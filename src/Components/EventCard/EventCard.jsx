@@ -42,7 +42,7 @@ const EventCard = () => {
                                         </button>
                                     </div> */}
                                     <div className="event-back-dec">
-                                    <p>{event.description} Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum perferendis repellendus similique obcaecati ad omnis maxime </p>
+                                    <p>{event.description} Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum perferendis repellendus similique obcaecati ad omnis maxime </p> 
                                     </div>
                                 </div>
                             </div>
