@@ -151,8 +151,10 @@
     -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
 }
+
 .middle {
-    position: absolute;
+    width: 100%;
+    background-color: #fff  ;
     top: 100%;
     left: 50%;
     transform: translate(-50%, -50%);

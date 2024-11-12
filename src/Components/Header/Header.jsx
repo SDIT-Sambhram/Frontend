@@ -22,7 +22,6 @@ const Header = () => {
                     </div>
                 )}
 
-                {/* Video that will play */}
                 <video
                     className='head-video'
                     autoPlay 
@@ -50,12 +49,13 @@ const Header = () => {
                         Discover
                     </button>
 
-                    {/* Countdown Component */}
                     <div className="middle">
                         {/* <h1 className="label">Sambhram</h1> */}
                         <Countdown targetDate="2024-12-06" />
                     </div>
+
                 </div>
+                
             </div>
         </>
     );
