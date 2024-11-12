@@ -26,8 +26,8 @@ const Footer = () =>{
         <div class="footer-col">
           <h4>Legal</h4>
           <ul class="links">
-            <li><a href="https://sambhram-assets.s3.ap-south-1.amazonaws.com/Terms+and+Conditions.pdf" target="_blank">Privacy Policy</a></li>
-            <li><a href="https://sambhram-assets.s3.ap-south-1.amazonaws.com/Privacy+Policy.pdf" target="_blank">Terms & Conditions</a></li>
+            <li><a href="https://sambhram-assets.s3.ap-south-1.amazonaws.com/Privacy+Policy.pdf" target="_blank">Privacy Policy</a></li>
+            <li><a href="https://sambhram-assets.s3.ap-south-1.amazonaws.com/Terms+and+Conditions.pdf" target="_blank">Terms & Conditions</a></li>
           </ul>
         </div>
 
