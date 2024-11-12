@@ -44,7 +44,7 @@ const Header = () => {
                     <p className="description">
                         We cordially invite you to our national level college fest of 2024.
                     </p>
-                    <p className="date">On Dec 06, 07 & 08</p>
+                    <p className="date">On Dec 06 & 07</p>
                     <button className="btn-white" href="#">
                         Discover
                     </button>

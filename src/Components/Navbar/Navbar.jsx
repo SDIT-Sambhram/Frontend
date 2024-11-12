@@ -27,7 +27,7 @@ const Navbar = () => {
             setScrolled(false); // Set scrolled to false when the page is above the threshold
         }
     };
-
+ 
     // Set up the scroll event listener
     useEffect(() => {
         if (location.pathname === '/') {

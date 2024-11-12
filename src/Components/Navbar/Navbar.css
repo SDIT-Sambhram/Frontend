@@ -31,11 +31,13 @@
 .navbar.other-page {
     background-color: #010000e2; /* Color for all other pages */
 }
-.navbar img {
-    height: 60px;
-    width: 180px;
-    position: absolute;
-    top: 8px;
+
+.navbar-left{
+    height: 100%;
+    width: 100%;
+}
+.navbar-left img {
+    height: 100%;
 }
 
 .nav-items {
