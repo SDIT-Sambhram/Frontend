@@ -16,7 +16,10 @@
     justify-content: space-between;
     align-items: center;
     border-radius: 15px;
-    background-color: #000000
+
+    background: url("../../assets/bg-drag.jpg");
+    -webkit-animation: moveBg 80s linear infinite;
+    animation: moveBg 80s linear infinite;
 }
 
 .register-button:hover{
