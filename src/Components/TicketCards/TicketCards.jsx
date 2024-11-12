@@ -10,19 +10,19 @@ const TicketCards = () => {
         {
             ticket_name: "FANG PASS",
             ticket_image: "Fang Pass.png",
-            description: "Double your fest experience! Pick any 2 exciting events with 20% savings. Showcase your versatility across different platforms and shine bright!"
+            description: "Double your fest experience! Pick any 2 exciting events with ₹40 savings. Showcase your versatility across different platforms and shine bright!"
         },
         {
             ticket_name: "FLAME PASS",
             ticket_image: "Flame Pass.png",
-            description: "Triple the excitement! Access 3 spectacular shows with a stunning 27% discount. From stage performances to tech innovations - embrace the diversity!"
+            description: "Triple the excitement! Access 3 spectacular shows with a stunning ₹80 discount. From stage performances to tech innovations - embrace the diversity!"
         },
         {
             ticket_name: "DRAGON PASS",
             ticket_image: "Dragon Pass.png",
-            description: "Ultimate fest experience! Select any 4 events with a massive 37.5% discount. Mix performances and tech shows - create your perfect festival adventure!"
+            description: "Ultimate fest experience! Select any 4 events with a massive ₹150 discount. Mix performances and tech shows - create your perfect festival adventure!"
         }
-    ]
+     ]
 
     return (
         <div className="ticket-cards"> 
