@@ -77,7 +77,7 @@ const RightDrawerMenu = memo(() => {
           sx: {
             width: { xs: '250px', sm: '300px' },
             backdropFilter: 'blur(4px)', 
-            backgroundColor: 'rgb(223 59 59 / 11%)',
+            backgroundColor: 'rgb(37 9 9 / 50%);',
             color:'white',
             '& .MuiListItemButton-root': {
               py: 1.5,
