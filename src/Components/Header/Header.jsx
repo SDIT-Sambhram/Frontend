@@ -25,7 +25,7 @@ const Header = () => {
                 {/* Video that will play */}
                 <video
                     className='head-video'
-                    autoPlay
+                    autoPlay 
                     loop
                     muted
                     playsInline

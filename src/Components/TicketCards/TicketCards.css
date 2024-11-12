@@ -11,11 +11,10 @@
 .ticket-card-list {
     width: 60%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 40px;  
-    column-gap: 40px;  
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    column-gap: 40px;
     margin-top: 40px;
-    
 }
 
 .ticket-card-view {
@@ -26,7 +25,7 @@
     transition: transform 1s ease;
     overflow: hidden;
     position: relative;
-    justify-self: center; 
+    justify-self: center;
 }
 
 .ticket-card-view img {
@@ -39,6 +38,7 @@
 .ticket-card-view:hover {
     transform: scale(1.05);
 }
+
 .ticket-card-overview {
     position: absolute;
     height: 60%;
@@ -46,27 +46,38 @@
     z-index: 100;
     bottom: 0;
     padding: 35px 20px 10px;
-    background: linear-gradient(to bottom, 
-                              transparent 0%,
-                              rgba(0, 0, 0, 0.5) 10%,
-                              rgba(0, 0, 0, 0.6) 20%,
-                              rgba(0, 0, 0, 0.7) 30%,
-                              rgba(0, 0, 0, 0.9) 100%);
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(0, 0, 0, 0.5) 10%,
+            rgba(0, 0, 0, 0.6) 20%,
+            rgba(0, 0, 0, 0.7) 30%,
+            rgba(0, 0, 0, 0.9) 100%);
 }
-.ticket-card-overview h6{
+
+.ticket-card-overview h6 {
     color: rgba(221, 255, 0, 0.797);
 }
-.ticket-card-overview p{
+
+.ticket-card-overview p {
     margin-top: 5px;
     color: rgba(255, 255, 255, 0.450);
     font-size: 10px;
 }
-.ticket-heading{
+
+.ticket-heading {
     width: 65%;
     display: flex;
+    background-image: url("https://www.shutterstock.com/image-vector/abstract-circle-lines-wave-gold-600nw-2338008067.jpg");
     justify-content: center;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-animation: moveBg 50s linear infinite;
+    animation: moveBg 50s linear infinite;
 }
-.ticket-heading h2{
+
+.ticket-heading h2 {
     font-size: 45px;
 }
 
@@ -75,37 +86,44 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
     }
+
     .ticket-card-view {
         height: 180px;
         width: 135px;
     }
-    .ticket-cards{
+
+    .ticket-cards {
         margin-top: 0;
         height: 80vh;
     }
+
     .ticket-card-list {
         width: 40%;
     }
-}   
+}
 
 @media (max-width: 900px) {
-    .ticket-heading{
+    .ticket-heading {
         width: 100%;
     }
-    .ticket-heading h2{
+
+    .ticket-heading h2 {
         font-size: 30px;
     }
+
     .ticket-card-list {
-        grid-template-columns: repeat(2, 1fr);  
+        grid-template-columns: repeat(2, 1fr);
         width: 70%;
         row-gap: 30px;
     }
-    .ticket-card-overview{
+
+    .ticket-card-overview {
         padding: 10px;
     }
-    .ticket-card-overview p{
+
+    .ticket-card-overview p {
         margin-top: 5px;
         font-size: 9px;
     }
-   
+
 }

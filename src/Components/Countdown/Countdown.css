@@ -4,25 +4,6 @@
   font-family: "Arial", sans-serif;
 }
 
-/* html,
-body {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  background: rgb(119, 13, 13);
-  background: radial-gradient(
-    circle,
-    rgba(119, 13, 13, 0.92) 64%,
-    rgba(0, 0, 0, 0.6) 100%
-  );
-} */
-
-canvas {
-  width: 100%;
-  height: 100%;
-}
-
 .label {
   font-size: 2.2rem;
   background: url("https://res.cloudinary.com/nikita-rudenko/image/upload/v1544906837/stripe_c982eebe592d6c30f2034f5ce80b1fc6.png");
@@ -41,15 +22,6 @@ canvas {
   100% {
     background-position: 1000% 500%;
   }
-}
-
-.middle {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  user-select: none;
 }
 
 .time {

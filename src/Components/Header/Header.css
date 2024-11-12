@@ -56,23 +56,25 @@
 
 .title {
     font-size: 100px;
-    background: url("https://i.pinimg.com/736x/21/ee/0d/21ee0d0d52401912143ea0c650bfeb44.jpg");
+    background: url("../../assets/gold_metal_background.jpg");
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
     color: transparent;
-    -webkit-animation: moveBg 30s linear infinite;
-    animation: moveBg 15s linear infinite;
+    -webkit-animation: moveBg 60s linear infinite;
+    animation: moveBg 60s linear infinite;
 }
 
 @keyframes moveBg {
     0% {
         background-position: 0% 30%;
     }
-
     100% {
-        background-position: 1000% 500%;
+        background-position: 1000% 50% ;
     }
+    /* 100% {
+        background-position: 1000% 500%;
+    } */
 }
 
 .description {
@@ -149,6 +151,14 @@
     -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
 }
+.middle {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    user-select: none;
+  }
 
 @media (max-width:1200px) {
     .title {
