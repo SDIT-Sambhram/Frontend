@@ -8,7 +8,7 @@
 
 .invite-container {
     width: 100hh;
-    height: 100vh; 
+    height: 100vh;
     display: flex;
     color: white;
     justify-content: center;
@@ -16,6 +16,7 @@
     background-size: cover;
     background-position: center;
 }
+
 .loading-overlay {
     position: absolute;
     top: 0;
@@ -28,37 +29,52 @@
     align-items: center;
     z-index: 10;
 }
-.head-video{
+
+.head-video {
     position: relative;
     object-fit: cover;
     width: 100%
 }
-.header-overlay{
+
+.header-overlay {
     position: absolute;
     width: 100%;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.406)
 }
+
 .content {
     padding: 4%;
     margin-top: 60px;
     text-align: left;
     position: absolute;
 }
-.title-sd{
+
+.title-sd {
     font-size: 60px;
 }
 
 .title {
-    font-size: 100px; 
-    font-family: Arial;
-    background: url('../../assets/image.png') no-repeat center center; 
-    background-size: cover; 
-    -webkit-background-clip: text; 
-    background-clip: text; 
-    color: transparent; 
+    font-size: 100px;
+    background: url("https://i.pinimg.com/736x/21/ee/0d/21ee0d0d52401912143ea0c650bfeb44.jpg");
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-animation: moveBg 30s linear infinite;
+    animation: moveBg 15s linear infinite;
 }
-  
+
+@keyframes moveBg {
+    0% {
+        background-position: 0% 30%;
+    }
+
+    100% {
+        background-position: 1000% 500%;
+    }
+}
+
 .description {
     font-size: 30px;
     margin-bottom: 30px;
@@ -69,7 +85,7 @@
     margin-bottom: 30px;
 }
 
-/* From Uiverse.io by Wlidha09 */ 
+/* From Uiverse.io by Wlidha09 */
 .btn-white {
     display: inline-flex;
     align-items: center;
@@ -82,20 +98,20 @@
     z-index: 1;
     position: relative;
     background-color: transparent;
-  }
-  
-  .btn-white::before {
+}
+
+.btn-white::before {
     content: "";
     background-color: #fff;
     display: block;
     width: 45px;
     height: 1px;
     margin-right: 20px;
-  }
-  
-  .btn-white::after {
+}
+
+.btn-white::after {
     content: "";
-    background: url('../../assets/image.png') no-repeat center center; 
+    background: url('../../assets/image.png') no-repeat center center;
     display: block;
     width: 0%;
     height: 100%;
@@ -107,47 +123,50 @@
     -moz-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
-  }
-  
-  .btn-white:hover {
+}
+
+.btn-white:hover {
     color: #232963;
     text-decoration: none;
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
-  }
-  
-  .btn-white:hover::after {
+}
+
+.btn-white:hover::after {
     width: 100%;
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
-  }
-  
-  .btn-white:hover::before {
+}
+
+.btn-white:hover::before {
     background-color: #232963;
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
-  }
+}
 
-  @media (max-width:1200px) {
-    .title{
+@media (max-width:1200px) {
+    .title {
         font-size: 80px;
         background-color: #232963;
     }
-  }
+}
+
 @media (max-width: 700px) {
 
     .invite-container {
         height: 100vh;
     }
-    .title-sd{
+
+    .title-sd {
         font-size: 38px;
     }
+
     .title {
         font-size: 47px;
     }
@@ -161,15 +180,17 @@
         font-size: 20px;
     }
 
-    .btn-white::before{
+    .btn-white::before {
         width: 20px;
         margin-right: 10px;
     }
-    .btn-white{
+
+    .btn-white {
         height: 35px;
         font-size: 14px;
         padding: 10px;
     }
+
     .header {
         height: 90vh;
     }
