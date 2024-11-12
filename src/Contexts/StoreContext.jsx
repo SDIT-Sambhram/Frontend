@@ -11,39 +11,28 @@ export const ContextProvider = ({ children }) => {
     const [eventType, setEventType] = useState("Cultural");
     const [popUpStatus, setPopUpStatus] = useState('');
     const [eventDatas, setEventDatas] = useState([]);
+    const [amount, setAmount] = useState();
+    const [step, setStep] = useState(1);
+    const [data, setData] = useState({
+        name: "",
+        usn: "",
+        college: "",
+        mobile: "",
+    });
+    const [selectedEvent, setSelectedEvent] = useState(() => {
+        const savedEvents = localStorage.getItem("selectedEvent");
+        return savedEvents ? JSON.parse(savedEvents) : [];
+    });
 
+
+    useEffect(() => {
+        localStorage.setItem("selectedEvent", JSON.stringify(selectedEvent));
+    }, [selectedEvent]);
+
+    useEffect(() => {
+        localStorage.setItem("eventDatas", JSON.stringify(eventDatas));
+    }, [eventDatas])
     const navigate = useNavigate();
-
-    const fetchData = async () => {
-        try {
-            console.log(url);
-            const response = await axios.get(`${url}/api/v1/auth/events`);
-            
-            const newEventDatas = response.data;
-         
-            localStorage.setItem("eventDatas", JSON.stringify(newEventDatas));
-
-            // Update state
-            setEventDatas(newEventDatas);
-            console.log("Data successfully fetched from server ||", "Fetched quantity :::", newEventDatas.length);
-        } catch (err) {
-            console.log("Error in axios", err);
-
-            // Try to load from localStorage first
-            const cachedData = localStorage.getItem("eventDatas");
-            if (cachedData) {
-                const parsedData = JSON.parse(cachedData);
-                setEventDatas(parsedData);
-                console.log("Data loaded from localStorage (", parsedData.length, "items)");
-            } else {
-                // Fallback to eventsData if nothing in localStorage
-                // setEventDatas(eventsData);
-                // console.log("Sample db fetched for production mode (", eventsData.length, "datas)");
-                console.log("error fetching data");
-                
-            }
-        }
-    };
 
     useEffect(() => {
         const loadEvents = async () => {
@@ -60,20 +49,8 @@ export const ContextProvider = ({ children }) => {
         loadEvents();
     }, []);
 
-    const [amount, setAmount] = useState();
-    const [data, setData] = useState({
-        name: "",
-        usn: "",
-        college: "",
-        mobile: "",
-    });
 
-    const [selectedEvent, setSelectedEvent] = useState(() => {
-        const savedEvents = localStorage.getItem("selectedEvent");
-        return savedEvents ? JSON.parse(savedEvents) : [];
-    });
-
-    const [step, setStep] = useState(1);
+    
     const selectEvent = (id) => {
         if (selectedEvent.includes(id)) {
             setSelectedEvent((prev) => prev.filter(eventId => eventId !== id));
@@ -85,20 +62,37 @@ export const ContextProvider = ({ children }) => {
             }
             else {
                 setSelectedEvent((prev) => [...prev, id]);
-                toast.success("Event added");        
+                toast.success("Event added");
             }
         }
 
     };
+    const fetchData = async () => {
+        try {
+            console.log(url);
+            const response = await axios.get(`${url}/api/v1/auth/events`);
 
-    useEffect(() => {
-        localStorage.setItem("selectedEvent", JSON.stringify(selectedEvent));
-    }, [selectedEvent]);
+            const newEventDatas = response.data;
 
-    useEffect(() => {
-        localStorage.setItem("eventDatas", JSON.stringify(eventDatas));
-    }, [eventDatas])
+            localStorage.setItem("eventDatas", JSON.stringify(newEventDatas));
 
+            // Update state
+            setEventDatas(newEventDatas);
+            console.log("Data successfully fetched from server ||", "Fetched quantity :::", newEventDatas.length);
+        } catch (err) {
+            console.log("Error in axios", err);
+
+            // Try to load from localStorage first
+            const cachedData = localStorage.getItem("eventDatas");
+            if (cachedData) {
+                const parsedData = JSON.parse(cachedData);
+                setEventDatas(parsedData);
+                console.log("Data loaded from localStorage (", parsedData.length, "items)");
+            } else {
+                console.log("error fetching data");
+            }
+        }
+    };
     const sendDatatoBackend = async () => {
         const dataSet = {
             name: data.name,
@@ -137,15 +131,15 @@ export const ContextProvider = ({ children }) => {
                 handler: function (response) {
 
                     console.log("gateway success");
-                    
-                    setSelectedEvent([]); 
-                    navigate('/success')                  
+
+                    setSelectedEvent([]);
+                    navigate('/success')
 
                 },
                 prefill: {
                     name: data.name,
                     contact: data.mobile
-                }, 
+                },
                 notes: {
                     address: "Kenjar"
                 },
