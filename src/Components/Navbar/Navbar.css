@@ -77,11 +77,7 @@
 
 /* responsive desigining */
 
-@media(max-width:1200px) {
-    .navbar img{
-        width: 180px;
-    }
-}
+
 @media(max-width:900px) {
     .nav-items {
         display: none;
@@ -94,12 +90,5 @@
     }
     .navbar h1 {
         font-size: 20px;
-    }
-    .navbar img {
-        
-        position: absolute;
-        top: 8px;
-        width: 150px;
-        left: 10px;
     }
 }
