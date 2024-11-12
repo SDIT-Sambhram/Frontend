@@ -91,7 +91,6 @@
     margin-bottom: 30px;
 }
 
-/* From Uiverse.io by Wlidha09 */
 .btn-white {
     display: inline-flex;
     align-items: center;
@@ -178,10 +177,10 @@
         height: 100vh;
     }
     .title-sd {
-      font-size: 38px;
+      font-size: 32px;
     }
     .title {
-        font-size: 47px;
+        font-size: 40px;
     }
 
     .description {

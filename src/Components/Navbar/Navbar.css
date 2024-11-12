@@ -16,7 +16,8 @@
 
 /* Scrolled state background color */
 .navbar.scrolled {
-    background-color: #01000079; /* You can change this color */
+    background-color: #01000079;
+    backdrop-filter: blur(6px);
 }
 
 /* Navbar on other pages (constant color) */
