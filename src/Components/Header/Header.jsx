@@ -41,7 +41,7 @@ const Header = () => {
                         <h1 className="title-sd">Shree Devi</h1>
                         <h1 className="title">SAMBHRAM&apos;24</h1>
                         <p className="description">
-                            W"Harmonize with Visionaries" invites attendees to join an esteemed group.
+                           sambhrathilekk ellavarkum swagatham 
                         </p>
                         <p className="date">On Dec 06 & 07</p>
                         <button className="btn-white">
