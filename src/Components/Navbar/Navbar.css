@@ -31,11 +31,13 @@
 .navbar.other-page {
     background-color: #010000e2; /* Color for all other pages */
 }
-.navbar img {
-    height: 60px;
-    width: 180px;
-    position: absolute;
-    top: 8px;
+
+.navbar-left{
+    height: 100%;
+    width: 100%;
+}
+.navbar-left img {
+    height: 100%;
 }
 
 .nav-items {
@@ -75,11 +77,7 @@
 
 /* responsive desigining */
 
-@media(max-width:1200px) {
-    .navbar img{
-        width: 180px;
-    }
-}
+
 @media(max-width:900px) {
     .nav-items {
         display: none;
@@ -92,12 +90,5 @@
     }
     .navbar h1 {
         font-size: 20px;
-    }
-    .navbar img {
-        
-        position: absolute;
-        top: 8px;
-        width: 150px;
-        left: 10px;
     }
 }

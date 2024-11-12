@@ -34,9 +34,14 @@ const SuccessPage = () => {
 
                         </div>
                         <div className="save-flex">
+                            <div className="download-div">
+                                
                             <a href="4.png" download={"ticket_sambhram"}>
                                 <Save />
                             </a>
+                            <p>Click to download</p>
+                            </div>
+                            
 
                         </div>
                     </div>

@@ -20,6 +20,9 @@ const EventCard = () => {
                         >
                             <div className="front">
                                 <p>{event.eventName}</p>
+                                <button onClick={(e) => { selectEvent(event._id); e.stopPropagation() }} className={`button-event ${selectedEvent.includes(event._id) ? 'clicked' : ''}`}>
+                                            {selectedEvent.includes(event._id) ? 'EVENT ADDED' : 'ADD EVENT'}
+                                        </button>
                                 
                             </div>
                             <div className="back">
@@ -33,11 +36,11 @@ const EventCard = () => {
                                             className="fa-solid fa-circle-question fa-lg " style={{ color: '#FFFFFF' }}></i>
 
                                     </div>
-                                    <div className="card-button2-back">
+                                    {/* <div className="card-button2-back">
                                         <button onClick={(e) => { selectEvent(event._id); e.stopPropagation() }} className={`button-event ${selectedEvent.includes(event._id) ? 'clicked' : ''}`}>
                                             {selectedEvent.includes(event._id) ? 'EVENT ADDED' : 'ADD EVENT'}
                                         </button>
-                                    </div>
+                                    </div> */}
                                     <div className="event-back-dec">
                                     <p>{event.description} Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum perferendis repellendus similique obcaecati ad omnis maxime </p>
                                     </div>

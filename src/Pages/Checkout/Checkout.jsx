@@ -12,8 +12,9 @@ const CheckoutPage = () => {
 
   const { selectedEvent, setSelectedEvent, eventDatas, setAmount, amount, payNow, step, data, setStep } = useContext(StoreContext);
 
-  const items = eventDatas.filter(event => selectedEvent.includes(event._id));
   const [selectedCoupon, setSelectedCoupon] = useState(null);
+
+  const items = eventDatas.filter(event => selectedEvent.includes(event._id));
 
 
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ const CheckoutPage = () => {
       : items.length === 2 ? 40
         : 0;
 
-  const grandTotal = totalAmount ;
+  const grandTotal = totalAmount - couponDiscount ;
 
   useEffect(() => {
     setAmount(() => grandTotal)
@@ -126,7 +127,7 @@ const CheckoutPage = () => {
           }
 
 
-          
+           
 
         </div>
       </div>

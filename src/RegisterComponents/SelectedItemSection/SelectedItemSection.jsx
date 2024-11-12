@@ -8,7 +8,7 @@ const SelectedItemSection = ({ items }) => {
   const { selectEvent } = useContext(StoreContext)
 
   const totalAmount = items.length * 100;
-  let couponDiscount = 0;
+  let couponDiscount = 0; 
   let currentCoupon = null;
 
   couponDiscount = items.length === 4 ? 150
