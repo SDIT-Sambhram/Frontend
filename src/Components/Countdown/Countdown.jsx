@@ -41,7 +41,7 @@ function Countdown() {
 
     return (
         <div className="middle">
-            <div className="label">Coming Soon</div>
+            <div className="label">Get Ready, Sambhram is Coming.</div>
             <div className="time">
                 <span>
                     <div>{time.days}</div>

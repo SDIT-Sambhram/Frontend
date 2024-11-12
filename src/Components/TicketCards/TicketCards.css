@@ -77,7 +77,7 @@
     animation: moveBg 50s linear infinite;
 }
 
-.ticket-heading h2 {
+.ticket-heading h2 { 
     font-size: 45px;
 }
 
@@ -126,4 +126,9 @@
         font-size: 9px;
     }
 
+}
+@media(max-width:700px){
+    .ticket-card-list{
+        width: 90%;
+    }
 }

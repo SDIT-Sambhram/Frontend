@@ -15,7 +15,6 @@ const Header = () => {
     return (
         <>
             <div className="invite-container">
-                {/* Loading Spinner */}
                 {!isVideoLoaded && (
                     <div className="loading-overlay">
                         <Preloader />
@@ -24,7 +23,7 @@ const Header = () => {
 
                 <video
                     className='head-video'
-                    autoPlay 
+                    autoPlay
                     loop
                     muted
                     playsInline
@@ -36,26 +35,27 @@ const Header = () => {
                 </video>
 
                 <div className="header-overlay"></div>
-
-                {/* Content that appears immediately after the video is ready */}
+                
                 <div className={`content ${isVideoLoaded ? 'fade-in' : ''}`}>
-                    <h1 className="title-sd">Shree Devi</h1>
-                    <h1 className="title">SAMBHRAM&apos;24</h1>
-                    <p className="description">
-                        We cordially invite you to our national level college fest of 2024.
-                    </p>
-                    <p className="date">On Dec 06 & 07</p>
-                    <button className="btn-white">
-                        Discover
-                    </button>
+                    <div className="main-contents">
+                        <h1 className="title-sd">Shree Devi</h1>
+                        <h1 className="title">SAMBHRAM&apos;24</h1>
+                        <p className="description">
+                            We cordially invite you to our national level college fest of 2024.
+                        </p>
+                        <p className="date">On Dec 06 & 07</p>
+                        <button className="btn-white">
+                            Discover
+                        </button>
+                    </div>
+
 
                     <div className="middle">
-                        {/* <h1 className="label">Sambhram</h1> */}
                         <Countdown targetDate="2024-12-06" />
                     </div>
 
                 </div>
-                
+
             </div>
         </>
     );
