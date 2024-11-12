@@ -30,12 +30,12 @@ const Header = () => {
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     onLoadedData={handleVideoLoad}
                 >
-                    <source src="https://sambhram-assets.s3.ap-south-1.amazonaws.com/header-video.webm" type="video/webm" />
+                    <source src="https://sambhram-assets.s3.ap-south-1.amazonaws.com/sambhram-header.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
 
                 <div className="header-overlay"></div>
-                
+
                 <div className={`content ${isVideoLoaded ? 'fade-in' : ''}`}>
                     <div className="main-contents">
                         <h1 className="title-sd">Shree Devi</h1>
