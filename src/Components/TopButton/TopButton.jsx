@@ -7,7 +7,7 @@ const TopButton = () => {
     const location = useLocation();
 
     useEffect(() => {
-        const showButtonOnRoutes = ['/', '/events']; 
+        const showButtonOnRoutes = ['/']; 
         const isPathVisible = showButtonOnRoutes.includes(location.pathname);
 
         const handleScroll = () => {

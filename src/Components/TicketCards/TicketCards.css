@@ -21,7 +21,7 @@
     height: 240px;
     width: 170px;
     border-radius: 10px;
-    background-color: rgba(181, 0, 0, 0.475);
+    background-color: rgba(181, 0, 0, 0.275);
     transition: transform 1s ease;
     overflow: hidden;
     position: relative;
@@ -73,11 +73,13 @@
     -moz-background-clip: text;
     background-clip: text;
     color: transparent;
-    -webkit-animation: moveBg 50s linear infinite;
-    animation: moveBg 50s linear infinite;
+    -webkit-animation: moveBg 30s linear infinite;
+    animation: moveBg 30s linear infinite;
 }
 
-.ticket-heading h2 { 
+
+
+.ticket-heading h2 {
     font-size: 45px;
 }
 
@@ -119,6 +121,10 @@
 
     .ticket-card-overview {
         padding: 10px;
+        height: 60%;
+    }
+    .ticket-card-overview h6{
+        margin-top: 20px;
     }
 
     .ticket-card-overview p {
@@ -127,8 +133,15 @@
     }
 
 }
-@media(max-width:700px){
-    .ticket-card-list{
-        width: 90%;
+
+@media(max-width:700px) {
+    .ticket-card-list {
+        width: 88%;
+        gap: 20px;
+    }
+
+    .ticket-card-view {
+        width: 160px;
+        height: 220px;
     }
 }

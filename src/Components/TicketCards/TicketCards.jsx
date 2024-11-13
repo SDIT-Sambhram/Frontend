@@ -25,7 +25,7 @@ const TicketCards = () => {
      ]
 
     return (
-        <div className="ticket-cards"> 
+        <div className="ticket-cards">  
             <div className="ticket-heading">
                 <h2>GRAB YOUR TICKETS</h2>
             </div>
