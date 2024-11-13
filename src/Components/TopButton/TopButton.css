@@ -5,8 +5,7 @@
     display: flex;
     padding: 30px;
     justify-content: end;
-    top: 85%;
-    z-index: 100;
+    top: 1005%;
 }
 
 .top-button {
@@ -23,7 +22,6 @@
     cursor: pointer;
     transition-duration: 0.3s;
     overflow: hidden;
-    z-index: 1000;
 }
 
 .svgIcon {
