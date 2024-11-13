@@ -7,13 +7,13 @@
 .label {
   font-size: 30px;
   font-weight: bold;
-  background: url("https://res.cloudinary.com/nikita-rudenko/image/upload/v1544906837/stripe_c982eebe592d6c30f2034f5ce80b1fc6.png");
+  background: url('../../assets/image.png') no-repeat center center;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
   color: transparent;
-  -webkit-animation: moveBg 80s linear infinite;
-  animation: moveBg 80s linear infinite;
+  -webkit-animation: moveBg 2s linear infinite;
+  animation: moveBg 2s linear infinite;
 }
 
 @keyframes moveBg {
@@ -26,7 +26,7 @@
 }
 
 .time {
-  color: #d99c3b;
+  color: #edd04f;
   text-transform: uppercase;
   display: flex;
   justify-content: center;

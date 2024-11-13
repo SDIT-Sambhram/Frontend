@@ -1,90 +1,236 @@
-import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
-import ArrowRightIcon from "@mui/icons-material/ArrowRight";
-import { Box, IconButton, Pagination, PaginationItem } from "@mui/material";
-import React, { useState } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
+import PropTypes from 'prop-types';
+import './CarouselComponent.scss'; // Import the SCSS file
 
-const CarouselComponent = () => {
-  const images = [
-    "https://media.istockphoto.com/id/155673177/photo/two-chinese-dragons-for-chinese-new-year.jpg?s=612x612&w=0&k=20&c=sdQtNp_R1uUodt_xPxx_cIEmbXDHOBwE4hORgQLme8U=",
-    "https://www.usatoday.com/gcdn/authoring/authoring-images/2024/06/10/USAT/74045302007-dragon-boat-festival-races-01.jpg?crop=4314,2427,x42,y394&width=1600&height=800&format=pjpg&auto=webp",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXlbK8rzQmHDE9F4zVPjjesyZujSweWBUM7w&s",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY41W0e_e_9xTbxeSo_1NhhfjPK589i8NJlA&s",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj3G-0_S2nzGt8Iy2ALTeXZ8oGlb-5c98fKw&s",
-  ];
+function useTilt(animationDuration = '150ms') {
+  const ref = useRef(null);
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  useEffect(() => {
+    if (!ref.current) {
+      return;
+    }
 
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
+    const unify = (e) => (e.changedTouches ? e.changedTouches[0] : e);
 
-  const handlePrevious = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-  };
+    const state = {
+      rect: undefined,
+      mouseX: undefined,
+      mouseY: undefined,
+    };
 
-  const handlePaginationChange = (_, index) => {
-    setCurrentIndex(index - 1);
-  };
+    let el = ref.current;
+
+    const handleEnterEvent = () => {
+      el.style.transition = `transform ${animationDuration} ease-out`;
+    };
+
+    const handleMoveEvent = (e) => {
+      e.preventDefault();
+
+      if (!el) {
+        return;
+      }
+      if (!state.rect) {
+        state.rect = el.getBoundingClientRect();
+      }
+      state.mouseX = unify(e).clientX;
+      state.mouseY = unify(e).clientY;
+
+      const px = (state.mouseX - state.rect.left) / state.rect.width;
+      const py = (state.mouseY - state.rect.top) / state.rect.height;
+
+      el.style.setProperty('--px', px.toFixed(2));
+      el.style.setProperty('--py', py.toFixed(2));
+    };
+
+    const handleEndEvent = () => {
+      el.style.setProperty('--px', 0.5);
+      el.style.setProperty('--py', 0.5);
+      el.style.transition = `transform ${animationDuration} ease-in`;
+    };
+
+    el.addEventListener('mouseenter', handleEnterEvent);
+    el.addEventListener('mousemove', handleMoveEvent);
+    el.addEventListener('mouseleave', handleEndEvent);
+    el.addEventListener('touchstart', handleEnterEvent);
+    el.addEventListener('touchmove', handleMoveEvent);
+    el.addEventListener('touchend', handleEndEvent);
+
+    return () => {
+      el.removeEventListener('mouseenter', handleEnterEvent);
+      el.removeEventListener('mousemove', handleMoveEvent);
+      el.removeEventListener('mouseleave', handleEndEvent);
+      el.removeEventListener('touchstart', handleEnterEvent);
+      el.removeEventListener('touchmove', handleMoveEvent);
+      el.removeEventListener('touchend', handleEndEvent);
+    };
+  }, [animationDuration]);
+
+  return ref;
+}
+
+const Slide = ({ image, title, subtitle, description, offset }) => {
+  const active = offset === 0 ? true : null;
+  const ref = useTilt(active);
 
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      width="592px"
-      height="308px"
-      alignItems="center"
-      gap={2}
-      px={4}
-      py={2}
-      position="relative"
+    <div
+      ref={ref}
+      className="slide"
+      data-active={active}
+      style={{
+        '--offset': offset,
+        '--dir': offset === 0 ? 0 : offset > 0 ? 1 : -1,
+      }}
     >
-      {/* Display the current image */}
-      <Box
-        component="img"
-        src={images[currentIndex]}
-        alt={`Slide ${currentIndex + 1}`}
-        width="100%"
-        height="100%"
-        flex={1}
-        style={{ objectFit: "cover", borderRadius: 8 }}
-      />
-
-      {/* Pagination and navigation controls */}
-      <Box display="flex" alignItems="center" justifyContent="center" gap={1} p={1}>
-        <IconButton onClick={handlePrevious}>
-          <ArrowLeftIcon fontSize="small" />
-        </IconButton>
-
-        <Pagination
-          count={images.length}
-          page={currentIndex + 1}
-          onChange={handlePaginationChange}
-          renderItem={(item) => (
-            <PaginationItem
-              {...item}
-              sx={{
-                "&.Mui-selected": {
-                  backgroundColor: "#7b61ff",
-                  borderRadius: "50%",
-                },
-                "&": {
-                  width: 24,
-                  height: 24,
-                  borderRadius: "50%",
-                  backgroundColor: "carouselgray",
-                  opacity: item.selected ? 1 : 0.5,
-                },
-              }}
-            />
+      <div
+        className="slideContent"
+        style={{
+          backgroundImage: `url('${image}')`,
+        }}
+      >
+        <div className="slideContentInner">
+          {title && (
+            <h2 className="slideTitle" dir="auto">
+              {title}
+            </h2>
           )}
-        />
-
-        <IconButton onClick={handleNext}>
-          <ArrowRightIcon fontSize="small" />
-        </IconButton>
-      </Box>
-    </Box>
+          {subtitle && (
+            <h3 className="slideSubtitle" dir="auto">
+              {subtitle}
+            </h3>
+          )}
+          {description && (
+            <p className="slideDescription" dir="auto">
+              {description}
+            </p>
+          )}
+        </div>
+      </div>
+    </div>
   );
 };
+
+Slide.propTypes = {
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  description: PropTypes.string,
+  offset: PropTypes.number.isRequired,
+  isPageBackground: PropTypes.bool,
+};
+
+const Carousel = ({ slides, isPageBackground }) => {
+  const [slideIndex, setSlideIndex] = useState(0);
+
+  const handlePrevSlide = useCallback(() => {
+    setSlideIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  }, [slides.length]);
+
+  // const handleNextSlide = () => {
+  //   setSlideIndex((prev) => (prev + 1) % slides.length);
+  // };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handlePrevSlide();
+    }, 3000); // Change slide every 3 seconds
+
+    return () => clearInterval(interval); // Cleanup interval on component unmount
+  }, [handlePrevSlide]);
+
+  return (
+    <section className="slidesWrapper">
+      <div className="slides">
+        {/* <button className="prevSlideBtn" onClick={handleNextSlide}>
+          <i className="fas fa-chevron-left" />
+        </button> */}
+
+        {[...slides, ...slides, ...slides].map((slide, i) => {
+          let offset = slides.length + (slideIndex - i);
+
+          if (typeof slide === 'string') {
+            return (
+              <Slide image={slide} offset={offset} isPageBackground={isPageBackground} key={i} />
+            );
+          } else {
+            return (
+              <Slide
+                image={slide.image}
+                title={slide.title}
+                subtitle={slide.subtitle}
+                description={slide.description}
+                offset={offset}
+                isPageBackground={isPageBackground}
+                key={i}
+              />
+            );
+          }
+        })}
+        {/* <button className="nextSlideBtn" onClick={handlePrevSlide}>
+          <i className="fas fa-chevron-right" />
+        </button> */}
+      </div>
+    </section>
+  );
+};
+
+Carousel.propTypes = {
+  slides: PropTypes.array.isRequired,
+  isPageBackground: PropTypes.bool,
+};
+
+const slides = [
+  {
+    id: 1,
+    title: 'TACTICAL TAKEOVER',
+    subtitle: '(BGMI)',
+    image: 'Bgmi.jpg',
+  },
+  {
+    id: 2,
+    title: 'RUN RIOT',
+    subtitle: '(GULLY CRICKET)',
+    image: 'gullycricket.webp',
+  },
+  {
+    id: 3,
+    title: 'SAKURA SQUARE',
+    subtitle: '(LUDO)',
+    image: 'ludo.webp',
+  },
+  {
+    id: 4,
+    title: 'YAKSHA VISMAYA',
+    subtitle: '(YAKSHAGANA)',
+    image: 'yakshagana.jpg',
+  },
+  {
+    id: 5,
+    title: 'HIKARI MATSURI',
+    subtitle: '(ANIME QUIZ)',
+    image: 'anime.png',
+  },
+  {
+    id: 6,
+    title: 'GLOW HUNT',
+    subtitle: '(TREASURE HUNT)',
+    image: 'treasurehunt.jpg',
+  },
+  {
+    id: 7,
+    title: 'EYES OF, CODE ON!',
+    subtitle: '(BLIND CODING)',
+    image: 'blindcoding.webp',
+  },
+  {
+    id: 8,
+    title: 'FLAUNT AND FLOW',
+    subtitle: '(FASHION WALK)',
+    image: 'fashionwalk.webp',
+  },
+];
+
+const CarouselComponent = () => <Carousel slides={slides} isPageBackground />;
 
 export default CarouselComponent;
