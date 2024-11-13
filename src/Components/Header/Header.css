@@ -46,9 +46,9 @@
     height: 60%;
 }
 .content {
-    padding: 4%;
+    padding: 4% 4% 2%;
     height: 90%;
-    margin-top: 60px;
+    margin-top: 40px;
     text-align: left;
     position: absolute;
     display: flex;
