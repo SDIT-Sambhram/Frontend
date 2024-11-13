@@ -39,9 +39,9 @@ const Header = () => {
                 <div className={`content ${isVideoLoaded ? 'fade-in' : ''}`}>
                     <div className="main-contents">
                         <h1 className="title-sd">Shree Devi</h1>
-                        <h1 className="title">SAMBHRAM&apos;24</h1>
+                        <h1 className="title">SAMBHRAM&apos;24.</h1>
                         <p className="description">
-                           sambhrathilekk ellavarkum swagatham 
+                        Where Brilliance Meets Legacy, Join the Symphony of Celebration.
                         </p>
                         <p className="date">On Dec 06 & 07</p>
                         <button className="btn-white">
