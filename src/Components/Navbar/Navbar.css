@@ -1,23 +1,14 @@
 .navbar {
+    padding: 20px 4%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     height: 80px;
     width: 100%;
     position: fixed;
     top: 0;
-    /* background: linear-gradient(319deg, #000000, #540000, #630202);
-    background-size: 800% 800%;
-    -webkit-animation: AnimationName 5s ease infinite;
-    animation: AnimationName 5s ease infinite;
-    opacity: 0.5px;
-    flex-wrap: wrap; */
-    /* Ensure wrapping on smaller screens */
     z-index: 1000;
-    /* Keeps the navbar on top */
-}
-
-.dflex{
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline   ;
 }
 
 .navbar.transparent {
@@ -26,18 +17,23 @@
 
 /* Scrolled state background color */
 .navbar.scrolled {
-    background-color: #01000079; /* You can change this color */
+    background-color: #01000079;
+    backdrop-filter: blur(6px);
 }
 
 /* Navbar on other pages (constant color) */
 .navbar.other-page {
-    background-color: #010000e2; /* Color for all other pages */
+    background-color: #010000e2;
+    /* Color for all other pages */
 }
-.navbar img {
-    height: auto;
-    width: 180px;
-    position: absolute;
-    padding: 8px;
+
+.navbar-left {
+    height: 100%;
+    width: 100%;
+}
+
+.navbar-left img {
+    height: 100%;
 }
 
 .nav-items {
@@ -48,7 +44,7 @@
 }
 
 .nav-items a {
-    color: white; 
+    color: white;
 }
 
 .nav-items a.menu-active {
@@ -56,39 +52,106 @@
 }
 
 .nav-items button {
-    background-color: #00000000;
-    height: 30px;
-    width: 100px;
-    color: white;
-    border: 1px solid yellow;
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: 1px solid #fff200;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: transparent;
+    color: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
 }
+
+.nav-items button:hover {
+    background: rgb(236, 186, 48);
+    /* box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815); */
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+.nav-items button:hover::before {
+    -webkit-animation: sh02 0.5s 0s linear;
+    -moz-animation: sh02 0.5s 0s linear;
+    animation: sh02 0.5s 0s linear;
+}
+
+.nav-items button::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+    from {
+        opacity: 0;
+        left: 0%;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        left: 100%;
+    }
+}
+
+button:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+}
+
+
 
 .navbar h1 {
     color: rgb(255, 255, 255);
 }
 
+.navbar-right {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 /* responsive desigining */
 
-@media(max-width:1200px) {
-    .navbar img{
-        width: 180px;
-    }
-}
+
 @media(max-width:900px) {
     .nav-items {
         display: none;
     }
 
 }
+
 @media(max-width:700px) {
     .navbar {
         height: 70px;
     }
+
     .navbar h1 {
         font-size: 20px;
-    }
-    .navbar img {
-        height: auto;
-        width: 100px;
     }
 }
