@@ -1,50 +1,129 @@
-.register-button-container{
+.register-button-container {
     position: fixed;
-    top: 90vh;
+    /* Mobile-friendly viewport units */
+    top: min(90svh, 90lvh);
+    top: 90vh; /* Fallback */
     height: 60px;
     width: 100%;
     display: flex;
     justify-content: center;
     z-index: 90;
+    padding-bottom: env(safe-area-inset-bottom, 20px);
 }
 
-.register-button{
+.register-button {
     width: 40%;
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-radius: 15px;
-
     background: url("../../assets/bg-drag.jpg");
     -webkit-animation: moveBg 80s linear infinite;
     animation: moveBg 80s linear infinite;
+    /* Add smooth transition for hover effect */
+    transition: background 0.3s ease;
 }
 
-.register-button:hover{
+.register-button:hover {
     background: linear-gradient(319deg, #000000, #540000, #630202);
     background-size: 800% 800%;
     -webkit-animation: AnimationName 5s ease infinite;
     animation: AnimationName 5s ease infinite;
 }
 
-.register-button:hover p{
+.register-button:hover p {
     font-size: 20px;
 }
 
-@keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-.register-button p{
+.register-button p {
     font-size: large;
     color: aliceblue;
     transition: font-size 0.3s ease;
+    /* Prevent text selection */
+    user-select: none;
+    /* Ensure text stays crisp during animations */
+    -webkit-font-smoothing: antialiased;
 }
 
-@media (max-width:700px){
-    .register-button{
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes moveBg {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 700px) {
+    .register-button-container {
+        /* Adjust position for mobile */
+        top: min(85svh, 85lvh);
+        /* Add padding for mobile browsers */
+        padding: 0 15px env(safe-area-inset-bottom, 20px) 15px;
+    }
+    
+    .register-button {
         width: 85%;
+        /* Adjust padding for better mobile touch targets */
+        padding: 15px 20px;
+    }
+    
+    .register-button p {
+        /* Slightly larger text for mobile */
+        font-size: 16px;
+    }
+    
+    .register-button:hover p {
+        /* Adjust hover state for mobile */
+        font-size: 18px;
+    }
+}
+
+/* Handle landscape orientation */
+@media (max-width: 900px) and (orientation: landscape) {
+    .register-button-container {
+        top: min(80svh, 80lvh);
+    }
+    
+    .register-button {
+        padding: 12px 20px;
+    }
+}
+
+/* Handle larger screens */
+@media (min-width: 1200px) {
+    .register-button {
+        width: 30%;
+        max-width: 500px;
+    }
+}
+
+/* Add support for reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .register-button {
+        animation: none;
+        transition: none;
+    }
+    
+    .register-button:hover {
+        animation: none;
+    }
+    
+    .register-button p {
+        transition: none;
     }
 }
