@@ -57,3 +57,10 @@
     bottom: unset;
     transition-duration: 0.3s;
 }
+
+@media (max-width:700px) {
+    .top-button-div{
+        bottom: 12%;
+        right: 8%;
+    }
+}
