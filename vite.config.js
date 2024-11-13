@@ -8,6 +8,17 @@ config();
 
 export default defineConfig({
   base: '/', // Ensure root path is correctly set for deployment
+  
+  // Add server configuration for network access
+  server: {
+    host: '0.0.0.0',  // Expose to all network interfaces
+    port: 3000,       // Specify port
+    strictPort: true, // Fail if port is in use
+    watch: {
+      usePolling: true // Helps with some network file systems
+    }
+  },
+
   plugins: [
     react(),
     compression({
@@ -47,5 +58,9 @@ export default defineConfig({
   define: {
     'process.env': process.env,
   },
-});
 
+  // Optional: Add HMR and other development optimizations
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom'],
+  },
+});

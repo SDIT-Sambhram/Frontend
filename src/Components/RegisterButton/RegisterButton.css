@@ -1,17 +1,16 @@
 .register-button-container {
     position: fixed;
-    /* Mobile-friendly viewport units */
-    top: min(90svh, 90lvh);
-    top: 90vh; /* Fallback */
+    bottom: calc(env(safe-area-inset-bottom) + 20px);
     height: 60px;
     width: 100%;
     display: flex;
     justify-content: center;
     z-index: 90;
-    padding-bottom: env(safe-area-inset-bottom, 20px);
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
 }
 
-.register-button {
+ .register-button {
     width: 40%;
     padding: 20px;
     display: flex;
@@ -19,34 +18,36 @@
     align-items: center;
     border-radius: 15px;
     background: url("../../assets/bg-drag.jpg");
+    background-size: cover;
     -webkit-animation: moveBg 80s linear infinite;
     animation: moveBg 80s linear infinite;
-    /* Add smooth transition for hover effect */
-    transition: background 0.3s ease;
-}
-
-.register-button:hover {
+    transition: all 0.3s ease;
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+ }
+ 
+ .register-button:hover {
     background: linear-gradient(319deg, #000000, #540000, #630202);
     background-size: 800% 800%;
     -webkit-animation: AnimationName 5s ease infinite;
     animation: AnimationName 5s ease infinite;
-}
-
-.register-button:hover p {
+ }
+ 
+ .register-button:hover p {
     font-size: 20px;
-}
-
-.register-button p {
+ }
+ 
+ .register-button p {
     font-size: large;
     color: aliceblue;
-    transition: font-size 0.3s ease;
-    /* Prevent text selection */
+    transition: all 0.3s ease;
     user-select: none;
-    /* Ensure text stays crisp during animations */
     -webkit-font-smoothing: antialiased;
-}
-
-@keyframes AnimationName {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+ }
+ 
+ @keyframes AnimationName {
     0% {
         background-position: 0% 50%;
     }
@@ -56,64 +57,63 @@
     100% {
         background-position: 0% 50%;
     }
-}
-
-@keyframes moveBg {
+ }
+ 
+ @keyframes moveBg {
     0% {
         background-position: 0 0;
     }
     100% {
         background-position: 100% 0;
     }
-}
-
-/* Mobile Responsive Styles */
-@media (max-width: 700px) {
+ }
+ 
+ @media (max-width: 700px) {
     .register-button-container {
-        /* Adjust position for mobile */
-        top: min(85svh, 85lvh);
-        /* Add padding for mobile browsers */
+        top: calc(90svh - env(safe-area-inset-bottom, 0px));
         padding: 0 15px env(safe-area-inset-bottom, 20px) 15px;
     }
     
     .register-button {
         width: 85%;
-        /* Adjust padding for better mobile touch targets */
         padding: 15px 20px;
+        min-height: 44px;
     }
     
     .register-button p {
-        /* Slightly larger text for mobile */
         font-size: 16px;
     }
     
-    .register-button:hover p {
-        /* Adjust hover state for mobile */
-        font-size: 18px;
+    .register-button:hover {
+        background: url("../../assets/bg-drag.jpg");
+        background-size: cover;
+        animation: moveBg 80s linear infinite;
     }
-}
-
-/* Handle landscape orientation */
-@media (max-width: 900px) and (orientation: landscape) {
+    
+    .register-button:hover p {
+        font-size: 16px;
+    }
+ }
+ 
+ @media (max-width: 900px) and (orientation: landscape) {
     .register-button-container {
         top: min(80svh, 80lvh);
+        bottom: env(safe-area-inset-bottom, 20px);
     }
     
     .register-button {
         padding: 12px 20px;
     }
-}
-
-/* Handle larger screens */
-@media (min-width: 1200px) {
+ }
+ 
+ @media (min-width: 1200px) {
     .register-button {
         width: 30%;
         max-width: 500px;
     }
-}
-
-/* Add support for reduced motion preferences */
-@media (prefers-reduced-motion: reduce) {
+ }
+ 
+ @media (prefers-reduced-motion: reduce) {
     .register-button {
         animation: none;
         transition: none;
@@ -126,4 +126,10 @@
     .register-button p {
         transition: none;
     }
-}
+ }
+ 
+ @media (prefers-color-scheme: dark) {
+    .register-button p {
+        color: white;
+    }
+ }
