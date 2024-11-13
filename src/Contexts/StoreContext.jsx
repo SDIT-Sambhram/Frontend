@@ -73,7 +73,7 @@ export const ContextProvider = ({ children }) => {
 
             const newEventDatas = response.data;
 
-            localStorage.setItem("eventDatas", JSON.stringify(newEventDatas));
+            localStorage.setItem("eventDatas", JSON.stringify(newEventDatas.length));
 
             // Update state
             setEventDatas(newEventDatas);

@@ -7,7 +7,7 @@ const EventCard = () => {
     const [flippedCard, setFlippedCard] = useState(null);
 
     const toggleFlip = (id) => setFlippedCard(prevId => (prevId === id ? null : id));
-
+    
     return (
         <>
             {eventDatas

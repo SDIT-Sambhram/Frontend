@@ -9,8 +9,10 @@ import CheckoutPage from './Pages/Checkout/Checkout.jsx';
 import SuccessPage from './Pages/SuccessPage/SuccessPage.jsx'
 
 import Footer from './Components/Footer/Footer.jsx'
+import TopButton from './Components/TopButton/TopButton.jsx'
 
 import ScrollToTop from './ScrolltoTop.jsx';
+
 
 import { ContextProvider } from './Contexts/StoreContext.jsx';
 
@@ -25,7 +27,7 @@ function App() {
   useEffect(() => {
     // Modified loading logic
     const handleLoad = () => setIsLoading(false);
-    
+
     // Check if document is already loaded
     if (document.readyState === 'complete') {
       setIsLoading(false);
@@ -45,25 +47,27 @@ function App() {
   return (
     <ContextProvider>
       {isLoading ? (
-        <Preloader/>
+        <Preloader />
       ) : (
         <>
           <div className="app">
-          <Navbar />
+            <Navbar />
             <ToastContainer />
-            <ScrollToTop/>
+            <ScrollToTop />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/checkout" element={<CheckoutPage />} />
               <Route path="/events" element={<Event />} />
-              <Route path="/success" element={<SuccessPage/>}/>
+              <Route path="/success" element={<SuccessPage />} />
               <Route path="*" element={<h1>not found page</h1>} />
+
             </Routes>
-            
+
+            <TopButton />
           </div>
-          <Footer/>
-          
-          
+          <Footer />
+
+
         </>
       )}
     </ContextProvider>
