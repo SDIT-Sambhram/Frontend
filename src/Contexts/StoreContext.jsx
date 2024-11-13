@@ -48,8 +48,6 @@ export const ContextProvider = ({ children }) => {
 
         loadEvents();
     }, []);
-
-
     
     const selectEvent = (id) => {
         if (selectedEvent.includes(id)) {
@@ -67,6 +65,7 @@ export const ContextProvider = ({ children }) => {
         }
 
     };
+
     const fetchData = async () => {
         try {
             console.log(url);

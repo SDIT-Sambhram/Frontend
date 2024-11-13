@@ -42,12 +42,18 @@
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.406)
 }
-
+.main-contents{
+    height: 60%;
+}
 .content {
     padding: 4%;
+    height: 90%;
     margin-top: 60px;
     text-align: left;
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .title-sd {
@@ -56,23 +62,13 @@
 
 .title {
     font-size: 100px;
-    background: url("https://i.pinimg.com/736x/21/ee/0d/21ee0d0d52401912143ea0c650bfeb44.jpg");
+    background: url("../../assets/gold_metal_background.jpg");
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
     color: transparent;
-    -webkit-animation: moveBg 30s linear infinite;
-    animation: moveBg 15s linear infinite;
-}
-
-@keyframes moveBg {
-    0% {
-        background-position: 0% 30%;
-    }
-
-    100% {
-        background-position: 1000% 500%;
-    }
+    -webkit-animation: moveBg 60s linear infinite;
+    animation: moveBg 60s linear infinite;
 }
 
 .description {
@@ -85,13 +81,13 @@
     margin-bottom: 30px;
 }
 
-/* From Uiverse.io by Wlidha09 */
 .btn-white {
     display: inline-flex;
     align-items: center;
     color: #fff;
     border: 1px solid #fff;
     height: 50px;
+    width: 180px;
     padding: 0 20px;
     font-size: 17px;
     text-transform: uppercase;
@@ -150,6 +146,15 @@
     transition: all 0.3s ease-out;
 }
 
+.middle {
+    width: 100%;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+}
+
 @media (max-width:1200px) {
     .title {
         font-size: 80px;
@@ -158,17 +163,14 @@
 }
 
 @media (max-width: 700px) {
-
     .invite-container {
         height: 100vh;
     }
-
     .title-sd {
-        font-size: 38px;
+      font-size: 32px;
     }
-
     .title {
-        font-size: 47px;
+        font-size: 40px;
     }
 
     .description {

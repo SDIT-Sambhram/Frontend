@@ -21,7 +21,6 @@ const menuItems = [
 const RightDrawerMenu = memo(() => {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
 
-  // Memoize handlers to prevent unnecessary re-renders
   const handleOpenDrawer = useCallback(() => {
     setIsDrawerOpen(true);
   }, []);
@@ -35,7 +34,7 @@ const RightDrawerMenu = memo(() => {
   // Memoize drawer content to prevent unnecessary re-renders
   const drawerContent = useMemo(() => (
     <List component="nav">
-      {menuItems.map(({ id, path, label }) => (
+      {menuItems.map(({ id, path, label }) => ( 
         <ListItem key={id} disablePadding>
           {path ? (
             <ListItemButton
@@ -77,8 +76,9 @@ const RightDrawerMenu = memo(() => {
           elevation: 3,
           sx: {
             width: { xs: '250px', sm: '300px' },
-            backdropFilter: 'blur(4px)', // This applies the blur effect
-            backgroundColor: 'rgba(255, 255, 255, 0.8 )', // Adjust opacity for a frosted glass effect
+            backdropFilter: 'blur(4px)', 
+            backgroundColor: 'rgb(37 9 9 / 50%);',
+            color:'white',
             '& .MuiListItemButton-root': {
               py: 1.5,
               '&:hover': {
