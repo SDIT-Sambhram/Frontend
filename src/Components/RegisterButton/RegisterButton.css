@@ -48,9 +48,3 @@
         width: 85%;
     }
 }
-
-@supports (padding: max(0px)) {
-    .register-button-container {
-        padding-bottom: max(20px, env(safe-area-inset-bottom));
-    }
-}
