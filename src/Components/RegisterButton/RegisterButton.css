@@ -1,6 +1,6 @@
 .register-button-container{
     position: fixed;
-    top: 90%;
+    top: 90vh;
     height: 60px;
     width: 100%;
     display: flex;
