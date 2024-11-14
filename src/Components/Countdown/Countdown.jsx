@@ -1,6 +1,5 @@
 import React from 'react';
 import '../Countdown/Countdown.css'
-// ... (Snowflake and Snow classes remain the same)
  
 function Countdown() {
     const [time, setTime] = React.useState({

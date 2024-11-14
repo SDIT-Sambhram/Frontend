@@ -16,7 +16,7 @@
   animation: moveBg 80s linear infinite;
 }
 
-@keyframes moveBg {
+@keyframes moveBg { 
   0% {
     background-position: 0% 30%;
   }
