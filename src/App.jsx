@@ -7,6 +7,7 @@ import Home from './Pages/Home/Home.jsx';
 import Event from './Pages/Events/Event.jsx';
 import CheckoutPage from './Pages/Checkout/Checkout.jsx';
 import SuccessPage from './Pages/SuccessPage/SuccessPage.jsx'
+import About from './Pages/About/About.jsx';
 
 import Footer from './Components/Footer/Footer.jsx'
 import TopButton from './Components/TopButton/TopButton.jsx'
@@ -59,7 +60,9 @@ function App() {
               <Route path="/checkout" element={<CheckoutPage />} />
               <Route path="/events" element={<Event />} />
               <Route path="/success" element={<SuccessPage />} />
+              <Route path='/about' element={<About/>}/>
               <Route path="*" element={<h1>not found page</h1>} />
+
 
             </Routes>
 

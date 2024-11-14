@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Preloader from '../Preloader/Preloader.jsx'
 import './Header.css';
 import Countdown from '../Countdown/Countdown.jsx';
-import "../Countdown/Countdown.css"
+
 
 const Header = () => {
     const [isVideoLoaded, setIsVideoLoaded] = useState(false);
@@ -43,14 +43,14 @@ const Header = () => {
                         <p className="description">
                             National Level Technical & Cultural Fest.
                         </p>
-                        <p className="date">On Dec 06 & 07</p>
+                        <p className="date">On 6th & 7th December 2024</p>
                         <button className="btn-white">
-                            Discover
+                            Explore
                         </button>
                     </div>
 
-
                     <div className="middle">
+                        
                         <Countdown targetDate="2024-12-06" />
                     </div>
 

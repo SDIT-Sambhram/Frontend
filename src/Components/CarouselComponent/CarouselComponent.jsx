@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import PropTypes from 'prop-types';
-import './CarouselComponent.scss'; // Import the SCSS file
+import './CarouselComponent.css'; 
 
 function useTilt(animationDuration = '150ms') {
   const ref = useRef(null);
@@ -14,7 +14,7 @@ function useTilt(animationDuration = '150ms') {
 
     const state = {
       rect: undefined,
-      mouseX: undefined,
+      mouseX: undefined, 
       mouseY: undefined,
     };
 
@@ -140,13 +140,10 @@ const Carousel = ({ slides, isPageBackground }) => {
   }, [handlePrevSlide]);
 
   return (
-    <div className="carousel">
-      <h2>FEATURED EVENTS</h2>
-    <section className="slidesWrapper">
+    <div className="slide-div">
+      <h3>FEATURED EVENTS</h3>
+ <section className="slidesWrapper">
       <div className="slides">
-        {/* <button className="prevSlideBtn" onClick={handleNextSlide}>
-          <i className="fas fa-chevron-left" />
-        </button> */}
 
         {[...slides, ...slides, ...slides].map((slide, i) => {
           let offset = slides.length + (slideIndex - i);
@@ -169,12 +166,13 @@ const Carousel = ({ slides, isPageBackground }) => {
             );
           }
         })}
-        {/* <button className="nextSlideBtn" onClick={handlePrevSlide}>
-          <i className="fas fa-chevron-right" />
-        </button> */}
       </div>
     </section>
+    <button>Button</button>
     </div>
+   
+  
+   
 
   );
 };
@@ -209,7 +207,7 @@ const slides = [
     subtitle: '(YAKSHAGANA)',
     image: 'yakshagana.jpg',
   },
-  {
+  { 
     id: 5,
     title: 'HIKARI MATSURI',
     subtitle: '(ANIME QUIZ)',
