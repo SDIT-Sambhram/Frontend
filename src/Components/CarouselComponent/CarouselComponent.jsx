@@ -14,7 +14,7 @@ function useTilt(animationDuration = '150ms') {
 
     const state = {
       rect: undefined,
-      mouseX: undefined,
+      mouseX: undefined, 
       mouseY: undefined,
     };
 
@@ -140,8 +140,9 @@ const Carousel = ({ slides, isPageBackground }) => {
   }, [handlePrevSlide]);
 
   return (
-    <div className="carousel">
+    <div className="carousel-div">
       <h2>FEATURED EVENTS</h2>
+ <div className="carousel">
     <section className="slidesWrapper">
       <div className="slides">
         {/* <button className="prevSlideBtn" onClick={handleNextSlide}>
@@ -175,6 +176,8 @@ const Carousel = ({ slides, isPageBackground }) => {
       </div>
     </section>
     </div>
+    </div>
+   
 
   );
 };

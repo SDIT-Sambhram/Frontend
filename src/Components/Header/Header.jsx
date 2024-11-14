@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Preloader from '../Preloader/Preloader.jsx'
 import './Header.css';
 import Countdown from '../Countdown/Countdown.jsx';
-import FlipTimer from '../FlipTimer/FlipTimer.jsx';
 
 
 const Header = () => {
@@ -51,12 +50,8 @@ const Header = () => {
                     </div>
 
                     <div className="middle">
-                        <FlipTimer
-                            targetDate="2024-12-9 20:57:00"
-                            type="down"
-                            onComplete={() => console.log('Timer completed!')}
-                        />
-                        {/* <Countdown targetDate="2024-12-06" /> */}
+                        
+                        <Countdown targetDate="2024-12-06" />
                     </div>
 
                 </div>
