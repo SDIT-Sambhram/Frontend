@@ -62,13 +62,13 @@
 
 .title {
     font-size: 100px;
-    background: url("../../assets/gold_metal_background.jpg");
+    background: url("../../assets/image.png");
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
     color: transparent;
-    -webkit-animation: moveBg 60s linear infinite;
-    animation: moveBg 60s linear infinite;
+    -webkit-animation: moveBg 4s linear infinite;
+    animation: moveBg 4s linear infinite;
 }
 
 .description {
