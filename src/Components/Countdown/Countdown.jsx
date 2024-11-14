@@ -1,7 +1,7 @@
 import React from 'react';
 
 // ... (Snowflake and Snow classes remain the same)
- 
+
 function Countdown() {
     const [time, setTime] = React.useState({
         days: '00',
@@ -41,24 +41,25 @@ function Countdown() {
 
     return (
         <div className="middle">
-            <div className="label">Get Ready, Sambhram is Coming.</div>
-            <div className="time">
-                <span>
-                    <div>{time.days}</div>
-                    Days
-                </span>
-                <span>
-                    <div>{time.hours}</div>
-                    Hours
-                </span>
-                <span>
-                    <div>{time.minutes}</div>
-                    Minutes
-                </span>
-                <span>
-                    <div>{time.seconds}</div>
-                    Seconds
-                </span>
+            <div className='bg-box'>
+                <div className="label">Gear Up! Sambhram Starts Soon!</div>
+                <div className="time">
+                    <span>
+                        <div><p>{time.days}</p>Days</div>
+                        <p>:</p>
+                    </span>
+                    <span>
+                        <div><p>{time.hours}</p>Hours</div>
+                        <p>:</p>
+                    </span>
+                    <span>
+                        <div><p>{time.minutes}</p>Minutes</div>
+                        <p>:</p>
+                    </span>
+                    <span>
+                        <div><p>{time.seconds}</p>Seconds</div>
+                    </span>
+                </div>
             </div>
         </div>
     );
