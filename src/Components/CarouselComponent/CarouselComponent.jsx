@@ -140,6 +140,8 @@ const Carousel = ({ slides, isPageBackground }) => {
   }, [handlePrevSlide]);
 
   return (
+    <div className="carousel">
+      <h2>FEATURED EVENTS</h2>
     <section className="slidesWrapper">
       <div className="slides">
         {/* <button className="prevSlideBtn" onClick={handleNextSlide}>
@@ -172,6 +174,8 @@ const Carousel = ({ slides, isPageBackground }) => {
         </button> */}
       </div>
     </section>
+    </div>
+
   );
 };
 
