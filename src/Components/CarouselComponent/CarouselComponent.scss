@@ -105,6 +105,13 @@ $desktop: 1200px;
   }
 }
 
+.carousel {
+  height: 700px;
+  display: flex;
+  flex-direction: column ;
+  background-color: #ffb0b0;
+}
+
 .slidesWrapper {
   min-height: 500px;
   display: flex;
