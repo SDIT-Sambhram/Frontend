@@ -2,7 +2,8 @@ import { useState } from 'react';
 import Preloader from '../Preloader/Preloader.jsx'
 import './Header.css';
 import Countdown from '../Countdown/Countdown.jsx';
-import "../Countdown/Countdown.css"
+import FlipTimer from '../FlipTimer/FlipTimer.jsx';
+
 
 const Header = () => {
     const [isVideoLoaded, setIsVideoLoaded] = useState(false);
@@ -41,17 +42,21 @@ const Header = () => {
                         <h1 className="title-sd">Shree Devi</h1>
                         <h1 className="title">SAMBHRAM&apos;24.</h1>
                         <p className="description">
-                        Where Brilliance Meets Legacy, Join the Symphony of Celebration.
+                            National Level Technical & Cultural Fest.
                         </p>
-                        <p className="date">On Dec 06 & 07</p>
+                        <p className="date">On 6th & 7th December 2024</p>
                         <button className="btn-white">
-                            Discover
+                            Explore
                         </button>
                     </div>
 
-
                     <div className="middle">
-                        <Countdown targetDate="2024-12-06" />
+                        <FlipTimer
+                            targetDate="2024-12-9 20:57:00"
+                            type="down"
+                            onComplete={() => console.log('Timer completed!')}
+                        />
+                        {/* <Countdown targetDate="2024-12-06" /> */}
                     </div>
 
                 </div>

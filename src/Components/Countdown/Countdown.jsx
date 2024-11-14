@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../Countdown/Countdown.css'
 // ... (Snowflake and Snow classes remain the same)
  
 function Countdown() {

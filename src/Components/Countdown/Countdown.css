@@ -12,8 +12,8 @@
   -moz-background-clip: text;
   background-clip: text;
   color: transparent;
-  -webkit-animation: moveBg 80s linear infinite;
-  animation: moveBg 80s linear infinite;
+  -webkit-animation: moveBg 60s linear infinite;
+  animation: moveBg 60s linear infinite;
 }
 
 @keyframes moveBg {
