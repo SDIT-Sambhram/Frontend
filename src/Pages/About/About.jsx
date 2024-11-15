@@ -1,13 +1,11 @@
 import './About.css'
 
-
+import AboutComponent from '../../Components/AboutComponent/AboutComponent'
 
 
 const About=()=>{
     return(<>
-    <div className="about">
-        <h1>Test</h1>
-    </div>
+    <AboutComponent/>
     </>)
 }
 

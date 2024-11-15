@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Preloader from '../Preloader/Preloader.jsx'
 import './Header.css';
+import { Link } from 'react-router-dom';
 import Countdown from '../Countdown/Countdown.jsx';
 
 
@@ -44,9 +45,11 @@ const Header = () => {
                             National Level Technical & Cultural Fest.
                         </p>
                         <p className="date">On 6th & 7th December 2024</p>
-                        <button className="btn-white">
-                            Explore
-                        </button>
+                        <Link to="/about">
+                            <button className="btn-white">
+                                Explore
+                            </button>
+                        </Link>
                     </div>
 
                     <div className="middle">
