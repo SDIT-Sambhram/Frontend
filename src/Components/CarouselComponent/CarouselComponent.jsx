@@ -1,26 +1,11 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import PropTypes from 'prop-types';
+import './CarouselComponent.css'; 
 
 function useTilt(animationDuration = '150ms') {
   const ref = useRef(null);
-  const [isGyroscopeAvailable, setIsGyroscopeAvailable] = useState(false);
 
   useEffect(() => {
-    // Check if the device has gyroscope
-    if (window.DeviceOrientationEvent) {
-      window.DeviceOrientationEvent.requestPermission?.()
-        .then(response => {
-          if (response === 'granted') {
-            setIsGyroscopeAvailable(true);
-          }
-        })
-        .catch(() => {
-          // If requestPermission is not available (like on Desktop),
-          // we'll still try to listen to events
-          setIsGyroscopeAvailable(true);
-        });
-    }
-
     if (!ref.current) {
       return;
     }
@@ -64,31 +49,12 @@ function useTilt(animationDuration = '150ms') {
       el.style.transition = `transform ${animationDuration} ease-in`;
     };
 
-    // Handle device orientation
-    const handleDeviceOrientation = (event) => {
-      if (!el || !isGyroscopeAvailable) return;
-
-      // Convert gamma (-90 to 90) to 0-1 range for X
-      const px = (event.gamma + 90) / 180;
-      // Convert beta (-180 to 180) to 0-1 range for Y
-      const py = (event.beta + 180) / 360;
-
-      el.style.setProperty('--px', px.toFixed(2));
-      el.style.setProperty('--py', py.toFixed(2));
-    };
-
-    // Add desktop mouse events
     el.addEventListener('mouseenter', handleEnterEvent);
     el.addEventListener('mousemove', handleMoveEvent);
     el.addEventListener('mouseleave', handleEndEvent);
     el.addEventListener('touchstart', handleEnterEvent);
     el.addEventListener('touchmove', handleMoveEvent);
     el.addEventListener('touchend', handleEndEvent);
-
-    // Add device orientation event
-    if (isGyroscopeAvailable) {
-      window.addEventListener('deviceorientation', handleDeviceOrientation);
-    }
 
     return () => {
       el.removeEventListener('mouseenter', handleEnterEvent);
@@ -97,12 +63,8 @@ function useTilt(animationDuration = '150ms') {
       el.removeEventListener('touchstart', handleEnterEvent);
       el.removeEventListener('touchmove', handleMoveEvent);
       el.removeEventListener('touchend', handleEndEvent);
-      
-      if (isGyroscopeAvailable) {
-        window.removeEventListener('deviceorientation', handleDeviceOrientation);
-      }
     };
-  }, [animationDuration, isGyroscopeAvailable]);
+  }, [animationDuration]);
 
   return ref;
 }
@@ -165,52 +127,52 @@ const Carousel = ({ slides, isPageBackground }) => {
     setSlideIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   }, [slides.length]);
 
-  const handleNextSlide = () => {
-    setSlideIndex((prev) => (prev + 1) % slides.length);
-  };
+  // const handleNextSlide = () => {
+  //   setSlideIndex((prev) => (prev + 1) % slides.length);
+  // };
 
   useEffect(() => {
     const interval = setInterval(() => {
-      handleNextSlide();
+      handlePrevSlide();
     }, 3000); // Change slide every 3 seconds
 
-    return () => clearInterval(interval);
+    return () => clearInterval(interval); // Cleanup interval on component unmount
   }, [handlePrevSlide]);
 
   return (
     <div className="slide-div">
       <h3>FEATURED EVENTS</h3>
-      <section className="slidesWrapper">
-        <div className="slides">
-          {[...slides, ...slides, ...slides].map((slide, i) => {
-            let offset = slides.length + (slideIndex - i);
+ <section className="slidesWrapper">
+      <div className="slides">
 
-            if (typeof slide === 'string') {
-              return (
-                <Slide 
-                  image={slide} 
-                  offset={offset} 
-                  isPageBackground={isPageBackground} 
-                  key={i} 
-                />
-              );
-            } else {
-              return (
-                <Slide
-                  image={slide.image}
-                  title={slide.title}
-                  subtitle={slide.subtitle}
-                  description={slide.description}
-                  offset={offset}
-                  isPageBackground={isPageBackground}
-                  key={i}
-                />
-              );
-            }
-          })}
-        </div>
-      </section>
+        {[...slides, ...slides, ...slides].map((slide, i) => {
+          let offset = slides.length + (slideIndex - i);
+
+          if (typeof slide === 'string') {
+            return (
+              <Slide image={slide} offset={offset} isPageBackground={isPageBackground} key={i} />
+            );
+          } else {
+            return (
+              <Slide
+                image={slide.image}
+                title={slide.title}
+                subtitle={slide.subtitle}
+                description={slide.description}
+                offset={offset}
+                isPageBackground={isPageBackground}
+                key={i}
+              />
+            );
+          }
+        })}
+      </div>
+    </section>
     </div>
+   
+  
+   
+
   );
 };
 
@@ -219,7 +181,6 @@ Carousel.propTypes = {
   isPageBackground: PropTypes.bool,
 };
 
-// Sample slides data
 const slides = [
   {
     id: 1,

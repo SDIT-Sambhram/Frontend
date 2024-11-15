@@ -141,7 +141,7 @@
 /* Responsive styles */
 @media (max-width: 700px) {
   .slide-div { 
-    height: 400px;
+    height: 300px;
   }
   .slideContent {
     width: 160px;
@@ -152,6 +152,7 @@
 @media (max-width: 900px) {
   .slide-div h3 {
     font-size: 30px;
+    margin-bottom: 30px;
   }
   .slideContentInner .slideSubtitle {
     font-size: 12px;
