@@ -50,7 +50,6 @@ const Header = () => {
                     </div>
 
                     <div className="middle">
-                        
                         <Countdown targetDate="2024-12-06" />
                     </div>
 
