@@ -36,7 +36,7 @@
 }
 
 .ticket-card-view:hover {
-    transform: scale(1.05);
+    transform: scale(1.01);
 }
 
 .ticket-card-overview {
@@ -59,7 +59,7 @@
 }
 
 .ticket-card-overview p {
-    margin-top: 5px;
+    
     color: rgba(255, 255, 255, 0.450);
     font-size: 10px;
 }
@@ -96,7 +96,7 @@
 
     .ticket-cards {
         margin-top: 0;
-        height: 80vh;
+        height: 100vh;
     }
 
     .ticket-card-list {
@@ -123,15 +123,14 @@
         padding: 10px;
         height: 60%;
     }
-    .ticket-card-overview h6{
+    /* .ticket-card-overview h6{
         margin-top: 20px;
-    }
+    } */
 
     .ticket-card-overview p {
-        margin-top: 5px;
-        font-size: 9px;
+        font-size: 12px;
     }
-
+  
 }
 
 @media(max-width:700px) {
@@ -142,6 +141,6 @@
 
     .ticket-card-view {
         width: 160px;
-        height: 220px;
+        height: 275px;
     }
 }
