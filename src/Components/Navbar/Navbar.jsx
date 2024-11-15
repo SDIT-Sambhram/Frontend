@@ -27,7 +27,7 @@ const Navbar = () => {
             setScrolled(false); // Set scrolled to false when the page is above the threshold
         }
     };
- 
+
     // Set up the scroll event listener
     useEffect(() => {
         if (location.pathname === '/') {
@@ -63,7 +63,7 @@ const Navbar = () => {
         <div className={getNavbarClass()}>
             <div className="navbar-left">
                 <Link to='/' onClick={() => setMenu('home')}>
-                    <img src="https://sambhram-assets.s3.ap-south-1.amazonaws.com/SAMBHRAM+LOGO+final.png"/>
+                    <img src="https://sambhram-assets.s3.ap-south-1.amazonaws.com/SAMBHRAM+LOGO+final.png" />
                 </Link>
             </div>
             <div className="navbar-right">
@@ -77,10 +77,16 @@ const Navbar = () => {
                         >
                             {item.label.toUpperCase()}
                         </Link>
-                    ))} 
-                    <Link to="/checkout"><button>REGISTER</button> </Link>
+                    ))}
+                    <Link to="/checkout">
+                    <div className='btn-width'>
+                    <button className='glowing-btn'>Register
+                    </button>
+                    </div>
                     
-                </div> 
+                    </Link>
+
+                </div>
                 <RightDrawerMenu />
             </div>
         </div>

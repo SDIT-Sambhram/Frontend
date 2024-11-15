@@ -39,8 +39,8 @@ const Header = () => {
 
                 <div className={`content ${isVideoLoaded ? 'fade-in' : ''}`}>
                     <div className="main-contents">
-                        <h1 className="title-sd">Shree Devi</h1>
-                        <h1 className="title">SAMBHRAM&apos;24.</h1>
+                            <h1 className="title-sd">Shree Devi</h1>
+                            <h1 className="title">SAMBHRAM&apos;24</h1>
                         <p className="description">
                             National Level Technical & Cultural Fest.
                         </p>
@@ -53,7 +53,6 @@ const Header = () => {
                     </div>
 
                     <div className="middle">
-                        
                         <Countdown targetDate="2024-12-06" />
                     </div>
 

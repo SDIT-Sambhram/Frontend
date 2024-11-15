@@ -1,9 +1,6 @@
 import React from 'react';
 import './Home.css';
 import Header from '../../Components/Header/Header';
-
-import PopularEvents from '../../Components/PopularEvents/PopularEvents';
-import EventTypes from '../../Components/EventTypes/EventTypes';
 import Spotlight from '../../Components/Spotlights/Spotlights';
 import TicketCards from '../../Components/TicketCards/TicketCards'
 
