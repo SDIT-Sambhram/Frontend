@@ -136,7 +136,7 @@
 
 @media(max-width:700px) {
     .ticket-card-list {
-        width: 88%;
+        width: 95%;
         gap: 20px;
     }
 
