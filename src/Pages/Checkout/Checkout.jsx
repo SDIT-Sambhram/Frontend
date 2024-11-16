@@ -6,23 +6,17 @@ import SelectedItemSection from '../../RegisterComponents/SelectedItemSection/Se
 import RegistrationForm from '../../RegisterComponents/RegistrationForm/RegistrationForm';
 import { toast } from 'react-toastify';
 import PayButton from '../../RegisterComponents/PayButton/PayButton';
+import Preloader from '../../Components/Preloader/Preloader';
 
 const CheckoutPage = () => {
-
-
   const { selectedEvent, setSelectedEvent, eventDatas, setAmount, amount, payNow, step, data, setStep } = useContext(StoreContext);
 
   const [selectedCoupon, setSelectedCoupon] = useState(null);
-  const [confirmSection,setConfirmSection] = useState(false);
+  const [confirmSection, setConfirmSection] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // Spinner loading state
 
-  const setConfirm = ()=>{
-    {confirmSection?setConfirmSection(false):setConfirmSection(true)}
-  }
-  
 
   const items = eventDatas.filter(event => selectedEvent.includes(event._id));
-
-
   const navigate = useNavigate();
 
   const totalAmount = items.length * 100;
@@ -33,18 +27,16 @@ const CheckoutPage = () => {
       : items.length === 2 ? 40
         : 0;
 
-  const grandTotal = totalAmount - couponDiscount ;
+  const grandTotal = totalAmount - couponDiscount;
 
   useEffect(() => {
     setAmount(() => grandTotal)
     console.log(amount)
-  }, [grandTotal])
-
+  }, [grandTotal]);
 
   if (selectedEvent.length == 0) {
     navigate('/events');
   }
-
 
   const handleContinue = () => {
     if (step < 2) {
@@ -72,8 +64,22 @@ const CheckoutPage = () => {
       toast.error("Please enter a valid 10-digit mobile number.");
       return;
     }
-    payNow();
+
+    setConfirm();
+
   }
+  const setConfirm = () => {
+    setConfirmSection(!confirmSection);
+  }
+  const confirmPayment = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      payNow();
+    }, 5000);
+  }
+
+
 
 
   return (
@@ -92,88 +98,71 @@ const CheckoutPage = () => {
             <div className={`circle ${step >= 2 ? 'active' : ''}`}>2</div>
             <div className={`step-title ${step >= 2 ? 'active' : ''}`}>Register</div>
           </div>
-          {/* <div className="step">
-            <div className={`circle ${step >= 3 ? 'active' : ''}`}>3</div>
-            <div className={`step-title ${step >= 3 ? 'active' : ''}`}>Verification</div>
-          </div> */}
         </div>
 
         {step === 1 &&
           <SelectedItemSection items={items} />
         }
 
-
         {step === 2 &&
           <RegistrationForm />
-        } 
+        }
       </div>
-
 
       {
-        confirmSection? <div className="confirm-div">
-          
-
-        <h3>Confirm payment</h3>
-        <div className="confirm-events">
-        {items.map((item, index) => (
-          <div className="confirm-event" key={index}>
-            <h6>{item.eventName}</h6>
-            <p> 100$</p>
+        confirmSection &&
+        <div className="confirm-div">
+          <div className="close-confirm">
+          <i onClick={setConfirm} className="fa-solid fa-xmark"></i>
           </div>
-   
-    ))}
-        </div>
-        
-        
-        <div className="confirm-price-section">
-        <h5>Price</h5>
-      <div className="confirm-price">
-        <p>Total amount</p> <p><i className="fa-solid fa-indian-rupee-sign"></i>&nbsp;{totalAmount}</p>
-      </div>
-      <div className="confirm-price">
-        <p>Coupon discount</p> <p><i className="fa-solid fa-indian-rupee-sign"></i>&nbsp;{couponDiscount}</p>
-      </div>
-      <div className="confirm-price">
-        <p>Grand Total</p> <p className='grand-total-final'><i className="fa-solid fa-indian-rupee-sign"></i>&nbsp;{grandTotal}</p>
-      </div>
-
-
-        </div>
-        <div className="confirm-payment-button">
-          <PayButton btnText={"Pay Now"} btnFunction={validateForm} step={step}/>
+          <h3>Confirm payment</h3>
+          <div className="confirm-events">
+            {items.map((item, index) => (
+              <div className="confirm-event" key={index}>
+                <h6>{item.eventName}</h6>
+                <p><i className="fa-solid fa-indian-rupee-sign fa-sm"></i> 100</p>
+              </div>
+            ))}
           </div>
-       
-   
-    </div>:
-    <></>
 
-
+          <div className="confirm-price-section">
+            <h5>Price</h5>
+            <div className="confirm-price">
+              <p>Total amount</p> <p><i className="fa-solid fa-indian-rupee-sign"></i>&nbsp;{totalAmount}</p>
+            </div>
+            <div className="confirm-price">
+              <p>Coupon discount</p> <p><i className="fa-solid fa-indian-rupee-sign"></i>&nbsp;{couponDiscount}</p>
+            </div>
+            <div className="confirm-price">
+              <p>Grand Total</p> <p className='grand-total-final'><i className="fa-solid fa-indian-rupee-sign"></i>&nbsp;{grandTotal}</p>
+            </div>
+          </div>
+          <div className="confirm-payment-button">
+            <PayButton btnText={"Pay Now"} btnFunction={confirmPayment} step={step} />
+          </div>
+        </div>
       }
-     
+
+      {isLoading &&
+        <div className="spinner-overlay">
+          <Preloader />
+        </div>
+      }
 
       <div className="continue-panel">
         <div className="terms">
-
           <i onClick={() => setSelectedEvent(() => [])} className="fa-solid fa-trash" style={{ color: "#520f0f" }}></i>
         </div>
 
         <div className="continue-section">
-
           {
             step === 1 ?
-                <PayButton btnFunction={handleContinue} btnText={"Continue"} step={step}/>:
-                <PayButton  btnFunction={setConfirm} btnText={"Confirm"} />
+              <PayButton btnFunction={handleContinue} btnText={"Continue"} step={step} /> :
+              <PayButton btnFunction={validateForm} btnText={"Confirm"} />
           }
-
-
-           
-
         </div>
       </div>
-
     </div>
-
-
   );
 };
 

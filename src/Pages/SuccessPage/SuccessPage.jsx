@@ -7,12 +7,13 @@ import Save from '../../Components/Save/Save';
 
 const SuccessPage = () => {
     const location = useLocation();
-    const participantId = location.state?.participantId;
+    let participantId = location.state?.participantId;
     
     const [isTicketOverlayVisible, setIsTicketOverlayVisible] = useState(false);
     console.log(participantId);
     
     
+    let imgSrc = "https://sambhram-tickets-bucket.s3.ap-south-1.amazonaws.com/tickets/"+ participantId +".jpg"
     // Show overlay when "View Ticket" is clicked
     const handleViewTicketClick = () => {
         setIsTicketOverlayVisible(true);
@@ -31,7 +32,7 @@ const SuccessPage = () => {
                 {isTicketOverlayVisible && (
                     <div className="ticket-overlay">
                         <div className="ticket">
-                            <img src={`https://sambhram-tickets-bucket.s3.ap-south-1.amazonaws.com/tickets/${participantId}.jpg`} alt="" />
+                            <img src={imgSrc} alt="Ticket" />
                             <div className="ticket-button-flex">
                                 <i onClick={handleCloseClick}
                                     className="fa-solid fa-xmark"
@@ -43,7 +44,7 @@ const SuccessPage = () => {
                         <div className="save-flex">
                             <div className="download-div">
                                 
-                            <a href="4.png" download={"ticket_sambhram"}>
+                            <a href={imgSrc} download={"ticket_sambhram"}>
                                 <Save />
                             </a>
                             <p>Click to download</p>
