@@ -21,7 +21,7 @@
 
 /* Scrolled state background color */
 .navbar.scrolled {
-    background-color: #01000079;
+    background-color: #000000a7;
     backdrop-filter: blur(6px);
 }
 

@@ -11,7 +11,7 @@ const Header = () => {
     const scrollToSpotlight = () => {
         setIsAutoScrolling(true);
         window.scrollTo({
-            top: 700,
+            top: 800,
             behavior: 'smooth',
         });
 

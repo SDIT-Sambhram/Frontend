@@ -141,7 +141,7 @@
 /* Responsive styles */
 @media (max-width: 700px) {
   .slide-div { 
-    height: 350px;
+    height: 300px;
   }
   .slideContent {
     width: 160px;

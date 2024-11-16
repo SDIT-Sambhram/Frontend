@@ -198,4 +198,14 @@
     .down-button{
         height: 20px;
     }
+    .content{
+        margin-top: 35%;
+    }
+    .middle{
+        margin-bottom: 50px;
+        transform: scale(0.95);
+    }
+    .down-button{
+        margin-bottom: 100px;
+    }
 }

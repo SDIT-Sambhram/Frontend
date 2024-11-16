@@ -23,49 +23,61 @@ const MainAttractions = () => {
                     <img src="dragon dance.webp" alt="" />
                 </div>
             </div> */}
+            <div className='main-container'>
+                <h2>SPECIAL ATTRACTIONS</h2>
+                <div className='hero-container'>
 
-            <div className="first hero">
-                <img src="Divya kumar.jpg" alt="" className="image"/>
-                    <div className="text"></div>
-                    <div className="main-text">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <div className="first hero">
+                        <img src="Divya kumar.jpg" alt="" className="image" />
+                        <div className="text"></div>
+                        <div className="main-text">
+                            <h3>DIVYA KUMAR</h3>
+                        </div>
+                        <div className='date-time'>
+                            <div className="date">
+                                <p>7.12.2024</p>
+                            </div>
+                            <div className="hero-btn">
+                                <p>7:30 PM</p>
+                            </div>
+                        </div>
+
                     </div>
-                    <div className="date">
-                        <p>7.12.2024</p>
+
+                    <div className="second hero">
+                        <img src="djraya.jpg" alt="" className="image" />
+                        <div className="text"></div>
+                        <div className="main-text">
+                            <h3>DJ <br/>RAYA</h3>
+                        </div>
+                        <div className='date-time'>
+                            <div className="date">
+                                <p>6.12.2024</p>
+                            </div>
+                            <div className="hero-btn">
+                                <p>7:30 PM</p>
+                            </div>
+                        </div>
                     </div>
-                    <div className="hero-btn">
-                        <a href="#">Learn More</a>
+
+                    <div className="first third hero">
+                        <img src="dragon dance.jpg" alt="" className="image" />
+                        <div className="text"></div>
+                        <div className="main-text">
+                            <h3>DRAGON DANCE</h3>
+                        </div>
+                        <div className='date-time'>
+                            <div className="date">
+                                <p>6.12.2024</p>
+                            </div>
+                            <div className="hero-btn">
+                                <p>7:00 PM</p>
+                            </div>
+                        </div>
                     </div>
+                </div>
             </div>
 
-            <div className="second hero">
-                <img src="djraya.jpg" alt="" className="image"/>
-                    <div className="text"></div>
-                    <div className="main-text">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </div>
-                    <div className="date">
-                        <p>6.12.2024</p>
-                    </div>
-                    <div className="hero-btn">
-                        <a href="#">Learn More</a>
-                    </div>
-            </div>
-
-            <div className="first third hero">
-                <img src="dragon dance.jpg" alt="" className="image"/>
-                    <div className="text"></div>
-                    <div className="main-text">
-                        <h2>Dragon Dance</h2>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </div>
-                    <div className="date">
-                        <p>6.12.2024</p>
-                    </div>
-                    <div className="hero-btn">
-                        <p>7:30</p>
-                    </div>
-            </div>
         </>
     )
 }

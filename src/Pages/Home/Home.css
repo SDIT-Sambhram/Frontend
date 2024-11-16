@@ -10,7 +10,7 @@
 }
 
 
-@keyframes bounce {
+/* @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
         transform: translateY(0);
     }
@@ -20,8 +20,8 @@
     60% {
         transform: translateY(-8px);
     }
-}
+} */
 
-.header-container {
-    animation: bounce 2s infinite; /* Apply the bounce animation */
-}
+/* .header-container {
+    animation: bounce 2s infinite; /* Apply the bounce animation 
+} */
