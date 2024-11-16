@@ -157,6 +157,11 @@
     align-items: center;
     margin-bottom: 0;
 }
+.down-button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
 @media (max-width:1200px) {
     .title {
