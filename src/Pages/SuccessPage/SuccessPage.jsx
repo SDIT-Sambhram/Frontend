@@ -31,7 +31,7 @@ const SuccessPage = () => {
                 {isTicketOverlayVisible && (
                     <div className="ticket-overlay">
                         <div className="ticket">
-                            <img src={`https://sambhram-tickets-bucket.s3.ap-south-1.amazonaws.com/tickets/${participantId}.png`} alt="" />
+                            <img src={`https://sambhram-tickets-bucket.s3.ap-south-1.amazonaws.com/tickets/${participantId}.jpg`} alt="" />
                             <div className="ticket-button-flex">
                                 <i onClick={handleCloseClick}
                                     className="fa-solid fa-xmark"

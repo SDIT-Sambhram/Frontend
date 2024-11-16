@@ -13,6 +13,12 @@ const CheckoutPage = () => {
   const { selectedEvent, setSelectedEvent, eventDatas, setAmount, amount, payNow, step, data, setStep } = useContext(StoreContext);
 
   const [selectedCoupon, setSelectedCoupon] = useState(null);
+  const [confirmSection,setConfirmSection] = useState(false);
+
+  const setConfirm = ()=>{
+    {confirmSection?setConfirmSection(false):setConfirmSection(true)}
+  }
+  
 
   const items = eventDatas.filter(event => selectedEvent.includes(event._id));
 
@@ -99,18 +105,52 @@ const CheckoutPage = () => {
 
         {step === 2 &&
           <RegistrationForm />
-        }
-
-
-        {/* {step === 3 && (
-          
-        ) */}
-
-
-
-
- 
+        } 
       </div>
+
+
+      {
+        confirmSection? <div className="confirm-div">
+          
+
+        <h3>Confirm payment</h3>
+        <div className="confirm-events">
+        {items.map((item, index) => (
+          <div className="confirm-event" key={index}>
+            <h6>{item.eventName}</h6>
+            <p> 100$</p>
+          </div>
+   
+    ))}
+        </div>
+        
+        
+        <div className="confirm-price-section">
+        <h5>Price</h5>
+      <div className="confirm-price">
+        <p>Total amount</p> <p><i className="fa-solid fa-indian-rupee-sign"></i>&nbsp;{totalAmount}</p>
+      </div>
+      <div className="confirm-price">
+        <p>Coupon discount</p> <p><i className="fa-solid fa-indian-rupee-sign"></i>&nbsp;{couponDiscount}</p>
+      </div>
+      <div className="confirm-price">
+        <p>Grand Total</p> <p className='grand-total-final'><i className="fa-solid fa-indian-rupee-sign"></i>&nbsp;{grandTotal}</p>
+      </div>
+
+
+        </div>
+        <div className="confirm-payment-button">
+          <PayButton btnText={"Pay Now"} btnFunction={validateForm} step={step}/>
+          </div>
+       
+   
+    </div>:
+    <></>
+
+
+      }
+     
+
       <div className="continue-panel">
         <div className="terms">
 
@@ -118,12 +158,11 @@ const CheckoutPage = () => {
         </div>
 
         <div className="continue-section">
+
           {
             step === 1 ?
-              // <button className="continue-button" onClick={() => { handleContinue() }}>
-              //   Continue ₹ {grandTotal.toFixed(2)}</button>
                 <PayButton btnFunction={handleContinue} btnText={"Continue"} step={step}/>:
-                <PayButton btnFunction={validateForm} btnText={"Pay now"} step={step}/>
+                <PayButton  btnFunction={setConfirm} btnText={"Confirm"} />
           }
 
 
