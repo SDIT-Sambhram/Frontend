@@ -38,15 +38,16 @@ const Header = () => {
 
                 <div className={`content ${isVideoLoaded ? 'fade-in' : ''}`}>
                     <div className="main-contents">
-                            <h1 className="title-sd">Shree Devi</h1>
-                            <h1 className="title">SAMBHRAM&apos;24</h1>
+                        <h1 className="title-sd">Shree Devi</h1>
+                        <h1 className="title">SAMBHRAM&apos;24</h1>
                         <p className="description">
                             National Level Technical & Cultural Fest.
                         </p>
                         <p className="date">On 6th & 7th December 2024</p>
-                        <button className="btn-white">
-                            Explore
-                        </button>
+                        <div className='btn-width'>
+                            <button className='explore-btn'>Explore</button>
+                            <button className='glowing-btn'>Register</button>
+                        </div>
                     </div>
 
                     <div className="middle">

@@ -92,11 +92,7 @@
     z-index: -1;
 }
 
-.glowing-btn:hover::before {
-    filter: blur(20px);
-    opacity: 1;
-  
-}
+
 
 @keyframes scale {
     0% {
@@ -143,4 +139,5 @@
     .navbar h1 {
         font-size: 20px;
     }
+    
 }
