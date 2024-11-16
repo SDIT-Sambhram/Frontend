@@ -166,7 +166,6 @@
 @media (max-width:1200px) {
     .title {
         font-size: 80px;
-        background-color: #232963;
     }
 }
 
@@ -203,5 +202,8 @@
 
     .header {
         height: 90vh;
+    }
+    .down-button{
+        height: 20px;
     }
 }

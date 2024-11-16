@@ -9,16 +9,16 @@ const Header = () => {
     const lastScrollY = useRef(0);
 
     const scrollToSpotlight = () => {
-        setIsAutoScrolling(true); // Prevent re-triggering during auto-scroll
+        setIsAutoScrolling(true);
         window.scrollTo({
             top: 700,
             behavior: 'smooth',
         });
 
-        // Reset the state after the scroll finishes
+        // Reset auto-scrolling after 1 second (smooth scroll time)
         setTimeout(() => {
             setIsAutoScrolling(false);
-        }, 1000); // Adjust based on the animation duration
+        }, 1000); 
     };
 
     const handleVideoLoad = () => {
@@ -26,27 +26,26 @@ const Header = () => {
     };
 
     useEffect(() => {
-    const handleScroll = () => {
-        if (isAutoScrolling) return; // Prevent handling while auto-scrolling
+        const handleScroll = () => {
+            if (isAutoScrolling) return; // Prevent handling while auto-scrolling
 
-        const currentScrollY = window.scrollY;
+            const currentScrollY = window.scrollY;
 
-        // Check if scrolling down and within the header section
-        if (currentScrollY > 20 && currentScrollY < 700 && currentScrollY > lastScrollY.current) {
-            scrollToSpotlight();
-        }
+            // Check if scrolling down and within the header section
+            if (currentScrollY > 20 && currentScrollY < 700 && currentScrollY > lastScrollY.current) {
+                scrollToSpotlight();
+            }
 
-        // Update last scroll position
-        lastScrollY.current = currentScrollY;
-    };
+            // Update last scroll position
+            lastScrollY.current = currentScrollY;
+        };
 
-    window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll);
 
-    return () => {
-        window.removeEventListener('scroll', handleScroll);
-    };
-}, [isAutoScrolling]);
-
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [isAutoScrolling]);
 
     return (
         <>
