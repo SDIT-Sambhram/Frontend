@@ -82,7 +82,14 @@ const Header = () => {
                             National Level Technical & Cultural Fest.
                         </p>
                         <p className="date">On 6th & 7th December 2024</p>
+<<<<<<< HEAD
                         <button className="btn-white">Explore</button>
+=======
+                        <div className='btn-width'>
+                            <button className='explore-btn'>Explore</button>
+                            <button className='glowing-btn'>Register</button>
+                        </div>
+>>>>>>> 32c18fbed6e7b6389d509af8989e4b8624e21ca8
                     </div>
 
                     <div className="middle">
