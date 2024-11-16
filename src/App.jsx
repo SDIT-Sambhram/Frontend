@@ -60,7 +60,7 @@ function App() {
               <Route path="/events" element={<Event />} />
               <Route path="/success" element={<SuccessPage />} />
               <Route path='/about' element={<About/>}/>
-              <Route path='/verification' element={<VerifyTicket/>}/>
+              <Route path='/verify' element={<VerifyTicket/>}/>
               <Route path="*" element={<h1>not found page</h1>} />
 
 
