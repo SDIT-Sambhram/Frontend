@@ -1,27 +1,34 @@
 import './VerifyTicket.css';
 import axios from 'axios';
 import { useState, useContext, useEffect } from 'react';
+import { useLocation } from 'react-router-dom'; // Import useLocation
 import { StoreContext } from '../../Contexts/StoreContext';
 
 const VerifyTicket = () => {
     const { eventDatas } = useContext(StoreContext);
     const [verificationMessage, setVerificationMessage] = useState('Verifying...');
     const [isError, setIsError] = useState(false);
-    const [items, setItems] = useState([]); // Add state for items
-    const [participantData, setParticipantData] = useState(null); // Add state for participant
+    const [items, setItems] = useState([]);
+    const [participantData, setParticipantData] = useState(null);
 
-    const pId = {
-        id: "6738ce6f20229f7444356261"
-    };
+    const location = useLocation(); // Get the current location object
+    const searchParams = new URLSearchParams(location.search); // Parse query parameters
+    const id = searchParams.get('id'); // Get the `id` from query parameters
 
     useEffect(() => {
         const verifyTicket = async () => {
+            if (!id) {
+                setVerificationMessage("No Participant ID provided");
+                setIsError(true);
+                return;
+            }
+
             try {
                 const verifyResponse = await axios.post(
                     "https://o83h8nltlc.execute-api.ap-south-1.amazonaws.com/api/v1/auth/verify/ticket",
-                    pId
+                    { id } // Pass the fetched ID
                 );
-                
+
                 const participant = verifyResponse.data;
                 setParticipantData(participant);
 
@@ -61,7 +68,7 @@ const VerifyTicket = () => {
         if (eventDatas && eventDatas.length > 0) {
             verifyTicket();
         }
-    }, [eventDatas]); // Run when eventDatas changes
+    }, [id, eventDatas]); // Depend on `id` and `eventDatas`
 
     return (
         <div className="verify-ticket">
@@ -106,7 +113,6 @@ const VerifyTicket = () => {
                                     <p>
                                         {event.date}
                                     </p>
-                                    
                                 </div>
                             ))
                         ) : (
