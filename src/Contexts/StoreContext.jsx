@@ -13,6 +13,7 @@ export const ContextProvider = ({ children }) => {
     const [eventDatas, setEventDatas] = useState([]);
     const [amount, setAmount] = useState();
     const [step, setStep] = useState(1);
+   
     const [data, setData] = useState({
         name: "",
         usn: "",
@@ -24,6 +25,9 @@ export const ContextProvider = ({ children }) => {
         return savedEvents ? JSON.parse(savedEvents) : [];
     });
 
+    let successData= {
+        participantId:"NAN"
+    };
 
     useEffect(() => {
         localStorage.setItem("selectedEvent", JSON.stringify(selectedEvent));
@@ -105,6 +109,9 @@ export const ContextProvider = ({ children }) => {
         try {
             const res = await axios.post(`${url}/api/v1/auth/payment`, dataSet);
             console.log("success bro ", res.data);
+            console.log(res.data.participantId);            
+            successData.participantId = res.data.participantId
+            
             return res.data; // Return the response data containing the order ID
         } catch (err) {
             console.error("Error in backend call", err);
@@ -132,7 +139,8 @@ export const ContextProvider = ({ children }) => {
                     console.log("gateway success");
 
                     setSelectedEvent([]);
-                    navigate('/success')
+                    
+                    navigate('/success', { state: { participantId: successData.participantId } });
 
                 },
                 prefill: {
@@ -179,7 +187,8 @@ export const ContextProvider = ({ children }) => {
         sendDatatoBackend,
         payNow,
         step,
-        setStep
+        setStep,
+        successData
     };
 
     return (

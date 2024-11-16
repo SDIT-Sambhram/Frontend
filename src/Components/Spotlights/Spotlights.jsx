@@ -1,5 +1,4 @@
 import './Spotlight.css'
-import Spotlightcarousel from '../Spotlightcarousel/Spotlightcarousel';
 import CarouselComponent from '../CarouselComponent/CarouselComponent';
 
 const Spotlight = () =>{
@@ -7,7 +6,6 @@ const Spotlight = () =>{
         <>
         <div className="spotlights">
             <CarouselComponent/>
-            {/* <Spotlightcarousel/> */}
         </div>
         </>
     ) 

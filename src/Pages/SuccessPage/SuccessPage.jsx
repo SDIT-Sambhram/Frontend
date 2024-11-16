@@ -1,11 +1,18 @@
 import './SuccessPage.css';
 import React, { useState } from 'react';
+
+import { useLocation } from 'react-router-dom';
+
 import Save from '../../Components/Save/Save';
 
 const SuccessPage = () => {
-    // State to control the visibility of the ticket overlay
+    const location = useLocation();
+    const participantId = location.state?.participantId;
+    
     const [isTicketOverlayVisible, setIsTicketOverlayVisible] = useState(false);
-
+    console.log(participantId);
+    
+    
     // Show overlay when "View Ticket" is clicked
     const handleViewTicketClick = () => {
         setIsTicketOverlayVisible(true);
@@ -24,7 +31,7 @@ const SuccessPage = () => {
                 {isTicketOverlayVisible && (
                     <div className="ticket-overlay">
                         <div className="ticket">
-                            <img src="4.png" alt="" />
+                            <img src={`https://sambhram-tickets-bucket.s3.ap-south-1.amazonaws.com/tickets/${participantId}.png`} alt="" />
                             <div className="ticket-button-flex">
                                 <i onClick={handleCloseClick}
                                     className="fa-solid fa-xmark"
@@ -56,7 +63,7 @@ const SuccessPage = () => {
                     <div className="success-up">
                         <img src="https://cdn2.iconfinder.com/data/icons/greenline/512/check-512.png" alt="Checkmark" />
                         <h2>Registered successfully</h2>
-                        <p>Your ticket will send to your mobile number shortly.</p>
+                        <p>Ticket will be sent to your number shortly</p>
                     </div>
                     <div className="success-down">
                         <div className="container">

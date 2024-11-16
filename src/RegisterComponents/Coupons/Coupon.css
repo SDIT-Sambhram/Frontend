@@ -29,12 +29,7 @@
   .coupon-text {
     font-size: 16px;
   }
-  
-  /* .coupon-right {
-    font-size: 20px;
-    color: red;
-  } */
-  
+
   .coupon-right.checked {
     font-size: 1px;
     color: green;

@@ -1,8 +1,74 @@
-.home{
-    width: 100%;
-    padding: 0px 0px;
+
+
+.animated-component {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: none;
+    min-height: 100vh;
 }
 
+/* Ensure header has enough height to scroll */
+.header-container {
+    min-height: 100vh;
+    position: relative;
+}
 
+.spotlight-container {
+    min-height: 100vh;
+    position: relative;
+}
 
+.tickets-container {
+    min-height: 100vh;
+    position: relative;
+}
 
+@keyframes fadeSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleFade {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.header-container.animate {
+    animation: scaleFade 0.8s ease-out forwards;
+}
+
+.spotlight-container.animate {
+    animation: fadeSlideUp 0.8s ease-out forwards;
+}
+
+.tickets-container.animate {
+    animation: slideFromRight 0.8s ease-out forwards;
+}
+
+.animated-component.animate-end {
+    opacity: 0;
+    transform: translateY(30px);
+}
