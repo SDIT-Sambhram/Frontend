@@ -21,7 +21,7 @@ const EventPopup = () => {
                                     <div className="event-time">{popUpStatus.time}</div>
                                 </div>
 
-                                <p className="event-desc">{popUpStatus.description} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse id  facere.</p>
+                                <p className="event-desc">{popUpStatus.description}</p>
 
                                 <div className="rule-box">
                                     <h3>Rules</h3>
