@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import PropTypes from 'prop-types';
-import './CarouselComponent.css'; 
+import './CarouselComponent.css';
 
 function useTilt(animationDuration = '150ms') {
   const ref = useRef(null);
@@ -14,7 +14,7 @@ function useTilt(animationDuration = '150ms') {
 
     const state = {
       rect: undefined,
-      mouseX: undefined, 
+      mouseX: undefined,
       mouseY: undefined,
     };
 
@@ -142,36 +142,36 @@ const Carousel = ({ slides, isPageBackground }) => {
   return (
     <div className="slide-div">
       <h3>FEATURED EVENTS</h3>
- <section className="slidesWrapper">
-      <div className="slides">
+      <section className="slidesWrapper">
+        <div className="slides">
 
-        {[...slides, ...slides, ...slides].map((slide, i) => {
-          let offset = slides.length + (slideIndex - i);
+          {[...slides, ...slides, ...slides].map((slide, i) => {
+            let offset = slides.length + (slideIndex - i);
 
-          if (typeof slide === 'string') {
-            return (
-              <Slide image={slide} offset={offset} isPageBackground={isPageBackground} key={i} />
-            );
-          } else {
-            return (
-              <Slide
-                image={slide.image}
-                title={slide.title}
-                subtitle={slide.subtitle}
-                description={slide.description}
-                offset={offset}
-                isPageBackground={isPageBackground}
-                key={i}
-              />
-            );
-          }
-        })}
-      </div>
-    </section>
+            if (typeof slide === 'string') {
+              return (
+                <Slide image={slide} offset={offset} isPageBackground={isPageBackground} key={i} />
+              );
+            } else {
+              return (
+                <Slide
+                  image={slide.image}
+                  title={slide.title}
+                  subtitle={slide.subtitle}
+                  description={slide.description}
+                  offset={offset}
+                  isPageBackground={isPageBackground}
+                  key={i}
+                />
+              );
+            }
+          })}
+        </div>
+      </section>
     </div>
-   
-  
-   
+
+
+
 
   );
 };
@@ -206,7 +206,7 @@ const slides = [
     subtitle: '(YAKSHAGANA)',
     image: 'yakshagana.jpg',
   },
-  { 
+  {
     id: 5,
     title: 'HIKARI MATSURI',
     subtitle: '(ANIME QUIZ)',
