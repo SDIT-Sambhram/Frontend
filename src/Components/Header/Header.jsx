@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import './Header.css';
 import Countdown from '../Countdown/Countdown.jsx';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     const [isAutoScrolling, setIsAutoScrolling] = useState(false);
