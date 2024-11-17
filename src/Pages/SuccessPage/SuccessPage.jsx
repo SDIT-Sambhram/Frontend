@@ -12,8 +12,6 @@ const SuccessPage = () => {
     const [isTicketOverlayVisible, setIsTicketOverlayVisible] = useState(false);
     console.log(participantId);
     
-    
-    // let imgSrc = "https://sambhram-tickets-bucket.s3.ap-south-1.amazonaws.com/tickets/"+ participantId +".jpg"
     let imgSrc = `https://sambhram-tickets-bucket.s3.ap-south-1.amazonaws.com/tickets/${participantId}/${orderId}.jpg`
 
     const handleViewTicketClick = () => {
