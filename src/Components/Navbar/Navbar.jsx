@@ -78,14 +78,6 @@ const Navbar = () => {
                             {item.label.toUpperCase()}
                         </Link>
                     ))}
-                    <Link to="/checkout">
-                    <div className='btn-width'>
-                    <button className='glowing-btn'>Register
-                    </button>
-                    </div>
-                    
-                    </Link>
-
                 </div>
                 <RightDrawerMenu />
             </div>

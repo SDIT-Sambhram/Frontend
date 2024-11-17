@@ -8,11 +8,12 @@ import Event from './Pages/Events/Event.jsx';
 import CheckoutPage from './Pages/Checkout/Checkout.jsx';
 import SuccessPage from './Pages/SuccessPage/SuccessPage.jsx'
 import About from './Pages/About/About.jsx';
+import VerifyTicket from './Pages/VerifyTicket/VerifyTicket.jsx';
 
 import Footer from './Components/Footer/Footer.jsx'
 import TopButton from './Components/TopButton/TopButton.jsx'
 
-import ScrollToTop from './ScrolltoTop.jsx';
+import ScrollToTop from './Components/ScrolltoTop.jsx';
 
 
 import { ContextProvider } from './Contexts/StoreContext.jsx';
@@ -21,22 +22,19 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Modified loading logic
+    
     const handleLoad = () => setIsLoading(false);
 
-    // Check if document is already loaded
     if (document.readyState === 'complete') {
       setIsLoading(false);
     } else {
       window.addEventListener('load', handleLoad);
     }
 
-    // Fallback timer in case load event doesn't fire
     const timer = setTimeout(() => setIsLoading(false), 2000);
 
     return () => {
@@ -61,6 +59,7 @@ function App() {
               <Route path="/events" element={<Event />} />
               <Route path="/success" element={<SuccessPage />} />
               <Route path='/about' element={<About/>}/>
+              <Route path='/verify' element={<VerifyTicket/>}/>
               <Route path="*" element={<h1>not found page</h1>} />
 
 

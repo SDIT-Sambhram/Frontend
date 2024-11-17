@@ -1,0 +1,45 @@
+.verify-ticket{
+    width: 100%;
+    height: 100vh;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+}
+.verification-container{
+    height: 80vh;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.participant-details{
+    background-color: rgba(224, 118, 118, 0.1);
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.participant-detail{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.participated-events{
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+@media (max-width:700px) {
+    
+    .verification-container{
+        width: 95%;
+    }
+    .participant-detail{
+        justify-content: space-between;
+    }
+}

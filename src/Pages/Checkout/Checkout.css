@@ -46,7 +46,7 @@
   border-radius: 50%;
   border: 1px solid black;
   width: 25px;
-  height: 25px; 
+  height: 25px;
   line-height: 40px;
   font-weight: 400;
   display: flex;
@@ -143,6 +143,56 @@
   padding: 10px 40px;
 }
 
+.confirm-div {
+  position: fixed;
+  top: 30%;
+  min-height: 300px;
+  width: 350px;
+  border: 3px solid red;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 1px 1px 1px rgba(184, 176, 176, 0.322);
+  border-radius: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+.confirm-payment-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.confirm-events {
+  width: 100%;
+}
+
+.confirm-price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.confirm-event {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+
+.confirm-div h6 {
+  font-size: 14px;
+  font-weight: light;
+}
+.grand-total-final{
+  font-size: 18px;
+  color: #ff1100;
+}
+.close-confirm{
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
 
 @media (max-width:700px) {
   .back {
@@ -160,3 +210,29 @@
 }
 
 
+.spinner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
