@@ -83,6 +83,7 @@
 .date {
     font-size: 30px;
     margin-bottom: 30px;
+    display: flex;
 }
 
 .btn-width{
@@ -167,6 +168,16 @@
     height: 20px;
 }
 
+.th{
+    font-size: 14px;
+    margin-left: 2px;
+    margin-right: 4px;
+
+    
+}
+
+
+
 @media (max-width:1200px) {
     .title {
         font-size: 80px;
@@ -174,6 +185,9 @@
 }
 
 @media (max-width: 700px) {
+    .main-contents{
+        margin-top: 50px;
+    }
     .invite-container {
         height: 100svh;
     }
@@ -181,15 +195,17 @@
         height: 100svh;
     }
     .title-sd {
-      font-size: 25px;
+      font-size: 23px;
+      margin-bottom: -10px;
     }
     .title {
         font-size: 43px;
     }
 
     .description {
-        font-size: 20px;
-        width: 77%;
+        font-size: 17px;
+        width: 100%;
+        margin-top: -5px;
     }
 
     .date {
@@ -225,6 +241,12 @@
     .middle{
         margin-top: 30px;
         margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 386px) {
+    .title {
+        font-size: 39px;
     }
 }
 

@@ -65,14 +65,14 @@ const Header = () => {
                 <div className="header-overlay">
                 </div>
 
-                <div className={`content`}>
+                <div className='content'>
                     <div className="main-contents">
                         <h1 className="title-sd">Shree Devi</h1>
                         <h1 className="title">SAMBHRAM&apos;24</h1>
                         <p className="description">
                             National Level Technical & Cultural Fest.
                         </p>
-                        <p className="date">On 6th & 7th December 2024</p>
+                        <p className="date">On 6 <p className='th'>th</p> & 7 <p className='th'>th</p> December 2024</p>
 
                         <div className='btn-width'>
                             <Link to='/about'><button className='explore-btn'>Explore</button></Link>
