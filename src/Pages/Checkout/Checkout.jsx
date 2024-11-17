@@ -72,8 +72,8 @@ const CheckoutPage = () => {
     setConfirmSection(!confirmSection);
   }
   const confirmPayment = () => {
-    setIsLoading(true);
     payNow();
+    setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
     }, 5000);

@@ -131,7 +131,7 @@ export const ContextProvider = ({ children }) => {
                 amount: payLoad.amount, // Amount from backend response (should be in subunits, e.g., paise for INR)
                 currency: payLoad.currency,
                 name: "SHREE DEVI SAMBHRAM",
-                description: "International Tech Fest",
+                description: "National Level Technical and Cultural Fest",
                 image: "https://storage.googleapis.com/educrib/colleges/uploads/f7a1791dd41f3fa5e5e4f8a6faea2467ShreeDeviCollegeOfPhysiotherapy_Fd.jpg",
                 order_id: payLoad.orderId,
                 redirect: url + '/api/v1/auth/payment/verify',
