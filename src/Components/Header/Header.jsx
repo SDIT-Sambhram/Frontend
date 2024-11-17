@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import './Header.css';
-import Countdown from '../Countdown/Countdown.jsx';
 import { Link } from 'react-router-dom';
+import Countdown from '../Countdown/Countdown.jsx';
 
 const Header = () => {
     const [isAutoScrolling, setIsAutoScrolling] = useState(false);
@@ -17,7 +17,7 @@ const Header = () => {
         // Reset auto-scrolling after 1 second (smooth scroll time)
         setTimeout(() => {
             setIsAutoScrolling(false);
-        }, 1000); 
+        }, 1000);
     };
 
     useEffect(() => {
@@ -45,7 +45,7 @@ const Header = () => {
     return (
         <>
             <div className="invite-container">
-                <video
+            <video
                     className="head-video"
                     autoPlay
                     loop
@@ -64,7 +64,6 @@ const Header = () => {
                     Your browser does not support the video tag.
                 </video>
 
-
                 <div className="header-overlay"></div>
 
                 <div className={`content`}>
@@ -78,7 +77,7 @@ const Header = () => {
 
                         <div className='btn-width'>
                             <Link to='/about'><button className='explore-btn'>Explore</button></Link>
-
+                            
                             <Link to='/events'><button className='glowing-btn'>Register</button></Link>
                         </div>
 
