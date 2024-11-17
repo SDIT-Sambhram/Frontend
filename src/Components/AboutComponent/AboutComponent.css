@@ -18,6 +18,7 @@
 
 .about-component {
   min-height: 100vh;
+  width: 100%;
   background: linear-gradient(
     -45deg,
     rgba(255, 245, 245, 1) 0%,
@@ -32,12 +33,12 @@
   background-size: 300% 300%;
   animation: gradientAnimation 12s ease-in-out infinite; /* Reduced from 20s to 12s */
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
   padding: 80px 20px;
   padding-top: 120px; /* Increased padding for better spacing */
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   text-align: center;
 }
 
@@ -61,6 +62,7 @@
 
 .about-content {
   max-width: 1400px; /* Increased max-width for better content spread */
+  width: 100%;
   margin: 0 auto;
   padding: 20px;
   display: flex;
@@ -91,12 +93,13 @@
 
 .about-card {
   background: white;
-  padding: 30px;
+  padding: 25px; /* Adjusted padding */
   border-radius: 15px;
   border: 1px solid rgba(139, 0, 0, 0.1);
   box-shadow: 0 4px 20px rgba(139, 0, 0, 0.05);
-  margin-bottom: 30px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 25px; /* Adjusted margin */
+  transition: transform 0.5s ease-out, 
+              box-shadow 0.5s ease-out;
 }
 
 .about-card:hover {
@@ -107,12 +110,12 @@
 
 .about-card h2 {
   color: #8B0000;
-  margin-bottom: 20px;
+  margin-bottom: 15px; /* Adjusted margin */
 }
 
 .about-card p {
   color: #555;
-  margin-bottom: 10px;
+  margin-bottom: 8px; /* Adjusted margin */
 }
 
 .about-description {
@@ -121,7 +124,8 @@
   border-radius: 15px;
   border: 1px solid rgba(139, 0, 0, 0.1);
   box-shadow: 0 4px 20px rgba(139, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.5s ease-out, 
+              box-shadow 0.5s ease-out;
 }
 
 .about-description:hover {
@@ -144,7 +148,8 @@
   border: 1px solid rgba(139, 0, 0, 0.1);
   box-shadow: 0 4px 20px rgba(139, 0, 0, 0.05);
   margin-top: 30px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.5s ease-out, 
+              box-shadow 0.5s ease-out;
 }
 
 .sambhram-section:hover {
@@ -203,7 +208,7 @@
 .card-content, .description-content, .sambhram-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px; /* Increased gap between content */
+  gap: 40px; /* Adjusted gap */
   align-items: center;  /* Center align grid items */
   justify-content: center;  /* Center align grid items */
 }
@@ -212,13 +217,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 15px;
-  padding: 20px;
+  gap: 12px; /* Adjusted gap */
+  padding: 15px; /* Adjusted padding */
 }
 
 .card-image, .description-image, .sambhram-image {
   width: 100%;
-  height: 400px; /* Taller images */
+  height: 350px; /* Adjusted height */
   overflow: hidden;
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(139, 0, 0, 0.1);
@@ -229,7 +234,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.6s ease-out;
 }
 
 .card-image:hover img, .description-image:hover img, .sambhram-image:hover img {
@@ -245,35 +250,60 @@
   
   .about-card,
   .about-description {
-    padding: 20px;
+    padding: 18px; /* Adjusted padding */
   }
   
   .about-component {
-    padding: 20px;
-    padding-top: 80px; /* Adjust padding for medium screens */
-    margin-top: 60px; /* Additional margin for safety */
-  }
-
-  .sambhram-section {
-    padding: 20px;
-  }
-
-  .card-content, .description-content, .sambhram-content {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .card-image, .description-image, .sambhram-image {
-    height: 300px;
-    order: -1; /* Makes images appear above text on mobile */
+    padding: 60px 15px;
+    align-items: center;
+    overflow-x: hidden;
   }
 
   .about-content {
-    gap: 30px;
+    padding: 10px;
+    gap: 20px;
+  }
+
+  .about-content h1 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .card-content, 
+  .description-content, 
+  .sambhram-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card-image, 
+  .description-image, 
+  .sambhram-image {
+    height: 250px;
+    margin-bottom: 15px;
+  }
+
+  .card-text, 
+  .description-text, 
+  .sambhram-text {
+    padding: 10px;
+    gap: 10px;
   }
 
   .event-details {
-    padding: 15px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  .event-date, 
+  .venue {
+    padding: 10px 15px;
+    font-size: 1rem;
+  }
+
+  .sambhram-description p {
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 }
 
@@ -286,30 +316,62 @@
   
   .about-card,
   .about-description {
-    padding: 15px;
+    padding: 12px; /* Adjusted padding */
   }
   
   .about-component {
-    padding: 10px;
+    padding: 50px 10px;
     padding-top: 70px; /* Adjust padding for small screens */
     margin-top: 50px; /* Additional margin for safety */
   }
 
   .sambhram-section {
-    padding: 15px;
+    padding: 12px; /* Adjusted padding */
   }
 
   .card-image, .description-image, .sambhram-image {
-    height: 250px;
+    height: 220px; /* Adjusted height */
   }
 
   .about-content {
-    gap: 25px;
+    gap: 20px; /* Adjusted gap */
   }
 
   .event-gallery {
     gap: 20px;
     padding: 10px;
+  }
+
+  .about-component {
+    padding: 50px 10px;
+  }
+
+  .about-content h1 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+
+  .about-card,
+  .about-description,
+  .sambhram-section {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .card-image, 
+  .description-image, 
+  .sambhram-image {
+    height: 200px;
+  }
+
+  .event-gallery {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .gallery-item {
+    aspect-ratio: 16/10;
   }
 }
 
@@ -341,7 +403,7 @@
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(139, 0, 0, 0.1);
   cursor: pointer;
-  transition: transform 0.4s ease-out;
+  transition: transform 0.5s ease-out;
 }
 
 .gallery-item:hover {
@@ -372,7 +434,7 @@
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease-out;
 }
 
 .image-overlay p {
@@ -381,7 +443,7 @@
   text-align: center;
   padding: 10px;
   transform: translateY(20px);
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease-out;
 }
 
 .gallery-item:hover .image-container img {
