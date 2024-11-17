@@ -34,7 +34,7 @@
     height: 100%;
     backface-visibility: hidden;
     /* background-image: url("https://img.freepik.com/free-vector/background-template-with-chinese-patterns-red_1308-38164.jpg?semt=ais_hybrid"); */
-    
+    background-color: #fafafa44;
     border-radius: 10px;
     display: flex;
     flex-direction: column;

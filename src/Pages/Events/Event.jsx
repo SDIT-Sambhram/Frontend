@@ -1,32 +1,37 @@
-import './Event.css';
-import React, { useContext } from 'react';
-import { StoreContext } from '../../Contexts/StoreContext';
-import EventNav from '../../Components/EventNav/EventNav';
-import EventCard from '../../Components/EventCard/EventCard';
-import EventPopup from '../../Components/EventPopup/EventPopup';
-import RegisterButton from '../../Components/RegisterButton/RegisterButton';
+import React, { useContext, useState, useEffect } from "react";
+import { StoreContext } from "../../Contexts/StoreContext";
+import EventNav from "../../Components/EventNav/EventNav";
+import EventCard from "../../Components/EventCard/EventCard";
+import EventPopup from "../../Components/EventPopup/EventPopup";
+import RegisterButton from "../../Components/RegisterButton/RegisterButton";
+import "./Event.css";
 
 const Event = () => {
-    const { eventType, popUpStatus, selectedEvent } = useContext(StoreContext);
+    const { eventType, selectedEvent } = useContext(StoreContext);
+    const [bgImage, setBgImage] = useState("bg-Cultural.jpg");
+    const isMobile = window.innerWidth <= 700;
+    
 
-    // const isPopupVisible = popUpStatus !== '';
+    useEffect(() => {
+        let image_bg = isMobile ? `bg-${eventType}-phone.jpg` : `bg-${eventType}.jpg`;
+       setBgImage(image_bg)
+    }, [eventType]);
+
     const isRegisterButtonVisible = selectedEvent.length > 0;
- 
+
     return (
-        <div className='event'>
-            <EventNav /> 
-            
-                <div className="image-overlay">
-                    
-                </div>
-            <div className='event-container'>
-                <h1 className='event-type-heading'>{eventType}</h1>
+        <div className="event">
+            <EventNav />
+            <div className="bg-image-events">
+                <img key={bgImage} src={bgImage} alt="Event Background" />
+            </div>
+            <div className="event-container">
+                <h1 className="event-type-heading">{eventType}</h1>
                 <div className="event-card-container">
                     <EventCard />
-                    {/* {isPopupVisible && <EventPopup />} */}
-                    <EventPopup/>
+                    <EventPopup />
                 </div>
-                    {isRegisterButtonVisible && <RegisterButton />}
+                {isRegisterButtonVisible && <RegisterButton />}
             </div>
         </div>
     );
