@@ -22,7 +22,7 @@ const EventCard = () => {
                                 <img src={`/${event.eventSubName}.jpg`} alt="" />
 
 
-                                <div className="card-content">
+                                <div className="event-card-content">
                                     <p>{event.eventName}</p>
                                     <p className='event-subname'>{event.eventSubName}</p>
                                     <div className="event-buttons">
