@@ -15,6 +15,11 @@ const VerifyTicket = () => {
     const searchParams = new URLSearchParams(location.search); // Parse query parameters
     const id = searchParams.get('id'); // Get the `id` from query parameters
 
+    let currentCoupon = items.length === 4 ? "DRAGON"
+    : items.length === 3 ? "FLAME"
+      : items.length === 2 ? "FANG"
+        : "EMBER";
+
     useEffect(() => {
         const verifyTicket = async () => {
             if (!id) {
@@ -74,12 +79,17 @@ const VerifyTicket = () => {
         <div className="verify-ticket">
             <div className="verification-container">
                 <div className="participant-details">
+                <img src="https://png.pngtree.com/png-clipart/20230805/original/pngtree-shabby-stamp-with-inscription-verified-trusted-seal-label-vector-picture-image_9855465.png" alt="" />
                     <h3>Participant Details</h3>
                     {participantData && (
                         <>
                             <div className="participant-detail">
                                 <h6>Id</h6>
                                 <p>{participantData._id || 'N/A'}</p>
+                            </div>
+                            <div className="participant-detail">
+                                <h6>Pass Type</h6>
+                                <p>{currentCoupon || 'N/A'}</p>
                             </div>
                             <div className="participant-detail">
                                 <h6>Name</h6>
@@ -100,7 +110,7 @@ const VerifyTicket = () => {
                         </>
                     )}
                 </div>
-
+                  
                 <div className="participated-events">
                     <h4>EVENTS REGISTERED</h4>
                     <div className="events-list">

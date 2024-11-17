@@ -1,44 +1,77 @@
-.verify-ticket{
+.verify-ticket {
     width: 100%;
-    height: 100vh;
+    min-height: 80vh;
     margin-top: 80px;
     display: flex;
     justify-content: center;
 }
-.verification-container{
-    height: 80vh;
+.participant-details img{
+    position: absolute;
+    top: 15%;
+    width: 30%;
+    opacity: 0.1;
+}
+.verification-container {
     width: 80%;
     display: flex;
+    padding: 50px;
     flex-direction: column;
     align-items: center;
 }
-.participant-details{
-    background-color: rgba(224, 118, 118, 0.1);
-    height: 40vh;
+.verification-container p{
+font-size: 14px;
+}
+
+.participant-details {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+    position: relative;
 }
-.participant-detail{
+
+.participant-detail {
     margin-top: 20px;
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
-.participated-events{
-width: 100%;
-display: flex;
-flex-direction: column;
-align-items: center;
+
+.participated-events {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
+
+.events-list {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.participated-event {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
 @media (max-width:700px) {
-    
-    .verification-container{
+
+    .verification-container {
         width: 95%;
     }
-    .participant-detail{
+    .participant-details img{
+        top: 25%;
+        width: 70%;
+    }
+    .participant-detail {
         justify-content: space-between;
     }
 }
