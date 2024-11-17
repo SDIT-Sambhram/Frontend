@@ -4,16 +4,18 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+  margin-top: 125px;
 }
 
 .slide-div h3 {
   font-size: 45px;
+  margin-bottom: 30px;
 }
 
 /* Slide content styles */
 .slideContent {
-  width: 250px;
-  height: 300px;
+  width: 300px;
+  height: 370px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -25,8 +27,6 @@
   transform-style: preserve-3d;
   transform: perspective(1000px) translateX(calc(100% * var(--offset))) rotateY(calc(-45deg * var(--dir)));
   border-radius: 15px;
-  /* Add shadow for better depth perception */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .slideContentInner {
@@ -42,11 +42,10 @@
   transform: translateZ(2rem);
   transition: opacity 0.3s linear;
   color: white;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.6);
   opacity: 0;
   text-align: center;
-  /* Add gradient overlay for better text readability */
-  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+  /* Add gradient overlay for better text readability*/
 }
 
 /* Text styles */
@@ -110,19 +109,19 @@
   transform-style: preserve-3d;
   transform: perspective(1000px) translateX(calc(100% * var(--offset)));
   transition: transform 0.5s ease-in-out;
-  transform: scale(1.1);
+  transform: scale(1.1);  
 }
 
 /* Hover and gyroscope effect */
 .slide[data-active] .slideContent:hover {
   transition: none;
-  transform: perspective(1000px) rotateY(calc(var(--x) * 45deg)) rotateX(calc(var(--y) * -45deg)) scale(1.1);
+  transform: perspective(1000px) rotateY(calc(var(--x) * 45deg)) rotateX(calc(var(--y) * -45deg));
 }
 
 /* For gyroscope effect, we use the same transform but triggered by device orientation */
 @media (max-width: 700px) {
   .slide[data-active] .slideContent {
-    transform: perspective(1000px) rotateY(calc(var(--x) * 45deg)) rotateX(calc(var(--y) * -45deg)) scale(1.1);
+    transform: perspective(1000px) rotateY(calc(var(--x) * 45deg)) rotateX(calc(var(--y) * -45deg)) ;
     transition: none;
   }
 }
@@ -130,7 +129,7 @@
 /* Wrapper styles */
 .slidesWrapper {
   position: relative;
-  height: 400px;
+  height: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -138,27 +137,40 @@
   width: 100%;
 }
 
-/* Responsive styles */
-@media (max-width: 700px) {
-  .slide-div { 
-    height: 300px;
-  }
-  .slideContent {
-    width: 160px;
-    height: 210px;
-  }
-}
+
 
 @media (max-width: 900px) {
   .slide-div h3 {
     font-size: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
   }
   .slideContentInner .slideSubtitle {
     font-size: 12px;
   }
   .slideContentInner .slideTitle {
     font-size: 22px;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 700px) {
+  .slide-div { 
+    height: auto;
+    margin-bottom: 70px;
+    margin-top: 0;
+
+  }
+  .slideContent {
+    width: 240px;
+    height: 370px;
+  }
+  .slidesWrapper {
+    position: relative;
+    height: 430px;
+  }
+  .slide-div h3 {
+    font-size: 30px;
+    margin-bottom: 25px;
   }
 }
 

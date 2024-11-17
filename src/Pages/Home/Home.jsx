@@ -5,12 +5,15 @@ import Spotlight from '../../Components/Spotlights/Spotlights';
 import TicketCards from '../../Components/TicketCards/TicketCards';
 import '../../Components/MainAttractions/MainAttractions.jsx'
 import MainAttractions from '../../Components/MainAttractions/MainAttractions.jsx';
+import LocationComponent from '../../Components/LocationComponent/LocationComponent.jsx';
+
 
 const Home = () => {
     const headerRef = useRef(null);
     const spotlightRef = useRef(null);
     const ticketsRef = useRef(null);
     const attractionRef = useRef(null);
+    const locationsRef = useRef(null);
 
     return (
         <div className="home">
@@ -25,6 +28,9 @@ const Home = () => {
             </div>
             <div ref={ticketsRef} className="tickets-container">
                 <TicketCards />
+            </div>
+            <div ref={locationsRef} className="location-container">
+                <LocationComponent />
             </div>
         </div>
     );
