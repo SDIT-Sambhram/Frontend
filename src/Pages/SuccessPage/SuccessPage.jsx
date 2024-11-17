@@ -10,7 +10,7 @@ const SuccessPage = () => {
     let { participantId, orderId } = location.state || {};
     
     const [isTicketOverlayVisible, setIsTicketOverlayVisible] = useState(false);
-    console.log(participantId);
+    console.log(orderId);
     
     let imgSrc = `https://sambhram-tickets-bucket.s3.ap-south-1.amazonaws.com/tickets/${participantId}/${orderId}.jpg`
 
