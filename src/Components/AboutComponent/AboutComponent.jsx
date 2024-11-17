@@ -12,34 +12,44 @@ const AboutComponent = () => {
     { src: "/images/sambhram-prev6.jpg", alt: "Student Projects" },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
     <div className="about-component">
       <motion.div 
         className="about-content"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ 
-          duration: 1.2,
-          ease: "easeOut"
-        }}
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
       >
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
+        <motion.h1 variants={itemVariants}>
           About Our Institute
         </motion.h1>
         
         <motion.div 
           className="about-card"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ 
-            duration: 1,
-            delay: 1,
-            ease: "easeOut"
-          }}
+          variants={itemVariants}
         >
           <div className="card-content">
             <div className="card-text">
@@ -50,9 +60,7 @@ const AboutComponent = () => {
             </div>
             <motion.div 
               className="card-image"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.2, delay: 1.3 }}
+              variants={itemVariants}
             >
               <img src="/images/college-building.jpg" alt="College Building" />
             </motion.div>
@@ -61,27 +69,19 @@ const AboutComponent = () => {
 
         <motion.div 
           className="about-description"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ 
-            duration: 1,
-            delay: 1.5,
-            ease: "easeOut"
-          }}
+          variants={itemVariants}
         >
           <div className="description-content">
             <motion.div 
               className="description-image"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.2, delay: 1.8 }}
+              variants={itemVariants}
             >
               <img src="/images/campus-life.jpg" alt="Campus Life" />
             </motion.div>
             <div className="description-text">
               <p>Our institution stands as a beacon of academic brilliance in the field of Engineering, Management and Computer applications. Established with a vision to nurture future innovators and problem solvers, the institute has consistently upheld its commitment to excellence since its inception.</p>
               
-              <p>The meticulously designed curriculum integrates theoretical learning with hands-on experiences ensuring that graduates can apply their knowledge to real world challenges. The institute takes pride in it's modern infrastructure with state-of-the-art laboratories.</p>
+              <p>The meticulously designed curriculum integrates theoretical learning with hands-on experiences ensuring that graduates can apply their knowledge to real world challenges. The institute takes pride in its modern infrastructure with state-of-the-art laboratories.</p>
               
               <p>Shree Devi Institute of Technology is more than an academic institution, it is a dynamic ecosystem where passion meets purpose, and where the young minds are nurtured to lead, innovate and make a lasting impact on the world.</p>
             </div>
@@ -90,17 +90,11 @@ const AboutComponent = () => {
 
         <motion.div 
           className="sambhram-section"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ 
-            duration: 1,
-            delay: 2,
-            ease: "easeOut"
-          }}
+          variants={itemVariants}
         >
           <h2>About Shree Devi Sambhram</h2>
           <div className="event-details">
-            <span className="date">December 6th - 7th, 2024</span>
+            <span className="event-date">December 6th - 7th, 2024</span>
             <span className="venue">Shree Devi Institute of Technology, Airport Road, Kenjar, Mangaluru</span>
           </div>
           <div className="sambhram-content">
@@ -117,18 +111,14 @@ const AboutComponent = () => {
             </div>
             <motion.div 
               className="sambhram-image"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.2, delay: 2.3 }}
+              variants={itemVariants}
             >
               <img src="/images/sambhram-event.jpg" alt="Sambhram Event" />
             </motion.div>
           </div>
           <motion.div 
             className="previous-events"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 2.5 }}
+            variants={itemVariants}
           >
             <h3>Previous Event Highlights</h3>
             <div className="event-gallery">
@@ -136,13 +126,7 @@ const AboutComponent = () => {
                 <motion.div
                   key={index}
                   className="gallery-item"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ 
-                    duration: 0.5, 
-                    delay: 2.8 + (index * 0.1),
-                    ease: "easeOut"
-                  }}
+                  variants={itemVariants}
                 >
                   <div className="image-container">
                     <img src={image.src} alt={image.alt} />
