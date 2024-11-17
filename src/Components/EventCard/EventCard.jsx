@@ -7,7 +7,7 @@ const EventCard = () => {
     const [flippedCard, setFlippedCard] = useState(null);
 
     const toggleFlip = (id) => setFlippedCard(prevId => (prevId === id ? null : id));
-    
+
     return (
         <>
             {eventDatas
@@ -19,15 +19,24 @@ const EventCard = () => {
                             onClick={() => toggleFlip(event._id)}
                         >
                             <div className="front">
-                                <p>{event.eventName}</p>
-                                <button onClick={(e) => { selectEvent(event._id); e.stopPropagation() }} className={`button-event ${selectedEvent.includes(event._id) ? 'clicked' : ''}`}>
+                                <img src={`/${event.eventSubName}.jpg`} alt="" />
+
+                               
+                                <div className="card-content">
+                                    <p>{event.eventName}</p>
+                                    <p className='event-subname'>{event.eventSubName}</p>
+                                    <div className="event-buttons">
+                                        <button onClick={(e) => { selectEvent(event._id); e.stopPropagation() }} className={`button-event ${selectedEvent.includes(event._id) ? 'clicked' : ''}`}>
                                             {selectedEvent.includes(event._id) ? 'EVENT ADDED' : 'ADD EVENT'}
                                         </button>
-                                
+                                    </div>
+
+                                </div>
+
                             </div>
                             <div className="back">
                                 <div className="back-div">
-                                
+
                                     <div className="card-button-back">
                                         <i onClick={(e) => {
                                             e.stopPropagation();
@@ -42,7 +51,7 @@ const EventCard = () => {
                                         </button>
                                     </div> */}
                                     <div className="event-back-dec">
-                                    <p>{event.description} Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum perferendis repellendus similique obcaecati ad omnis maxime </p>     
+                                        <p>{event.description}</p>
                                     </div>
                                 </div>
                             </div>
