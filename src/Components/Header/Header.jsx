@@ -85,8 +85,9 @@ const Header = () => {
                         <p className="date">On 6th & 7th December 2024</p>
 
                         <div className='btn-width'>
-                            <button className='explore-btn'>Explore</button>
-                            <button className='glowing-btn'>Register</button>
+                            <Link to='/about'><button className='explore-btn'>Explore</button></Link>
+                            
+                            <Link to='/events'><button className='glowing-btn'>Register</button></Link>
                         </div>
 
                     </div>
