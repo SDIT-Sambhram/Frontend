@@ -21,13 +21,17 @@ const EventCard = () => {
                             <div className="front">
                                 <img src={`/${event.eventSubName}.jpg`} alt="" />
 
-                               
+
                                 <div className="card-content">
                                     <p>{event.eventName}</p>
                                     <p className='event-subname'>{event.eventSubName}</p>
                                     <div className="event-buttons">
                                         <button onClick={(e) => { selectEvent(event._id); e.stopPropagation() }} className={`button-event ${selectedEvent.includes(event._id) ? 'clicked' : ''}`}>
                                             {selectedEvent.includes(event._id) ? 'EVENT ADDED' : 'ADD EVENT'}
+                                        </button>
+
+                                        <button onClick={(e) => { setPopUpStatus(event); e.stopPropagation() }} className='view-rule-btn'>
+                                            View Rules
                                         </button>
                                     </div>
 
