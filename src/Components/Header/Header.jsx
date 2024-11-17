@@ -19,7 +19,7 @@ const Header = () => {
         // Reset auto-scrolling after 1 second (smooth scroll time)
         setTimeout(() => {
             setIsAutoScrolling(false);
-        }, 1000); 
+        }, 1000);
     };
 
     const handleVideoLoad = () => {
