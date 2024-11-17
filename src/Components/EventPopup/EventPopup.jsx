@@ -16,6 +16,7 @@ const EventPopup = () => {
                         {popUpStatus && typeof popUpStatus === 'object' ? (
                             <>
                                 <h3 className="event-name">{popUpStatus.eventName}</h3>
+                                {popUpStatus.eventSubName}
                                 <div className="time-date">
                                     <p className="event-time">{popUpStatus.date}</p>
                                     <div className="event-time">{popUpStatus.time}</div>
