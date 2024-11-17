@@ -45,7 +45,10 @@ const Header = () => {
     return (
         <>
             <div className="invite-container">
-            <video
+            
+
+                
+                <video
                     className="head-video"
                     autoPlay
                     loop
@@ -54,17 +57,13 @@ const Header = () => {
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 >
                     <source
-                        src="https://sambhram-assets.s3.ap-south-1.amazonaws.com/sambhram-header.mp4"
-                        type="video/mp4"
-                    />
-                    <source
                         src="https://sambhram-assets.s3.ap-south-1.amazonaws.com/sambhram-header.webm"
                         type="video/webm"
                     />
                     Your browser does not support the video tag.
                 </video>
-
-                <div className="header-overlay"></div>
+                <div className="header-overlay">
+                </div>
 
                 <div className={`content`}>
                     <div className="main-contents">
