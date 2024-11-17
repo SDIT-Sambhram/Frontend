@@ -46,6 +46,7 @@ const Navbar = () => {
         { id: 'event', path: '/events', label: 'Event' },
         { id: 'contact', path: '/contact', label: 'Contact' },
         { id: 'about', path: '/about', label: 'About' },
+        { id: 'location', path: '/location', label: 'Location' },
     ];
 
     // Determine the navbar class based on scrolled state and current page

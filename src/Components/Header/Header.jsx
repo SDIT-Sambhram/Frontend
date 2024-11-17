@@ -1,11 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
-import Preloader from '../Preloader/Preloader.jsx';
 import './Header.css';
 import { Link } from 'react-router-dom';
 import Countdown from '../Countdown/Countdown.jsx';
 
 const Header = () => {
-    const [isVideoLoaded, setIsVideoLoaded] = useState(false);
     const [isAutoScrolling, setIsAutoScrolling] = useState(false);
     const lastScrollY = useRef(0);
 
@@ -20,10 +18,6 @@ const Header = () => {
         setTimeout(() => {
             setIsAutoScrolling(false);
         }, 1000);
-    };
-
-    const handleVideoLoad = () => {
-        setIsVideoLoaded(true);
     };
 
     useEffect(() => {
@@ -51,12 +45,6 @@ const Header = () => {
     return (
         <>
             <div className="invite-container">
-                {!isVideoLoaded && (
-                    <div className="loading-overlay">
-                        <Preloader />
-                    </div>
-                )}
-
                 <video
                     className="head-video"
                     autoPlay
@@ -64,7 +52,6 @@ const Header = () => {
                     muted
                     playsInline
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    onLoadedData={handleVideoLoad}
                 >
                     <source
                         src="https://sambhram-assets.s3.ap-south-1.amazonaws.com/sambhram-header.mp4"
@@ -75,7 +62,7 @@ const Header = () => {
 
                 <div className="header-overlay"></div>
 
-                <div className={`content ${isVideoLoaded ? 'fade-in' : ''}`}>
+                <div className={`content`}>
                     <div className="main-contents">
                         <h1 className="title-sd">Shree Devi</h1>
                         <h1 className="title">SAMBHRAM&apos;24</h1>

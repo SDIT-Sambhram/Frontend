@@ -186,7 +186,7 @@ const slides = [
     id: 1,
     title: 'TACTICAL TAKEOVER',
     subtitle: '(BGMI)',
-    image: 'Bgmi.jpg',
+    image: '(BGMI).jpg',
   },
   {
     id: 2,
@@ -198,7 +198,7 @@ const slides = [
     id: 3,
     title: 'SAKURA SQUARE',
     subtitle: '(LUDO)',
-    image: 'https://w0.peakpx.com/wallpaper/669/783/HD-wallpaper-love-ludo-game-naseeb.jpg',
+    image: '(Ludo).jpg',
   },
   {
     id: 4,
@@ -222,7 +222,7 @@ const slides = [
     id: 7,
     title: 'EYES OF, CODE ON!',
     subtitle: '(BLIND CODING)',
-    image: 'https://cdn.pixabay.com/video/2023/07/21/172655-847860558_tiny.jpg',
+    image: '(Blind Coding).jpg',
   },
   {
     id: 8,
