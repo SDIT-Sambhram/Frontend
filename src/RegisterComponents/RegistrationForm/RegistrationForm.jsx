@@ -55,6 +55,7 @@ const RegistrationForm = () => {
         "Nitte Meenakshi Institute of Technology",
         "NRAMP, Nitte",
         "Oxford Business School",
+        "PA college of Engineering,(PACE)",
         "PES College of Pharmacy",
         "R.L. Jalappa Institute of Technology",
         "Rajarajeswari College of Engineering",
@@ -69,7 +70,7 @@ const RegistrationForm = () => {
         "SDM College of Business Management Post Graduate Centre",
         "SDM College of Engineering & Technology (SDMC)",
         "Shri Madhwa Vadiraja Institute of Technology & Management (SMVIT)",
-        "Shridevi Institute of Engineering & Technology",
+        "Shree Devi Institute of Engineering & Technology",
         "Siddaganga Institute of Technology",
         "SJEC - St. Joseph Engineering College",
         "SJB Institute of Technology",
@@ -85,7 +86,7 @@ const RegistrationForm = () => {
     ];
 
 
-    const { data, setData, sendDatatoBackend } = useContext(StoreContext)
+    const { data, setData } = useContext(StoreContext)
     const onChangeHandler = (event) => {
         const name = event.target.name;
         const value = event.target.value;

@@ -26,7 +26,8 @@ export const ContextProvider = ({ children }) => {
     });
 
     let successData= {
-        participantId:"NAN"
+        participantId:"no participant id",
+        orderId:"no id"
     };
 
     useEffect(() => {
@@ -111,7 +112,7 @@ export const ContextProvider = ({ children }) => {
             console.log("success bro ", res.data);
             console.log(res.data.participantId);            
             successData.participantId = res.data.participantId
-            
+            successData.orderId = res.data.orderId
             return res.data; // Return the response data containing the order ID
         } catch (err) {
             console.error("Error in backend call", err);
@@ -140,7 +141,7 @@ export const ContextProvider = ({ children }) => {
 
                     setSelectedEvent([]);
                     
-                    navigate('/success', { state: { participantId: successData.participantId } });
+                    navigate('/success', { state: { participantId: successData.participantId,orderId:successData.orderId } });
 
                 },
                 prefill: {

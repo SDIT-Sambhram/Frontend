@@ -7,28 +7,25 @@ import Save from '../../Components/Save/Save';
 
 const SuccessPage = () => {
     const location = useLocation();
-    let participantId = location.state?.participantId;
+    let { participantId, orderId } = location.state || {};
     
     const [isTicketOverlayVisible, setIsTicketOverlayVisible] = useState(false);
     console.log(participantId);
     
     
-    let imgSrc = "https://sambhram-tickets-bucket.s3.ap-south-1.amazonaws.com/tickets/"+ participantId +".jpg"
-    // Show overlay when "View Ticket" is clicked
+    // let imgSrc = "https://sambhram-tickets-bucket.s3.ap-south-1.amazonaws.com/tickets/"+ participantId +".jpg"
+    let imgSrc = `https://sambhram-tickets-bucket.s3.ap-south-1.amazonaws.com/tickets/${participantId}/${orderId}.jpg`
+
     const handleViewTicketClick = () => {
         setIsTicketOverlayVisible(true);
     };
-
-    // Hide overlay when "Close" is clicked
     const handleCloseClick = () => {
         setIsTicketOverlayVisible(false);
     };
 
     return (
         <>
-            <div className="success-page">
-
-                {/* Conditionally render the ticket overlay based on state */}
+            <div className="success-page">  
                 {isTicketOverlayVisible && (
                     <div className="ticket-overlay">
                         <div className="ticket">
