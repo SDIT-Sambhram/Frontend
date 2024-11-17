@@ -3,6 +3,88 @@ import { StoreContext } from '../../Contexts/StoreContext';
 import { useContext } from 'react';
 
 const RegistrationForm = () => {
+    const collegeNames = [
+        "A.J. Institute of Engineering and Technology (AJIET)",
+        "ACS College of Engineering",
+        "Acharya's N R V School of Architecture",
+        "Advanced Management College",
+        "Alva's Institute of Engineering and Technology",
+        "Bearys Institute of Technology",
+        "Bharathi College of Pharmacy",
+        "B.L.D.E.A's V.P. Dr. P.G. Halakatti College of Engineering & Technology",
+        "BMS Institute of Technology & Management",
+        "Cambridge Institute of Technology",
+        "Canara Engineering College (CE)",
+        "City College",
+        "Dayananda Sagar College of Arts, Science & Commerce",
+        "Dayananda Sagar College of Engineering",
+        "Dayananda Sagar College of Pharmacy",
+        "Dr. Ambedkar Institute of Technology",
+        "Dr. H.L. Thimmegowda College of Pharmacy",
+        "Dr. M.V. Shetty Institute of Technology",
+        "Dr. Sri Sri Sri Shivakumara Mahaswamy College of Engineering",
+        "Dr. T.M.A. Pai Polytechnic (TMAP Polytechnic)",
+        "East West Institute of Technology",
+        "Gautham College of Pharmacy",
+        "Ghousia College of Engineering",
+        "Global Academy of Technology",
+        "Government Polytechnic for Women, Karkala (GPFW, Karkala)",
+        "Government Polytechnic, Bajpe (GP, Bajpe)",
+        "Government Polytechnic, Ujire (GP, Ujire)",
+        "Guru Nanak Dev Engineering College",
+        "HKBK College of Engineering",
+        "Impact Polytechnic",
+        "Indira Shiva Rao Polytechnic, Udupi",
+        "Institute of Finance & International Management",
+        "JSS Academy of Technical Education",
+        "JSS College of Pharmacy",
+        "Jawaharlal Nehru National College of Engineering",
+        "K.L.E. Society's College of Engineering & Technology",
+        "K.L.S. Gogte Institute of Technology",
+        "Karavali Institute of Technology",
+        "Karavali College of Pharmacy",
+        "KVG Engineering College",
+        "K.V. Gowda Polytechnic (KVG Polytechnic)",
+        "Manglore Marine College and Technology",
+        "Mangalore Institute of Technology & Engineering (MITE)",
+        "Manipal Institute of Technology (MIT)",
+        "M.S. Ramaiah Institute of Technology",
+        "M.S. Ramaiah College of Pharmacy",
+        "Nargund College of Pharmacy",
+        "National Institute of Technology Karnataka (NITK)",
+        "Nitte Meenakshi Institute of Technology",
+        "NRAMP, Nitte",
+        "Oxford Business School",
+        "PES College of Pharmacy",
+        "R.L. Jalappa Institute of Technology",
+        "Rajarajeswari College of Engineering",
+        "Rajeev Institute of Technology",
+        "Reva Institute of Science and Management",
+        "Reva Institute of Technology and Management",
+        "RNS Institute of Technology",
+        "Rural Engineering College",
+        "Sahyadri College of Engineering & Management (SCE)",
+        "SBRR Mahajana First Grade College",
+        "S.E.T's College of Pharmacy",
+        "SDM College of Business Management Post Graduate Centre",
+        "SDM College of Engineering & Technology (SDMC)",
+        "Shri Madhwa Vadiraja Institute of Technology & Management (SMVIT)",
+        "Shridevi Institute of Engineering & Technology",
+        "Siddaganga Institute of Technology",
+        "SJEC - St. Joseph Engineering College",
+        "SJB Institute of Technology",
+        "Sri Dharmasthala Manjunatheshwara Polytechnic (SDMP, Ujire)",
+        "Sri Revana Siddeshwara Institute of Technology",
+        "Srinivas Institute of Technology (SIT)",
+        "Sri Krishna School of Engineering & Management",
+        "Sri Taralabalu Jagadguru Institute of Technology",
+        "Vemana Institute of Technology",
+        "Vivekananda College of Engineering & Technology",
+        "Vivekananda Polytechnic (VC Polytechnic)",
+        "Yenepoya Institute of Technology (YIT)"
+    ];
+
+
     const { data, setData, sendDatatoBackend } = useContext(StoreContext)
     const onChangeHandler = (event) => {
         const name = event.target.name;
@@ -32,14 +114,17 @@ const RegistrationForm = () => {
                     value={data.usn}
                     required
                 />
-                <input 
-                    type="text"
-                    placeholder="Enter College Name"
+                <select
                     name="college"
                     onChange={onChangeHandler}
                     value={data.college}
                     required
-                />
+                >
+                    <option value="" disabled>Select College</option>
+                    {collegeNames.map((college, index) => (
+                        <option key={index} value={college}>{college}</option>
+                    ))}
+                </select>
                 <input
                     type="number"
                     placeholder="Enter Your Mobile Number"
@@ -48,7 +133,7 @@ const RegistrationForm = () => {
                     value={data.mobile}
                     required
                 />
-                
+
                 {/* <div><i className="fa-solid fa-circle-info fa-lg" style={{ color: "#ff0000" }}></i>
                 <p>OTP will be sent to your registered phone number for verification.</p></div> */}
             </form>
