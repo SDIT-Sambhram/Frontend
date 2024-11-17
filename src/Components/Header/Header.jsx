@@ -57,8 +57,13 @@ const Header = () => {
                         src="https://sambhram-assets.s3.ap-south-1.amazonaws.com/sambhram-header.mp4"
                         type="video/mp4"
                     />
+                    <source
+                        src="https://sambhram-assets.s3.ap-south-1.amazonaws.com/sambhram-header.webm"
+                        type="video/webm"
+                    />
                     Your browser does not support the video tag.
                 </video>
+
 
                 <div className="header-overlay"></div>
 
@@ -73,7 +78,7 @@ const Header = () => {
 
                         <div className='btn-width'>
                             <Link to='/about'><button className='explore-btn'>Explore</button></Link>
-                            
+
                             <Link to='/events'><button className='glowing-btn'>Register</button></Link>
                         </div>
 
