@@ -1,5 +1,6 @@
 import React from 'react'
-import { motion } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 import "./AboutComponent.css"
 
 const AboutComponent = () => {
@@ -17,23 +18,61 @@ const AboutComponent = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2
+        staggerChildren: 0.4,
+        delayChildren: 0.3,
+        duration: 1,
+        ease: "easeOut"
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { 
+      opacity: 0, 
+      y: 30,
+      scale: 0.95
+    },
     visible: { 
       opacity: 1, 
       y: 0,
+      scale: 1,
       transition: {
-        duration: 0.8,
+        duration: 1.2,
         ease: "easeOut"
       }
     }
   };
+
+  const imageVariants = {
+    hidden: { 
+      opacity: 0, 
+      scale: 0.8,
+      y: 20
+    },
+    visible: { 
+      opacity: 1, 
+      scale: 1,
+      y: 0,
+      transition: {
+        duration: 1.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.2
+  });
+
+  React.useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
 
   return (
     <div className="about-component">
@@ -41,7 +80,8 @@ const AboutComponent = () => {
         className="about-content"
         variants={containerVariants}
         initial="hidden"
-        animate="visible"
+        animate={controls}
+        ref={ref}
       >
         <motion.h1 variants={itemVariants}>
           About Our Institute
@@ -50,6 +90,7 @@ const AboutComponent = () => {
         <motion.div 
           className="about-card"
           variants={itemVariants}
+          whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
         >
           <div className="card-content">
             <div className="card-text">
@@ -60,7 +101,8 @@ const AboutComponent = () => {
             </div>
             <motion.div 
               className="card-image"
-              variants={itemVariants}
+              variants={imageVariants}
+              whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
             >
               <img src="/images/college-building.jpg" alt="College Building" />
             </motion.div>
@@ -70,11 +112,13 @@ const AboutComponent = () => {
         <motion.div 
           className="about-description"
           variants={itemVariants}
+          whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
         >
           <div className="description-content">
             <motion.div 
               className="description-image"
-              variants={itemVariants}
+              variants={imageVariants}
+              whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
             >
               <img src="/images/campus-life.jpg" alt="Campus Life" />
             </motion.div>
@@ -91,6 +135,7 @@ const AboutComponent = () => {
         <motion.div 
           className="sambhram-section"
           variants={itemVariants}
+          whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
         >
           <h2>About Shree Devi Sambhram</h2>
           <div className="event-details">
@@ -111,7 +156,8 @@ const AboutComponent = () => {
             </div>
             <motion.div 
               className="sambhram-image"
-              variants={itemVariants}
+              variants={imageVariants}
+              whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
             >
               <img src="/images/sambhram-event.jpg" alt="Sambhram Event" />
             </motion.div>
@@ -119,6 +165,7 @@ const AboutComponent = () => {
           <motion.div 
             className="previous-events"
             variants={itemVariants}
+            whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
           >
             <h3>Previous Event Highlights</h3>
             <div className="event-gallery">
@@ -126,7 +173,8 @@ const AboutComponent = () => {
                 <motion.div
                   key={index}
                   className="gallery-item"
-                  variants={itemVariants}
+                  variants={imageVariants}
+                  whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
                 >
                   <div className="image-container">
                     <img src={image.src} alt={image.alt} />
