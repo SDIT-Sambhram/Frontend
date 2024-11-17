@@ -91,12 +91,13 @@
 
 .about-card {
   background: white;
-  padding: 30px;
+  padding: 25px; /* Adjusted padding */
   border-radius: 15px;
   border: 1px solid rgba(139, 0, 0, 0.1);
   box-shadow: 0 4px 20px rgba(139, 0, 0, 0.05);
-  margin-bottom: 30px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 25px; /* Adjusted margin */
+  transition: transform 0.5s ease-out, 
+              box-shadow 0.5s ease-out;
 }
 
 .about-card:hover {
@@ -107,12 +108,12 @@
 
 .about-card h2 {
   color: #8B0000;
-  margin-bottom: 20px;
+  margin-bottom: 15px; /* Adjusted margin */
 }
 
 .about-card p {
   color: #555;
-  margin-bottom: 10px;
+  margin-bottom: 8px; /* Adjusted margin */
 }
 
 .about-description {
@@ -121,7 +122,8 @@
   border-radius: 15px;
   border: 1px solid rgba(139, 0, 0, 0.1);
   box-shadow: 0 4px 20px rgba(139, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.5s ease-out, 
+              box-shadow 0.5s ease-out;
 }
 
 .about-description:hover {
@@ -144,7 +146,8 @@
   border: 1px solid rgba(139, 0, 0, 0.1);
   box-shadow: 0 4px 20px rgba(139, 0, 0, 0.05);
   margin-top: 30px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.5s ease-out, 
+              box-shadow 0.5s ease-out;
 }
 
 .sambhram-section:hover {
@@ -203,7 +206,7 @@
 .card-content, .description-content, .sambhram-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px; /* Increased gap between content */
+  gap: 40px; /* Adjusted gap */
   align-items: center;  /* Center align grid items */
   justify-content: center;  /* Center align grid items */
 }
@@ -212,13 +215,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 15px;
-  padding: 20px;
+  gap: 12px; /* Adjusted gap */
+  padding: 15px; /* Adjusted padding */
 }
 
 .card-image, .description-image, .sambhram-image {
   width: 100%;
-  height: 400px; /* Taller images */
+  height: 350px; /* Adjusted height */
   overflow: hidden;
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(139, 0, 0, 0.1);
@@ -229,7 +232,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.6s ease-out;
 }
 
 .card-image:hover img, .description-image:hover img, .sambhram-image:hover img {
@@ -245,7 +248,7 @@
   
   .about-card,
   .about-description {
-    padding: 20px;
+    padding: 18px; /* Adjusted padding */
   }
   
   .about-component {
@@ -255,21 +258,21 @@
   }
 
   .sambhram-section {
-    padding: 20px;
+    padding: 18px; /* Adjusted padding */
   }
 
   .card-content, .description-content, .sambhram-content {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 25px; /* Adjusted gap */
   }
 
   .card-image, .description-image, .sambhram-image {
-    height: 300px;
+    height: 280px; /* Adjusted height */
     order: -1; /* Makes images appear above text on mobile */
   }
 
   .about-content {
-    gap: 30px;
+    gap: 25px; /* Adjusted gap */
   }
 
   .event-details {
@@ -286,7 +289,7 @@
   
   .about-card,
   .about-description {
-    padding: 15px;
+    padding: 12px; /* Adjusted padding */
   }
   
   .about-component {
@@ -296,15 +299,15 @@
   }
 
   .sambhram-section {
-    padding: 15px;
+    padding: 12px; /* Adjusted padding */
   }
 
   .card-image, .description-image, .sambhram-image {
-    height: 250px;
+    height: 220px; /* Adjusted height */
   }
 
   .about-content {
-    gap: 25px;
+    gap: 20px; /* Adjusted gap */
   }
 
   .event-gallery {
@@ -341,7 +344,7 @@
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(139, 0, 0, 0.1);
   cursor: pointer;
-  transition: transform 0.4s ease-out;
+  transition: transform 0.5s ease-out;
 }
 
 .gallery-item:hover {
@@ -372,7 +375,7 @@
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease-out;
 }
 
 .image-overlay p {
@@ -381,7 +384,7 @@
   text-align: center;
   padding: 10px;
   transform: translateY(20px);
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease-out;
 }
 
 .gallery-item:hover .image-container img {
