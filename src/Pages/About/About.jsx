@@ -1,6 +1,6 @@
 import './About.css'
 
-import AboutComponent from '../../Components/AboutComponent/AboutComponent'
+import AboutComponent from '../../Components/AboutComponent/AboutComponent.jsx'
 
 
 const About=()=>{

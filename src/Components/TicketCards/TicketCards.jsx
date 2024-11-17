@@ -1,4 +1,5 @@
 import './TicketCards.css';
+import { Link } from 'react-router-dom';
 
 const TicketCards = () => {
     const tickets = [
@@ -29,6 +30,7 @@ const TicketCards = () => {
             <div className="ticket-heading">
                 <h2>GRAB YOUR TICKETS</h2>
             </div>
+            <Link to='/events'>
             <div className="ticket-card-list">
                 {tickets.map((src, index) => (
                     <div className="ticket-card-view" key={index}>
@@ -42,6 +44,8 @@ const TicketCards = () => {
                     </div>
                 ))}
             </div>
+            </Link>
+            
         </div>
     );
 };
