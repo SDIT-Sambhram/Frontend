@@ -37,6 +37,7 @@
     
     border-radius: 10px;
     display: flex;
+    flex-direction: column;
     top: 0;
     left: 0;
     overflow: hidden;
@@ -50,7 +51,7 @@
     object-fit: cover;
     object-position: top;
  }
- .card-content{
+ .event-card-content{
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -113,6 +114,9 @@
 
 
 .event-buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
 }
 .btn2 {
