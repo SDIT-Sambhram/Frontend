@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import Preloader from '../Preloader/Preloader.jsx';
 import './Header.css';
-import { Link } from 'react-router-dom';
 import Countdown from '../Countdown/Countdown.jsx';
 
 const Header = () => {
@@ -19,7 +18,7 @@ const Header = () => {
         // Reset auto-scrolling after 1 second (smooth scroll time)
         setTimeout(() => {
             setIsAutoScrolling(false);
-        }, 1000);
+        }, 1000); 
     };
 
     const handleVideoLoad = () => {
