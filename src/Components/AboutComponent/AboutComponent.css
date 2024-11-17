@@ -18,6 +18,7 @@
 
 .about-component {
   min-height: 100vh;
+  width: 100%;
   background: linear-gradient(
     -45deg,
     rgba(255, 245, 245, 1) 0%,
@@ -32,12 +33,12 @@
   background-size: 300% 300%;
   animation: gradientAnimation 12s ease-in-out infinite; /* Reduced from 20s to 12s */
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
   padding: 80px 20px;
   padding-top: 120px; /* Increased padding for better spacing */
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   text-align: center;
 }
 
@@ -61,6 +62,7 @@
 
 .about-content {
   max-width: 1400px; /* Increased max-width for better content spread */
+  width: 100%;
   margin: 0 auto;
   padding: 20px;
   display: flex;
@@ -252,31 +254,56 @@
   }
   
   .about-component {
-    padding: 20px;
-    padding-top: 80px; /* Adjust padding for medium screens */
-    margin-top: 60px; /* Additional margin for safety */
-  }
-
-  .sambhram-section {
-    padding: 18px; /* Adjusted padding */
-  }
-
-  .card-content, .description-content, .sambhram-content {
-    grid-template-columns: 1fr;
-    gap: 25px; /* Adjusted gap */
-  }
-
-  .card-image, .description-image, .sambhram-image {
-    height: 280px; /* Adjusted height */
-    order: -1; /* Makes images appear above text on mobile */
+    padding: 60px 15px;
+    align-items: center;
+    overflow-x: hidden;
   }
 
   .about-content {
-    gap: 25px; /* Adjusted gap */
+    padding: 10px;
+    gap: 20px;
+  }
+
+  .about-content h1 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .card-content, 
+  .description-content, 
+  .sambhram-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card-image, 
+  .description-image, 
+  .sambhram-image {
+    height: 250px;
+    margin-bottom: 15px;
+  }
+
+  .card-text, 
+  .description-text, 
+  .sambhram-text {
+    padding: 10px;
+    gap: 10px;
   }
 
   .event-details {
-    padding: 15px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  .event-date, 
+  .venue {
+    padding: 10px 15px;
+    font-size: 1rem;
+  }
+
+  .sambhram-description p {
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 }
 
@@ -293,7 +320,7 @@
   }
   
   .about-component {
-    padding: 10px;
+    padding: 50px 10px;
     padding-top: 70px; /* Adjust padding for small screens */
     margin-top: 50px; /* Additional margin for safety */
   }
@@ -313,6 +340,38 @@
   .event-gallery {
     gap: 20px;
     padding: 10px;
+  }
+
+  .about-component {
+    padding: 50px 10px;
+  }
+
+  .about-content h1 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+
+  .about-card,
+  .about-description,
+  .sambhram-section {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .card-image, 
+  .description-image, 
+  .sambhram-image {
+    height: 200px;
+  }
+
+  .event-gallery {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .gallery-item {
+    aspect-ratio: 16/10;
   }
 }
 

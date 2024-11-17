@@ -13,6 +13,8 @@ const AboutComponent = () => {
     { src: "/images/sambhram-prev6.jpg", alt: "Student Projects" },
   ];
 
+  const isMobile = window.innerWidth <= 768;
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -30,7 +32,7 @@ const AboutComponent = () => {
     hidden: { 
       opacity: 0, 
       y: 30,
-      scale: 0.95
+      scale: 0.98
     },
     visible: { 
       opacity: 1, 
@@ -46,15 +48,13 @@ const AboutComponent = () => {
   const imageVariants = {
     hidden: { 
       opacity: 0, 
-      scale: 0.8,
-      y: 20
+      scale: 0.95
     },
     visible: { 
       opacity: 1, 
       scale: 1,
-      y: 0,
       transition: {
-        duration: 1.5,
+        duration: 1.2,
         ease: "easeOut"
       }
     }
@@ -62,17 +62,14 @@ const AboutComponent = () => {
 
   const controls = useAnimation();
   const [ref, inView] = useInView({
-    triggerOnce: false,
-    threshold: 0.2
+    triggerOnce: true, // Changed to true so animation only happens once
+    threshold: 0.1
   });
 
   React.useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [controls, inView]);
+    // Start animation immediately on component mount
+    controls.start("visible");
+  }, [controls]);
 
   return (
     <div className="about-component">
@@ -80,7 +77,7 @@ const AboutComponent = () => {
         className="about-content"
         variants={containerVariants}
         initial="hidden"
-        animate={controls}
+        animate="visible"
         ref={ref}
       >
         <motion.h1 variants={itemVariants}>
