@@ -79,8 +79,9 @@ const VerifyTicket = () => {
         <div className="verify-ticket">
             <div className="verification-container">
                 <div className="participant-details">
-                <img src="https://png.pngtree.com/png-clipart/20230805/original/pngtree-shabby-stamp-with-inscription-verified-trusted-seal-label-vector-picture-image_9855465.png" alt="" />
-                    <h3>Participant Details</h3>
+                    {participantData?<img src="https://png.pngtree.com/png-clipart/20230805/original/pngtree-shabby-stamp-with-inscription-verified-trusted-seal-label-vector-picture-image_9855465.png" alt="" />:<p><img className='unverified-image' src="https://static.vecteezy.com/system/resources/previews/009/384/246/non_2x/tick-and-cross-clipart-design-illustration-free-png.png" alt="" /></p>}
+                
+                    <h3>Participant Details{!participantData?" Not Found":""}</h3>
                     {participantData && (
                         <>
                             <div className="participant-detail">
