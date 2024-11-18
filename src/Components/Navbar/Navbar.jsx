@@ -39,7 +39,7 @@ const Navbar = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, [location]); // Re-run when location changes
-
+ 
     // Define the menu items
     const navItems = [
         { id: 'home', path: '/', label: 'Home' },

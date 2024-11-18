@@ -20,11 +20,15 @@ const EventCard = () => {
                         >
                             <div className="front">
                                 <img src={`/${event.eventSubName}.jpg`} alt="" />
- 
+
 
                                 <div className="event-card-content">
-                                    <p>{event.eventName}</p>
-                                    <p className='event-subname'>{event.eventSubName}</p>
+                                    <div className="card-front-top">
+                                        <div className="event-card-names">
+                                            <p>{event.eventName}</p>
+                                            <p className='event-subname'>{event.eventSubName}</p>
+                                        </div>
+                                    </div>
                                     <div className="event-buttons">
                                         <button onClick={(e) => { selectEvent(event._id); e.stopPropagation() }} className={`button-event ${selectedEvent.includes(event._id) ? 'clicked' : ''}`}>
                                             {selectedEvent.includes(event._id) ? 'EVENT ADDED' : 'ADD EVENT'}

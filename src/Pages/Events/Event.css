@@ -16,9 +16,9 @@
 
 .event-type-heading {
     color: rgb(91, 2, 2);
-    text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.2);
-    font-size: 40px;
-    background: url("../../assets/black abstract.png");
+    text-shadow: 2px 2px 2px rgba(255, 0, 0, 0.162);
+    font-size: 50px;
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXYoFEX0qNmd4Z-BUSULYBf7TUFAtqtW1Vow&s");
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;

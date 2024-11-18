@@ -12,9 +12,9 @@ import './RightDrawerMenu.css';
 
 const menuItems = [
   { id: 'home', path: '/', label: 'Home' },
-  { id: 'register', path: '/checkout', label: 'Register' },
   { id: 'events', path: '/events', label: 'Events' },
-  { id: 'about', path: '/about', label: 'About' }
+  { id: 'about', path: '/about', label: 'About' },
+  { id: 'contact', path: '/Contact', label: 'Contact' }
 ];
 
 const RightDrawerMenu = memo(() => {
