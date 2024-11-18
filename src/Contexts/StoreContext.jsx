@@ -3,6 +3,7 @@ import { eventsData } from '../sampleDB';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import Razorpay from 'razorpay';
 
 const url = process.env.REACT_APP_URL;
 
