@@ -78,10 +78,10 @@ const CheckoutPage = () => {
   }
   const confirmPayment = () => {
     payNow();
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 10000);
+    // setIsLoading(true);
+    // setTimeout(() => {
+    //   setIsLoading(false);
+    // }, 10000);
   }
 
 
