@@ -50,6 +50,7 @@ const SuccessPage = () => {
                     </div>
                 )}
                 <div className="success-component">
+                <img className='success-bg-img' src="bg-Special-phone.jpg" alt="" />
                     <div className="flying-lantern">
                         <img src="https://oriental-decor.com/wp-content/uploads/2023/10/2545-w-900x900.png" alt="Flying Lantern" />
                     </div>
@@ -59,22 +60,15 @@ const SuccessPage = () => {
                     <div className="success-up">
                         <img src="https://cdn2.iconfinder.com/data/icons/greenline/512/check-512.png" alt="Checkmark" />
                         <h2>Registered successfully</h2>
-                       <p>{orderId}</p>
-                        <p>Ticket will be sent to your number shortly</p>
+                        <p>Click the Button to View and Download the Ticket</p>
                     </div>
                     <div className="success-down">
+                       
                         <div className="success-btn-container">
                             <a className="button type--C" onClick={handleViewTicketClick}>
                                 <div className="button__line"></div>
                                 <div className="button__line"></div>
                                 <span className="button__text">View Ticket</span>
-                                <div className="button__drow1"></div>
-                                <div className="button__drow2"></div>
-                            </a>
-                            <a className="button type--C" href={imgSrc}>
-                                <div className="button__line"></div>
-                                <div className="button__line"></div>
-                                <span className="button__text">Download Ticket</span>
                                 <div className="button__drow1"></div>
                                 <div className="button__drow2"></div>
                             </a>

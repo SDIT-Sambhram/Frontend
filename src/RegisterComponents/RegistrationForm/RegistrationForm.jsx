@@ -99,7 +99,7 @@ const RegistrationForm = () => {
 
             <form action="" className='registration-form'>
                 <h2>ENTER YOUR DETAILS</h2>
-
+<p className='team-event-warning'><i className="fa-solid fa-circle-exclamation">&nbsp;&nbsp;</i>For team events, all team members must register individually.</p>
                 <input
                     type="text"
                     placeholder="Enter Your Name"
