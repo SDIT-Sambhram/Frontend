@@ -14,7 +14,7 @@ const SuccessPage = () => {
     
     let imgSrc = `https://sambhram-tickets-bucket.s3.ap-south-1.amazonaws.com/tickets/${participantId}/${orderId}.jpg`
 
-    const handleViewTicketClick = () => {
+    const handleViewTicketClick = () => { 
         setIsTicketOverlayVisible(true);
     };
     const handleCloseClick = () => {
@@ -63,11 +63,18 @@ const SuccessPage = () => {
                         <p>Ticket will be sent to your number shortly</p>
                     </div>
                     <div className="success-down">
-                        <div className="container">
+                        <div className="success-btn-container">
                             <a className="button type--C" onClick={handleViewTicketClick}>
                                 <div className="button__line"></div>
                                 <div className="button__line"></div>
                                 <span className="button__text">View Ticket</span>
+                                <div className="button__drow1"></div>
+                                <div className="button__drow2"></div>
+                            </a>
+                            <a className="button type--C" href={imgSrc}>
+                                <div className="button__line"></div>
+                                <div className="button__line"></div>
+                                <span className="button__text">Download Ticket</span>
                                 <div className="button__drow1"></div>
                                 <div className="button__drow2"></div>
                             </a>

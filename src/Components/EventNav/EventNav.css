@@ -6,7 +6,7 @@
    flex-direction: row;
    justify-content: center;
    top: 100px;
-   z-index: 10;
+   z-index: 15;
 }
 
 .event-nav{
