@@ -141,7 +141,7 @@ const Carousel = ({ slides, isPageBackground }) => {
 
   return (
     <div className="slide-div">
-      <h3>FEATURED EVENTS</h3>
+      <h2>FEATURED EVENTS</h2>
       <section className="slidesWrapper">
         <div className="slides">
 

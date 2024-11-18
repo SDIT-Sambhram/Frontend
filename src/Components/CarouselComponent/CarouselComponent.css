@@ -7,9 +7,11 @@
   margin-top: 125px;
 }
 
-.slide-div h3 {
-  font-size: 45px;
+.slide-div h2 {
   margin-bottom: 30px;
+  font-size: 45px;
+  color: rgb(211, 195, 195);
+  text-shadow: 1px 1px 1px black;
 }
 
 /* Slide content styles */
@@ -168,7 +170,7 @@
     position: relative;
     height: 430px;
   }
-  .slide-div h3 {
+  .slide-div h2 {
     font-size: 30px;
     margin-bottom: 25px;
   }
