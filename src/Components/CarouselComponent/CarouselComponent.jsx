@@ -194,53 +194,55 @@ Carousel.propTypes = {
 const slides = [
   {
     id: 1,
-    title: 'TACTICAL TAKEOVER',
+    title: 'Tactical Takeover',
     subtitle: '(BGMI)',
     image: '(BGMI).jpg',
   },
   {
     id: 2,
-    title: 'RUN RIOT',
-    subtitle: '(GULLY CRICKET)',
-    image: 'gullycricket.webp',
+    title: 'Run Riot',
+    subtitle: '(Gully Cricket)',
+    image: '(Gully Cricket).jpg',
   },
   {
     id: 3,
-    title: 'SAKURA SQUARE',
-    subtitle: '(LUDO)',
+    title: 'Sakura Square',
+    subtitle: '(Ludo)',
     image: '(Ludo).jpg',
   },
   {
     id: 4,
-    title: 'YAKSHA VISMAYA',
-    subtitle: '(YAKSHAGANA)',
+    title: 'Yaksha Vismaya',
+    subtitle: '(Yakshagana)',
     image: '(Yakshagana).jpg',
   },
   {
     id: 5,
-    title: 'HIKARI MATSURI',
-    subtitle: '(ANIME QUIZ)',
-    image: 'anime.png',
+    title: 'Hikari Matsuri',
+    subtitle: '(Anime Quiz)',
+    image: '(Anime Quiz).jpg',
   },
   {
     id: 6,
-    title: 'GLOW HUNT',
-    subtitle: '(TREASURE HUNT)',
-    image: 'treasurehunt.jpg',
+    title: 'Glow Hunt',
+    subtitle: '(Treasure Hunt)',
+    image: '(Treasure Hunt).jpg',
   },
   {
     id: 7,
-    title: 'EYES OF, CODE ON!',
-    subtitle: '(BLIND CODING)',
+    title: 'Eyes Of, Code On!',
+    subtitle: '(Blind Coding)',
     image: '(Blind Coding).jpg',
   },
   {
     id: 8,
-    title: 'FLAUNT AND FLOW',
-    subtitle: '(FASHION WALK)',
-    image: 'fashionwalk.webp',
+    title: 'Flaunt And Flow',
+    subtitle: '(Fashion Walk)',
+    image: '(Fashion Walk).jpg',
   },
 ];
+
+
 
 const CarouselComponent = () => <Carousel slides={slides} isPageBackground />;
 
