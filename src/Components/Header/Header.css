@@ -138,6 +138,11 @@
     color: #ffdd00;
     animation: bounce 2s infinite;
 }
+
+.down-button:focus {
+    outline: none;
+}
+
 .down-button p{
     padding-bottom: 5px;
 }
@@ -191,6 +196,8 @@
     margin-bottom: 0;
     transform: scale(0.95);
 }
+
+
 
 .down-button {
     height: 20px;
