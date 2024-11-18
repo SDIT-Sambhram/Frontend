@@ -63,6 +63,9 @@
 }
 
 .ticket-heading {
+    width: 65%;
+    display: flex;
+    justify-content: center;
     /* background-image: url("https://www.shutterstock.com/image-vector/abstract-circle-lines-wave-gold-600nw-2338008067.jpg"); */
     margin-bottom: 30px;
     font-size: 45px;
