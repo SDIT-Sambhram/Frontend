@@ -55,7 +55,12 @@ const CheckoutPage = () => {
   };
 
   const validateForm = () => {
-    if (!data.name || !data.usn || !data.college || !data.mobile) {
+
+    if (data.college === "Other") {
+      data.college = data.Othercollege
+    }
+
+    if (!data.name || !data.usn || !data.college || !data.mobile || data.college == "Other") {
       toast.error("Please fill out all fields.");
       return;
     }
@@ -88,7 +93,7 @@ const CheckoutPage = () => {
         <i className="fa-solid fa-circle-chevron-left fa-2xl" style={{ color: "#d53810" }}></i>
       </div>
       <div className="checkout-container">
-
+        <img className='checkout-container-img' src="Bg-reg.jpg" alt="" />
         <div className="steps">
           <div className="step">
             <div className={`circle ${step >= 1 ? 'active' : ''}`}>1</div>
@@ -113,7 +118,7 @@ const CheckoutPage = () => {
         confirmSection &&
         <div className="confirm-div">
           <div className="close-confirm">
-          <i onClick={setConfirm} className="fa-solid fa-xmark"></i>
+            <i onClick={setConfirm} className="fa-solid fa-xmark"></i>
           </div>
           <h3>Confirm payment</h3>
           <div className="confirm-events">

@@ -19,7 +19,9 @@ export const ContextProvider = ({ children }) => {
         usn: "",
         college: "",
         mobile: "",
+        Othercollege:""
     });
+
     const [selectedEvent, setSelectedEvent] = useState(() => {
         const savedEvents = localStorage.getItem("selectedEvent");
         return savedEvents ? JSON.parse(savedEvents) : [];
@@ -98,6 +100,7 @@ export const ContextProvider = ({ children }) => {
         }
     };
     const sendDatatoBackend = async () => {
+
         const dataSet = {
             name: data.name,
             usn: data.usn,
@@ -106,7 +109,8 @@ export const ContextProvider = ({ children }) => {
             amount: amount,
             registrations: selectedEvent.map(id => ({ event_id: id }))
         };
-
+        console.log("data sending to backend:",dataSet);
+        
         try {
             const res = await axios.post(`${url}/api/v1/auth/payment`, dataSet);
             console.log("success bro ", res.data);

@@ -1,13 +1,13 @@
 .items-section {
   padding: 20px;
-  background-color: #ffffffe1;
+  background-color: #ffffff;
   height: 100vh;
 }
 
 .coupon-current {
   width: 100%;
   display: flex;
-  justify-self: center
+  justify-self: center;
 }
 
 .coupon-current p {

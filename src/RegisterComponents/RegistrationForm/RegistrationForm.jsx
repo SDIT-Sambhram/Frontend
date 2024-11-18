@@ -4,7 +4,7 @@ import { useContext } from 'react';
 
 const RegistrationForm = () => {
     const collegeNames = [
-        "A.J. Institute of Engineering and Technology (AJIET)",
+        "Other",
         "ACS College of Engineering",
         "Acharya's N R V School of Architecture",
         "Advanced Management College",
@@ -82,7 +82,7 @@ const RegistrationForm = () => {
         "Vemana Institute of Technology",
         "Vivekananda College of Engineering & Technology",
         "Vivekananda Polytechnic (VC Polytechnic)",
-        "Yenepoya Institute of Technology (YIT)"
+        "Yenepoya Institute of Technology (YIT)",
     ];
 
 
@@ -92,6 +92,7 @@ const RegistrationForm = () => {
         const value = event.target.value;
         setData(data => ({ ...data, [name]: value }))
     }
+
 
     return (
         <div className="registration-form-div">
@@ -126,6 +127,18 @@ const RegistrationForm = () => {
                         <option key={index} value={college}>{college}</option>
                     ))}
                 </select>
+                {
+                    data.college=="Other"?<input
+                    type="text"
+                    placeholder="Enter College Name"
+                    name="Othercollege"
+                    onChange={onChangeHandler}
+                    value={data.Othercollege}
+                    required
+                />:<>
+                </>
+                }
+                
                 <input
                     type="number"
                     placeholder="Enter Your Mobile Number"
@@ -134,11 +147,8 @@ const RegistrationForm = () => {
                     value={data.mobile}
                     required
                 />
-
-                {/* <div><i className="fa-solid fa-circle-info fa-lg" style={{ color: "#ff0000" }}></i>
-                <p>OTP will be sent to your registered phone number for verification.</p></div> */}
             </form>
-            {/* <button className="continue-button" onClick={sendDatatoBackend}>send data</button> */}
+           
 
         </div>
     )
