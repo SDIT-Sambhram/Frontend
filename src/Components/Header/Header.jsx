@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useCallback } from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
 import Countdown from '../Countdown/Countdown.jsx';
@@ -53,12 +53,10 @@ const Header = () => {
                     <div className="middle">
                         <Countdown targetDate="2024-12-06" />
                     </div>
-                    <div onClick={scrollToSpotlight} className="down-button">
-                        <i
-                            className="fa-solid fa-angle-down fa-bounce fa-2xl"
-                            style={{ color: '#ffffff' }}
-                        ></i>
-                    </div>
+                    <button onClick={scrollToSpotlight} className="down-button">
+                        <p>click here</p>
+                        <i className="fa-duotone fa-solid fa-angles-down"></i>
+                    </button>
                 </div>
             </div>
         </div>
