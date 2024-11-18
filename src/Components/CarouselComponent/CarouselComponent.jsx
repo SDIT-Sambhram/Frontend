@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import PropTypes from 'prop-types';
 import './CarouselComponent.css';
+import { Link } from 'react-router-dom';
 
 function useTilt(animationDuration = '150ms') {
   const ref = useRef(null);
@@ -83,6 +84,7 @@ const Slide = ({ image, title, subtitle, description, offset }) => {
         '--dir': offset === 0 ? 0 : offset > 0 ? 1 : -1,
       }}
     >
+      <Link to='/events'>
       <div
         className="slideContent"
         style={{
@@ -107,6 +109,8 @@ const Slide = ({ image, title, subtitle, description, offset }) => {
           )}
         </div>
       </div>
+      </Link>
+      
     </div>
   );
 };
@@ -127,14 +131,14 @@ const Carousel = ({ slides, isPageBackground }) => {
     setSlideIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   }, [slides.length]);
 
-  // const handleNextSlide = () => {
-  //   setSlideIndex((prev) => (prev + 1) % slides.length);
-  // };
+  const handleNextSlide = () => {
+    setSlideIndex((prev) => (prev + 1) % slides.length);
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
       handlePrevSlide();
-    }, 3000); // Change slide every 3 seconds
+    }, 4000); // Change slide every 3 seconds
 
     return () => clearInterval(interval); // Cleanup interval on component unmount
   }, [handlePrevSlide]);
@@ -144,7 +148,9 @@ const Carousel = ({ slides, isPageBackground }) => {
       <h2>FEATURED EVENTS</h2>
       <section className="slidesWrapper">
         <div className="slides">
-
+        <button className="prevSlideBtn" onClick={handleNextSlide}>
+          <i className="fas fa-chevron-left" />
+        </button>
           {[...slides, ...slides, ...slides].map((slide, i) => {
             let offset = slides.length + (slideIndex - i);
 
@@ -166,6 +172,10 @@ const Carousel = ({ slides, isPageBackground }) => {
               );
             }
           })}
+          
+          <button className="nextSlideBtn" onClick={handlePrevSlide}>
+          <i className="fas fa-chevron-right" />
+        </button>
         </div>
       </section>
     </div>
@@ -204,7 +214,7 @@ const slides = [
     id: 4,
     title: 'YAKSHA VISMAYA',
     subtitle: '(YAKSHAGANA)',
-    image: 'yakshagana.jpg',
+    image: '(Yakshagana).jpg',
   },
   {
     id: 5,
