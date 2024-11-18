@@ -9,6 +9,8 @@
 .main-container h2{
     margin-bottom: 30px;
     font-size: 45px;
+    color: rgb(211, 195, 195);
+    text-shadow: 1px 1px 1px black;
 }
 
 .main-container h3{
@@ -69,9 +71,6 @@
     width: 108%;
     transform: skew(19deg, -9deg);
   }
-  
-
-  
   
   .date-time {
     display: flex;
