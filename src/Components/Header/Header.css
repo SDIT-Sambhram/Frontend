@@ -4,6 +4,12 @@
     width: 100%;
     height: 88vh;
     background-color: rgb(0, 16, 27);
+    transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.header.hidden {
+    height: 0;
+    opacity: 1;
 }
 
 .invite-container {
@@ -33,19 +39,20 @@
 .head-video {
     position: relative;
     object-fit: cover;
-    width: 100%
+    width: 100%;
 }
 
 .header-overlay {
     position: absolute;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.455)
+    background-color: rgba(0, 0, 0, 0.455);
 }
 
-.main-contents{
+.main-contents {
     height: 60%;
 }
+
 .content {
     width: 100%;
     justify-content: flex-start;
@@ -86,15 +93,14 @@
     display: flex;
 }
 
-.btn-width{
+.btn-width {
     width: 100%;
     height: auto;
     display: flex;
     gap: 10px;
 }
 
-
-.glowing-btn,.explore-btn {
+.glowing-btn, .explore-btn {
     width: 130px;
     height: 40px;
     background: #ffdd00; /* Replace with actual value of $color-primary */
@@ -108,24 +114,26 @@
     position: relative;
     text-transform: uppercase;
 }
-.glowing-btn{
+
+.glowing-btn {
     animation: glow 1s ease-in-out infinite;
 }
-.glowing-btn:hover{
+
+.glowing-btn:hover {
     animation: none;
 }
 
-.explore-btn{
+.explore-btn {
     background: none;
     border: 1.5px solid #ffdd00;
     color: white;
 }
-.down-button{
+
+.down-button {
     width: 100%;
     display: flex;
     justify-content: center;
 }
-
 
 @keyframes scale {
     0% {
@@ -133,7 +141,7 @@
     }
     50% {
         transform: scale(1.2);
-        }
+    }
     100% {
         transform: scale(1.0);
     }
@@ -141,13 +149,12 @@
 
 @keyframes glow {
     0% {
-        background: #ffdd00; 
-        transform: scale(1.0);/* Replace with actual value of $color-primary */
+        background: #ffdd00;
+        transform: scale(1.0); /* Replace with actual value of $color-primary */
     }
     50% {
-        background: #ffdd00; 
-        transform: scale(0.95);/* Replace with actual value of $color-primary */
-
+        background: #ffdd00;
+        transform: scale(0.95); /* Replace with actual value of $color-primary */
     }
     100% {
         background: #ffdd00;
@@ -156,7 +163,7 @@
 }
 
 .middle {
-    width: 100%;    
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -164,81 +171,68 @@
     margin-bottom: 0;
     transform: scale(0.95);
 }
-.down-button{
+
+.down-button {
     height: 20px;
 }
 
-.th{
-    font-size: 14px;
-    margin-left: 2px;
-    margin-right: 4px;
-
-    
-}
-
-
-
-@media (max-width:1200px) {
+@media (max-width: 1200px) {
     .title {
         font-size: 80px;
     }
 }
 
 @media (max-width: 700px) {
-    .main-contents{
+    .main-contents {
         margin-top: 50px;
     }
     .invite-container {
         height: 100svh;
     }
-    .header-overlay{
+    .header-overlay {
         height: 100svh;
     }
     .title-sd {
-      font-size: 23px;
-      margin-bottom: -10px;
+        font-size: 23px;
+        margin-bottom: -10px;
     }
     .title {
         font-size: 43px;
     }
-
     .description {
         font-size: 17px;
         width: 100%;
         margin-top: -5px;
     }
-
     .date {
         font-size: 20px;
     }
-
     .header {
         height: 90vh;
     }
-    .down-button{
+    .down-button {
         height: 20px;
         font-size: 13px;
-
     }
-    .content{
+    .content {
         margin-top: 35%;
     }
-    .middle{
+    .middle {
         margin-bottom: 50px;
         transform: scale(0.95);
     }
-    .down-button{
+    .down-button {
         margin-bottom: 130px;
     }
-    .glowing-btn,.explore-btn {
+    .glowing-btn, .explore-btn {
         width: 110px;
         height: 30px;
         font-size: 14px;
-
     }
 }
+
 @media (max-height: 700px) {
-    .middle{
+    .middle {
         margin-top: 30px;
         margin-bottom: 20px;
     }
@@ -249,4 +243,3 @@
         font-size: 39px;
     }
 }
-

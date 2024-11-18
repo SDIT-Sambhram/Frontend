@@ -1,53 +1,21 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
 import Countdown from '../Countdown/Countdown.jsx';
 
 const Header = () => {
-    const [isAutoScrolling, setIsAutoScrolling] = useState(false);
-    const lastScrollY = useRef(0);
-
-    const scrollToSpotlight = () => {
-        setIsAutoScrolling(true);
+    const scrollToSpotlight = useCallback(() => {
         window.scrollTo({
-            top: 800,
+            top: window.innerHeight + 10,
             behavior: 'smooth',
         });
-
-        // Reset auto-scrolling after 1 second (smooth scroll time)
-        setTimeout(() => {
-            setIsAutoScrolling(false);
-        }, 1000);
-    };
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (isAutoScrolling) return; // Prevent handling while auto-scrolling
-
-            const currentScrollY = window.scrollY;
-
-            // Check if scrolling down and within the header section
-            if (currentScrollY > 20 && currentScrollY < 700 && currentScrollY > lastScrollY.current) {
-                scrollToSpotlight();
-            }
-
-            // Update last scroll position
-            lastScrollY.current = currentScrollY;
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, [isAutoScrolling]);
+    }, []);
 
     return (
         <>
-            <div className="invite-container">
-            
 
-                
+<div>
+<div className="invite-container">  
                 <video
                     className="head-video"
                     autoPlay
@@ -93,6 +61,8 @@ const Header = () => {
                     </div>
                 </div>
             </div>
+        </div>
+            
         </>
     );
 };
