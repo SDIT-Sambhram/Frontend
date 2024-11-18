@@ -18,7 +18,7 @@ const Home = () => {
     return (
         <>
             <div className="home">
-                <div className='bg-anim'>
+                {/* <div className='bg-anim'>
                 <div className='light x1'></div>
                 <div className='light x2'></div>
                 <div className='light x3'></div>
@@ -28,7 +28,7 @@ const Home = () => {
                 <div className='light x7'></div>
                 <div className='light x8'></div>
                 <div className='light x9'></div>
-                </div>
+                </div> */}
                 
                 <div ref={headerRef} className="header-container">
                     <Header />
