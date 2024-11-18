@@ -21,6 +21,7 @@ import { ContextProvider } from './Contexts/StoreContext.jsx';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Contact from './Pages/Contact/Contact.jsx';
 
 
 function App() {
@@ -61,6 +62,7 @@ function App() {
               <Route path="/success" element={<SuccessPage />} />
               <Route path='/about' element={<About/>}/>
               <Route path='/verify' element={<VerifyTicket/>}/>
+              <Route path='/contact' element={<Contact/>}/>
               <Route path="*" element={<NotFound />} />
 
 
