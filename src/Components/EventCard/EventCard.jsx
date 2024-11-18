@@ -20,7 +20,7 @@ const EventCard = () => {
                         >
                             <div className="front">
                                 <img src={`/${event.eventSubName}.jpg`} alt="" />
-
+ 
 
                                 <div className="event-card-content">
                                     <p>{event.eventName}</p>

@@ -14,7 +14,7 @@ const Event = () => {
 
     useEffect(() => {
         let image_bg = isMobile ? `bg-${eventType}-phone.jpg` : `bg-${eventType}.jpg`;
-       setBgImage(image_bg)
+       setBgImage(image_bg) 
     }, [eventType]);
 
     const isRegisterButtonVisible = selectedEvent.length > 0;
@@ -24,6 +24,9 @@ const Event = () => {
             <EventNav />
             <div className="bg-image-events">
                 <img key={bgImage} src={bgImage} alt="Event Background" />
+                 <div className="bg-event-layer">
+                    
+                 </div>
             </div>
             <div className="event-container">
                 <h1 className="event-type-heading">{eventType}</h1>
