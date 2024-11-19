@@ -7,6 +7,6 @@ const OurTeam = () => {
         <TeamComponent/>
     </div>
   )
-}
+} 
 
 export default OurTeam

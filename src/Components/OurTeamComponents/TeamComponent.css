@@ -11,7 +11,7 @@
   --fluid-max-size: 18;
   --fluid-min-ratio: 1.2;
   --fluid-max-ratio: 1.25;
-}
+} 
 
 @keyframes fadeInDown {
   from {
@@ -503,7 +503,6 @@
     grid-column: span 1;
   }
 }
-
 @media (min-width: 769px) and (max-width: 1024px) {
   .team-members {
     grid-template-columns: repeat(3, 1fr);
