@@ -4,7 +4,6 @@ import { useContext } from 'react';
 
 const RegistrationForm = () => {
     const collegeNames = [
-        "Other",
         "ACS College of Engineering",
         "Acharya's N R V School of Architecture",
         "Advanced Management College",
@@ -83,6 +82,7 @@ const RegistrationForm = () => {
         "Vivekananda College of Engineering & Technology",
         "Vivekananda Polytechnic (VC Polytechnic)",
         "Yenepoya Institute of Technology (YIT)",
+        "Other"
     ];
 
 
@@ -98,8 +98,9 @@ const RegistrationForm = () => {
         <div className="registration-form-div">
 
             <form action="" className='registration-form'>
+                
                 <h2>ENTER YOUR DETAILS</h2>
-<p className='team-event-warning'><i className="fa-solid fa-circle-exclamation">&nbsp;&nbsp;</i>For team events, all team members must register individually.</p>
+                <p className='team-event-warning'><i className="fa-solid fa-circle-exclamation">&nbsp;&nbsp;</i>For team events, all team members must register individually.</p>
                 <input
                     type="text"
                     placeholder="Enter Your Name"
@@ -128,17 +129,17 @@ const RegistrationForm = () => {
                     ))}
                 </select>
                 {
-                    data.college=="Other"?<input
-                    type="text"
-                    placeholder="Enter College Name"
-                    name="Othercollege"
-                    onChange={onChangeHandler}
-                    value={data.Othercollege}
-                    required
-                />:<>
-                </>
+                    data.college == "Other" ? <input
+                        type="text"
+                        placeholder="Enter College Name"
+                        name="Othercollege"
+                        onChange={onChangeHandler}
+                        value={data.Othercollege}
+                        required
+                    /> : <>
+                    </>
                 }
-                
+
                 <input
                     type="number"
                     placeholder="Enter Your Mobile Number"
@@ -148,7 +149,7 @@ const RegistrationForm = () => {
                     required
                 />
             </form>
-           
+
 
         </div>
     )

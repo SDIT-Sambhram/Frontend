@@ -77,7 +77,7 @@ const CheckoutPage = () => {
     setConfirmSection(!confirmSection);
   }
 
-  
+
   const confirmPayment = () => {
     payNow();
     setIsLoading(true);
@@ -91,9 +91,9 @@ const CheckoutPage = () => {
 
   return (
     <div className="checkout-flex">
-      <div className="back" onClick={handleBack}>
+      {/* <div className="back" onClick={handleBack}>
         <i className="fa-solid fa-circle-chevron-left fa-2xl" style={{ color: "#d53810" }}></i>
-      </div>
+      </div> */}
       <div className="checkout-container">
         <img className='checkout-container-img' src="Bg-reg.jpg" alt="" />
         <div className="steps">
@@ -125,7 +125,7 @@ const CheckoutPage = () => {
           <h3>Confirm payment</h3>
 
           <div className="confirm-price-section">
-            <h5>Selected events</h5>
+            <h4>Selected events</h4>
             {items.map((item, index) => (
              <div className="confirm-price" key={index}>
              <p>{item.eventName}</p> <p><i className="fa-solid fa-indian-rupee-sign">&nbsp;</i>100</p>
@@ -134,7 +134,7 @@ const CheckoutPage = () => {
           </div>
 
           <div className="confirm-price-section">
-            <h5>Price</h5>
+            <h4>Price</h4>
             <div className="confirm-price">
               <p>Total amount</p> <p><i className="fa-solid fa-indian-rupee-sign"></i>&nbsp;{totalAmount}</p>
             </div>
@@ -159,7 +159,9 @@ const CheckoutPage = () => {
 
       <div className="continue-panel">
         <div className="terms">
-          <i onClick={() => setSelectedEvent(() => [])} className="fa-solid fa-trash" style={{ color: "#520f0f" }}></i>
+        <i onClick={handleBack} className="fa-solid fa-arrow-left fa-lg" style={{ color: "#ffffff" }}></i>
+          {/* <i onClick={() => setSelectedEvent(() => [])} className="fa-solid fa-trash" style={{ color: "#520f0f" }}></i> */}
+         
         </div>
 
         <div className="continue-section">
