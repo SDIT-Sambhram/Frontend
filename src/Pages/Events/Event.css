@@ -29,8 +29,7 @@
     /* text-shadow: 1px 1px 2px rgb(255, 7, 7,0.6); */
 }
 
-.event-loading{
-    width: 100vh;
+.event-loading{ 
     height: 40vh;
     display: flex;
     align-items: center;
@@ -112,6 +111,7 @@
     .event-card-container {
         grid-template-columns: auto auto auto;
         padding: 0;
+    
     }
 
     .bg-image-events img {
@@ -123,6 +123,7 @@
     .event-card-container {
         grid-template-columns: auto auto;
         padding: 0;
+        width: 100%;
     }
 
     .event-container {
