@@ -129,7 +129,7 @@ const AboutComponent = () => {
               variants={imageVariants}
               whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
             >
-              <img src="src\Components\AboutComponent\images\RAM_3539.JPG" alt="College Building" />
+              <img src="src\Components\AboutComponent\images\collage.jpg" alt="College Building" />
             </motion.div>
           </div>
         </motion.div>
@@ -145,7 +145,7 @@ const AboutComponent = () => {
               variants={imageVariants}
               whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
             >
-              <img src="src\Components\AboutComponent\images\RAM_0807.JPG" alt="Campus Life" />
+              <img src="src\Components\AboutComponent\images\canteen.JPG" alt="Campus Life" />
             </motion.div>
             <div className="description-text">
               <p>Our institution stands as a beacon of academic brilliance in the field of Engineering, Management and Computer applications. Established with a vision to nurture future innovators and problem solvers, the institute has consistently upheld its commitment to excellence since its inception.</p>

@@ -1,76 +1,85 @@
 import React, { useEffect, useRef } from 'react';
 import './TeamComponent.css';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import abhishekImage from './images//abhishek.jpg';
+import abdhullaImage from './images/1000324130.jpg';
+import mukeshImage from './images/mukesh.jpg';
+import adithyaImage from './images/adithya.jpg';
+import fahizImage from './images/fahiz.jpg';
+import shanifImage from './images/shanif.jpg';
+import devdarshImage from './images/devdarsh.jpg';
+import surajImage from './images/suraj.jpg';
+import abhinImage from './images/ABHIN_M_4SH21CS007.jpg';
 
 const teamMembers = {
   team: [
     {
-      name: "Team Lead Name",
-      role: "Technical Lead",
-      image: "https://via.placeholder.com/150",
+      name: "Abhishek Kulal",
+      role: "Website Lead",
+      image: abhishekImage, // Updated image reference
       github: "https://github.com/lead",
       linkedin: "https://linkedin.com/in/lead",
       isHead: true
     },
     {
-      name: "Co-Lead Name",
-      role: "Technical Co-Lead",
-      image: "https://via.placeholder.com/150",
+      name: "Abdhulla Shafaz KU",
+      role: "Website Co-Lead",
+      image: abdhullaImage, // Updated image reference
       github: "https://github.com/colead",
       linkedin: "https://linkedin.com/in/colead",
       isCoHead: true
     },
     {
-      name: "Developer 1",
+      name: "Abhin M",
       role: "Frontend Developer",
-      image: "https://via.placeholder.com/150",
+      image: abhinImage,
       github: "https://github.com/dev1",
       linkedin: "https://linkedin.com/in/dev1"
     },
     {
-      name: "Developer 2",
+      name: "Dhanya Kamath",
       role: "Backend Developer",
       image: "https://via.placeholder.com/150",
       github: "https://github.com/dev2",
       linkedin: "https://linkedin.com/in/dev2"
     },
     {
-      name: "Developer 3",
+      name: "K Mukesh",
       role: "Full Stack Developer",
-      image: "https://via.placeholder.com/150",
+      image: mukeshImage, // Updated image reference
       github: "https://github.com/dev3",
       linkedin: "https://linkedin.com/in/dev3"
     },
     {
-      name: "Developer 4",
+      name: "Suraj MP",
       role: "UI/UX Developer",
-      image: "https://via.placeholder.com/150",
+      image: surajImage,
       github: "https://github.com/dev4",
       linkedin: "https://linkedin.com/in/dev4"
     },
     {
-      name: "Developer 5",
+      name: "Isha",
       role: "Database Engineer",
       image: "https://via.placeholder.com/150",
       github: "https://github.com/dev5",
       linkedin: "https://linkedin.com/in/dev5"
     },
     {
-      name: "Developer 6",
+      name: "Cheeranjeevi",
       role: "API Developer",
       image: "https://via.placeholder.com/150",
       github: "https://github.com/dev6",
       linkedin: "https://linkedin.com/in/dev6"
     },
     {
-      name: "Developer 9",
+      name: "Appuraj",
       role: "Cloud Engineer",
       image: "https://via.placeholder.com/150",
       github: "https://github.com/dev9",
       linkedin: "https://linkedin.com/in/dev9"
     },
     {
-      name: "Developer 10",
+      name: "Shreyas",
       role: "Quality Assurance Engineer",
       image: "https://via.placeholder.com/150",
       github: "https://github.com/dev10",
@@ -79,19 +88,66 @@ const teamMembers = {
   ]
 };
 
+const specialContributors = {
+  team: [
+    {
+      name: "Fahiz",
+      role: "Technical Support",
+      image: fahizImage, // Updated image reference
+      github: "https://github.com/fahiz",
+      linkedin: "https://linkedin.com/in/fahiz"
+    },
+    {
+      name: "Adithya",
+      role: "Design Contributor",
+      image: adithyaImage, // Updated image reference
+      github: "https://github.com/adithya",
+      linkedin: "https://linkedin.com/in/adithya"
+    },
+    {
+      name: "Shanif",
+      role: "Development Support",
+      image: shanifImage, // Updated image reference
+      github: "https://github.com/shanif",
+      linkedin: "https://linkedin.com/in/shanif"
+    },
+    {
+      name: "Devdarsh",
+      role: "Technical Advisor",
+      image: devdarshImage, // Updated image reference
+      github: "https://github.com/devdarsh",
+      linkedin: "https://linkedin.com/in/devdarsh"
+    },
+    {
+      name: "Yadhukrishna",
+      role: "Development Support",
+      image: "https://via.placeholder.com/150",
+      github: "https://github.com/yadhukrishna",
+      linkedin: "https://linkedin.com/in/yadhukrishna"
+    },
+    {
+      name: "Sanjana",
+      role: "Development Support",
+      image: "https://via.placeholder.com/150",
+      github: "https://github.com/yadhukrishna",
+      linkedin: "https://linkedin.com/in/yadhukrishna"
+    }
+  ]
+};
+
 const HeadCard = () => {
   return (
-    <div className="head-card">
-      <div className="head-image">
-        <img src="https://via.placeholder.com/200" alt="Team Head" />
+    <div className="sambhram-head-card">
+      <div className="sambhram-head-image">
+        <img src="src\Components\OurTeamComponents\images\rohan.jpg" alt="Team Head" />
       </div>
-      <div className="head-info">
-        <h2>Team Lead Name</h2>
-        <p className="head-role">Project Lead & Technical Director</p>
-        <p className="head-description">
+      <div className="sambhram-head-info">
+        <h2>Rohan Shetty</h2>
+        <p className="sambhram-head-role">Sambhram Student Coordinator</p>
+        <p className="sambhram-head-description">
           Leading our talented team with vision and expertise, driving innovation and excellence in every project.
         </p>
-        <div className="social-links head-social">
+        <div className="sambhram-social-links sambhram-head-social">
           <a href="https://github.com/teamlead" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
           <a href="https://linkedin.com/in/teamlead" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
         </div>
@@ -149,6 +205,7 @@ const useIntersectionObserver = (options) => {
   return elementRef;
 };
 
+
 const TeamMemberCard = ({ member }) => {
   const cardRef = useIntersectionObserver({
     threshold: 0.2,
@@ -156,17 +213,17 @@ const TeamMemberCard = ({ member }) => {
   });
   const [imageLoaded, setImageLoaded] = React.useState(false);
 
-  const cardClassName = `team-member-card ${
+  const cardClassName = `sambhram-team-member-card ${
     member.isHead ? 'head-member' : member.isCoHead ? 'co-head-member' : ''
   } ${imageLoaded ? 'loaded' : ''}`;
 
   return (
     <div className={cardClassName} ref={cardRef}>
-      <div className="image-container">
+      <div className="sambhram-image-container">
         <img 
           src={member.image} 
           alt={member.name} 
-          className="member-image"
+          className="sambhram-member-image" // Updated className
           onLoad={() => setImageLoaded(true)}
           onError={(e) => {
             e.target.src = 'https://via.placeholder.com/150?text=Member';
@@ -177,7 +234,7 @@ const TeamMemberCard = ({ member }) => {
         {!imageLoaded && <div className="image-placeholder" />}
       </div>
         <h3>{member.name}</h3>
-        <p className="member-role">{member.role}</p>
+        <p className="sambhram-member-role">{member.role}</p>
         {(member.isHead || member.isCoHead) && (
           <>
             <p className="leader-description">
@@ -186,13 +243,13 @@ const TeamMemberCard = ({ member }) => {
                 "Supporting the team's success through technical guidance and collaborative leadership, ensuring project excellence."
               }
             </p>
-            <div className="leader-stats">
+            {/* <div className="leader-stats">
               <span>Experience: {member.isHead ? "10+ years" : "8+ years"}</span>
               <span>Projects: {member.isHead ? "50+" : "40+"}</span>
-            </div>
+            </div> */}
           </>
         )}
-        <div className="social-links">
+        <div className="sambhram-social-links">
             <a href={member.github} target="_blank" rel="noopener noreferrer"><FaGithub /></a>
             <a href={member.linkedin} target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
         </div>
@@ -207,9 +264,9 @@ const TeamSection = ({ title, members }) => {
   });
 
   return (
-    <div className="team-section" ref={sectionRef}>
+    <div className="sambhram-team-section" ref={sectionRef}>
       <h2 data-text={title}>{title}</h2>
-      <div className="team-members">
+      <div className="sambhram-team-members">
         {members.map((member, index) => (
           <TeamMemberCard key={index} member={member} />
         ))}
@@ -221,10 +278,11 @@ const TeamSection = ({ title, members }) => {
 const TeamComponent = () => {
     return (
       <TeamErrorBoundary>
-        <div className="team-container">
+        <div className="sambhram-team-container">
             <h1>Our Team</h1>
             <HeadCard />
             <TeamSection title="Website Team" members={teamMembers.team} />
+            <TeamSection title="Special Contributors" members={specialContributors.team} />
         </div>
       </TeamErrorBoundary>
     );
