@@ -17,27 +17,19 @@ import TopButton from './Components/TopButton/TopButton.jsx'
 
 import ScrollToTop from './Components/ScrolltoTop.jsx';
 
-
 import { ContextProvider } from './Contexts/StoreContext.jsx';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Contact from './Pages/Contact/Contact.jsx';
 
-
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    
     const handleLoad = () => setIsLoading(false);
 
-    if (document.readyState === 'complete') {
-      setIsLoading(false);
-    } else {
-      window.addEventListener('load', handleLoad);
-    }
-
+    window.addEventListener('load', handleLoad);
     const timer = setTimeout(() => setIsLoading(false), 2000);
 
     return () => {
@@ -66,15 +58,11 @@ function App() {
               <Route path='/verify' element={<VerifyTicket/>}/>
               <Route path='/contact' element={<Contact/>}/>
               <Route path="*" element={<NotFound />} />
-
-
             </Routes>
 
             <TopButton />
           </div>
           <Footer />
-
-
         </>
       )}
     </ContextProvider>
