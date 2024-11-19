@@ -10,6 +10,7 @@ import SuccessPage from './Pages/SuccessPage/SuccessPage.jsx'
 import About from './Pages/About/About.jsx';
 import VerifyTicket from './Pages/VerifyTicket/VerifyTicket.jsx';
 import NotFound from './Pages/NotFound/NotFound';
+import OurTeam from './Pages/OurTeam/OurTeam.jsx';
 
 import Footer from './Components/Footer/Footer.jsx'
 import TopButton from './Components/TopButton/TopButton.jsx'
@@ -61,6 +62,7 @@ function App() {
               <Route path="/events" element={<Event />} />
               <Route path="/success" element={<SuccessPage />} />
               <Route path='/about' element={<About/>}/>
+              <Route path='/team' element={<OurTeam/>}/>
               <Route path='/verify' element={<VerifyTicket/>}/>
               <Route path='/contact' element={<Contact/>}/>
               <Route path="*" element={<NotFound />} />
