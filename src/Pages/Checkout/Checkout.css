@@ -50,6 +50,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 12px;
   color: rgba(255, 255, 255, 0.256);
 }
 
@@ -128,11 +129,11 @@
   top: 30%;
   min-height: 350px;
   width: 350px;
-  background-color: rgba(61, 1, 1, 0.39);
+  background-color: rgba(31, 1, 1, 0.601);
   backdrop-filter: blur(15px);
   padding: 10px;
   display: flex;
-  color: rgba(255, 255, 255, 0.212);
+  color: rgba(255, 255, 255, 0.35);
   flex-direction: column;
   justify-content: space-around;
   border-radius: 10px;
