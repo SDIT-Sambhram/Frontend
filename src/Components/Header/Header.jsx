@@ -40,7 +40,7 @@ const Header = () => {
                         <p className="description">
                             National Level Technical & Cultural Fest.
                         </p>
-                        <p className="date">On 6 <p className='th'>th</p> & 7 <p className='th'>th</p> December 2024</p>
+                        <p className="date">On 6 <p className='th'> th</p> &  7 <p className='th'>th</p> December 2024</p>
 
                         <div className='btn-width'>
                             <Link to='/about'><button className='explore-btn'>Explore</button></Link>
