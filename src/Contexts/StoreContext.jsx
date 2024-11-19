@@ -135,7 +135,7 @@ export const ContextProvider = ({ children }) => {
 
             // Open Razorpay Checkout with dynamic order details
             const options = {
-                key: import.meta.REACT_APP_RAZORPAY_ID, // Your Razorpay Key ID
+                key: process.env.REACT_APP_RAZORPAY_ID, // Your Razorpay Key ID
                 amount: payLoad.amount, // Amount from backend response (should be in subunits, e.g., paise for INR)
                 currency: payLoad.currency,
                 name: "SHREE DEVI SAMBHRAM",
