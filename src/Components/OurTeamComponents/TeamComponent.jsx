@@ -10,6 +10,7 @@ import shanifImage from './images/shanif.jpg';
 import devdarshImage from './images/devdarsh.jpg';
 import surajImage from './images/suraj.jpg';
 import abhinImage from './images/ABHIN_M_4SH21CS007.jpg';
+import rohanImage from './images/rohan.jpg';
 
 const teamMembers = {
   team: [
@@ -139,7 +140,7 @@ const HeadCard = () => {
   return (
     <div className="sambhram-head-card">
       <div className="sambhram-head-image">
-        <img src="src\Components\OurTeamComponents\images\rohan.jpg" alt="Team Head" />
+        <img src={rohanImage} alt="Team Head" />
       </div>
       <div className="sambhram-head-info">
         <h2>Rohan Shetty</h2>
