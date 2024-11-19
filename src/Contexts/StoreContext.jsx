@@ -169,7 +169,7 @@ export const ContextProvider = ({ children }) => {
             orderId: paymentDetails.orderId,
             isSuccess: true
         });
-        
+
         setSelectedEvent([]);
         navigate('/success', {
             state: {
@@ -181,7 +181,7 @@ export const ContextProvider = ({ children }) => {
 
     const handlePaymentError = (error) => {
         console.error("Payment failed:", error);
-        toast.error(error.error?.description || 'Payment failed');
+        toast.error(error.error?.response.data.message || 'Payment failed');
         setPaymentStatus(prev => ({ ...prev, isSuccess: false }));
     };
 
@@ -230,7 +230,7 @@ export const ContextProvider = ({ children }) => {
             
         } catch (error) {
             console.error("Payment initialization failed:", error);
-            toast.error(error.message || 'Failed to initialize payment');
+            toast.error(error.response.data.message || 'Failed to initialize payment');
         }
     };
 
