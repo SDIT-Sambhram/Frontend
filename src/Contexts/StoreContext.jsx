@@ -5,7 +5,8 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import Razorpay from 'razorpay';
 
-const url = import.meta.REACT_APP_URL;
+
+const url = process.env.REACT_APP_URL;
 
 export const StoreContext = createContext();
 export const ContextProvider = ({ children }) => {
@@ -118,6 +119,7 @@ export const ContextProvider = ({ children }) => {
             console.log(res.data.participantId);            
             successData.participantId = res.data.participantId
             successData.orderId = res.data.orderId
+            console.log("success data",successData);
             return res.data; // Return the response data containing the order ID
         } catch (err) {
             console.error("Error in backend call", err);
