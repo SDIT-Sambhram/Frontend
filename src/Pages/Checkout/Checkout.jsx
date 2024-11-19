@@ -76,6 +76,8 @@ const CheckoutPage = () => {
   const setConfirm = () => {
     setConfirmSection(!confirmSection);
   }
+
+  
   const confirmPayment = () => {
     payNow();
     setIsLoading(true);
@@ -121,12 +123,13 @@ const CheckoutPage = () => {
             <i onClick={setConfirm} className="fa-solid fa-xmark"></i>
           </div>
           <h3>Confirm payment</h3>
-          <div className="confirm-events">
+
+          <div className="confirm-price-section">
+            <h5>Selected events</h5>
             {items.map((item, index) => (
-              <div className="confirm-event" key={index}>
-                <h6>{item.eventName}</h6>
-                <p><i className="fa-solid fa-indian-rupee-sign fa-sm"></i> 100</p>
-              </div>
+             <div className="confirm-price" key={index}>
+             <p>{item.eventName}</p> <p><i className="fa-solid fa-indian-rupee-sign">&nbsp;</i>100</p>
+           </div>
             ))}
           </div>
 

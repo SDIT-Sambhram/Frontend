@@ -140,20 +140,12 @@
   justify-content: center;
 }
 
-.confirm-events {
-  width: 100%;
-}
-
 .confirm-price {
   display: flex;
   justify-content: space-between;
 }
 
-.confirm-event {
-  display: flex;
-  justify-content: space-between;
-  padding: 5px 10px;
-}
+
 
 .confirm-div h6 {
   font-size: 14px;
@@ -184,6 +176,9 @@
 
   .continue-button {
     height: 50px;
+  }
+  .confirm-div{
+    width: 90%;
   }
 }
 
