@@ -4,12 +4,11 @@ import './Preloader.css';
 
 const Preloader = () => {
   return (
-    <div className="spinner">
-      <section className="area">
-        <div className="ball"></div>
-      </section>
-
+    <div className="preloader">
+      <div className="spinner">
+      </div>
     </div>
+
   );
 };
 

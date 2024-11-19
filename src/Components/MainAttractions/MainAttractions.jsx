@@ -11,14 +11,14 @@ const MainAttractions = () => {
                         <img src="Divya kumar.jpg" alt="" className="image" />
                         <div className="text"></div>
                         <div className="main-text">
-                            <h3>DIVYA KUMAR</h3>
+                            <h3>DIVYA <br /> KUMAR</h3>
                         </div>
                         <div className='date-time'>
                             <div className="date">
-                                <p>7.12.2024</p>
+                                <p>DEC 07 | 2024</p>
                             </div>
                             <div className="hero-btn">
-                                <p>7:30 PM</p>
+                                <p>7:00 PM</p>
                             </div>
                         </div>
                     </div>
@@ -31,10 +31,10 @@ const MainAttractions = () => {
                         </div>
                         <div className='date-time'>
                             <div className="date">
-                                <p>6.12.2024</p>
+                                <p>DEC 06 | 2024</p>
                             </div>
                             <div className="hero-btn">
-                                <p>7:30 PM</p>
+                                <p>7:00 PM</p>
                             </div>
                         </div>
                     </div>
@@ -43,14 +43,14 @@ const MainAttractions = () => {
                         <img src="dragon dance.jpg" alt="" className="image" />
                         <div className="text"></div>
                         <div className="main-text">
-                            <h3>DRAGON DANCE</h3>
+                            <h3>DRAGON <br /> DANCE</h3>
                         </div>
                         <div className='date-time'>
                             <div className="date">
-                                <p>6.12.2024</p>
+                                <p>DEC 06 | 2024</p>
                             </div>
                             <div className="hero-btn">
-                                <p>7:00 PM</p>
+                                <p>6:30 PM</p>
                             </div>
                         </div>
                     </div>
@@ -59,14 +59,14 @@ const MainAttractions = () => {
                         <img src="battle of bands.webp" alt="" className="image" />
                         <div className="text"></div>
                         <div className="main-text">
-                            <h3>BATTLE <br />OF BANDS</h3>
+                            <h3>BATTLE OF <br /> THE BANDS</h3>
                         </div>
                         <div className='date-time'>
                             <div className="date">
-                                <p>7.12.2024</p>
+                                <p>DEC 07 | 2024</p>
                             </div>
                             <div className="hero-btn">
-                                <p>7:00 PM</p>
+                                <p>5:30 PM</p>
                             </div>
                         </div>
                     </div>
