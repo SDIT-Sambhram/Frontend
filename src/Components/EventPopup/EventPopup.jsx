@@ -10,8 +10,8 @@ const EventPopup = () => {
             <div className="event-popup" onClick={(e) => e.stopPropagation()}>
             <img src="/bg-Cultural-phone.jpg" alt="" />
                 <div className="close-icon">
-                    <i onClick={() => setPopUpStatus('')} className="fa-solid fa-xmark" style={{ color: '#610000' }}></i>
-                </div>
+                    <i onClick={() => setPopUpStatus('')} className="fa-solid fa-xmark fa-xl" style={{ color: '#ffffff' }}></i>
+                </div> 
                 <div className="event-content">
                     <div className='pop-main'>
                         {popUpStatus && typeof popUpStatus === 'object' ? (
