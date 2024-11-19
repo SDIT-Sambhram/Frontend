@@ -614,6 +614,104 @@
     width: 110px;
     height: 110px;
   }
+
+  .team-container {
+    padding: 1rem;
+  }
+
+  .team-members {
+    gap: 1rem;
+    padding: 0.25rem;
+    grid-template-columns: 1fr;
+  }
+
+  .team-member-card {
+    min-height: auto;
+    height: auto;
+    min-width: 100%;
+    max-width: 100%;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    transform: none;
+    box-shadow: 0 2px 4px rgba(139, 0, 0, 0.15);
+  }
+
+  .member-image,
+  .image-container {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 0.75rem;
+  }
+
+  .team-member-card h3 {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+  }
+
+  .member-role {
+    font-size: 0.9rem;
+  }
+
+  .social-links {
+    gap: 1.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .social-links a {
+    font-size: 1.3rem;
+    padding: 0.5rem;
+  }
+
+  /* Head card mobile optimization */
+  .head-card {
+    padding: 1rem;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-direction: column;
+  }
+
+  .head-image img {
+    width: 140px;
+    height: 140px;
+    border-width: 3px;
+  }
+
+  .head-info h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .head-role {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .head-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  /* Disable heavy animations on mobile */
+  .team-member-card:hover {
+    transform: none;
+    box-shadow: 0 2px 4px rgba(139, 0, 0, 0.15);
+    animation: none;
+  }
+
+  .team-member-card:hover .member-image {
+    animation: none;
+    transform: none;
+  }
+
+  /* Optimize touch targets */
+  .social-links a {
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 768px) {
@@ -640,6 +738,25 @@
     font-size: 1rem;
     line-height: 1.6;
   }
+
+  .team-member-card {
+    content-visibility: auto;
+    contain-intrinsic-size: 300px;
+  }
+
+  .team-section {
+    contain: content;
+  }
+
+  /* Reduce animation complexity */
+  .team-member-card.animate {
+    animation: fadeIn 0.3s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
@@ -653,6 +770,15 @@
 
   .head-member, .co-head-member {
     grid-column: span 1;
+  }
+
+  .team-members {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .team-member-card {
+    min-height: 330px;
   }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
