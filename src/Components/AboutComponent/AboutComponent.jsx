@@ -2,15 +2,24 @@ import React from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import "./AboutComponent.css"
+import img1 from "./images/1.jpg"
+import img2 from "./images/2.jpg"
+import img3 from "./images/3.jpg"
+import img4 from "./images/4.jpg"
+import img5 from "./images/5.jpg"
+import img6 from "./images/6.jpg"
+import collage from "./images/collage.jpg"
+import canteen from "./images/canteen.jpg"
+import sambhram from "./images/sambhram.jpg"
 
 const AboutComponent = () => {
   const prevEventImages = [
-    { src: "/src/Components/AboutComponent/images/1.jpg", alt: "Previous Event Highlights" },
-    { src: "/src/Components/AboutComponent/images/2.jpg", alt: "Previous Event Highlights" },
-    { src: "/src/Components/AboutComponent/images/3.jpg", alt: "Previous Event Highlights" },
-    { src: "/src/Components/AboutComponent/images/4.jpg", alt: "Previous Event Highlights" },
-    { src: "/src/Components/AboutComponent/images/5.jpg", alt: "Previous Event Highlights" },
-    { src: "/src/Components/AboutComponent/images/6.jpg", alt: "Previous Event Highlights" },
+    { src: img1, alt: "Previous Event Highlights" },
+    { src: img2, alt: "Previous Event Highlights" },
+    { src: img3, alt: "Previous Event Highlights" },
+    { src: img4, alt: "Previous Event Highlights" },
+    { src: img5, alt: "Previous Event Highlights" },
+    { src: img6, alt: "Previous Event Highlights" },
   ];
 
   const isMobile = window.innerWidth <= 768;
@@ -129,7 +138,7 @@ const AboutComponent = () => {
               variants={imageVariants}
               whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
             >
-              <img src="src\Components\AboutComponent\images\RAM_3539.JPG" alt="College Building" />
+              <img src={collage} alt="College Building" />
             </motion.div>
           </div>
         </motion.div>
@@ -145,7 +154,7 @@ const AboutComponent = () => {
               variants={imageVariants}
               whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
             >
-              <img src="src\Components\AboutComponent\images\RAM_0807.JPG" alt="Campus Life" />
+              <img src={canteen} alt="Campus Life" />
             </motion.div>
             <div className="description-text">
               <p>Our institution stands as a beacon of academic brilliance in the field of Engineering, Management and Computer applications. Established with a vision to nurture future innovators and problem solvers, the institute has consistently upheld its commitment to excellence since its inception.</p>
@@ -184,7 +193,7 @@ const AboutComponent = () => {
               variants={imageVariants}
               whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
             >
-              <img src="src\Components\AboutComponent\images\IMG_8687.JPG" alt="Sambhram Event" />
+              <img src={sambhram} alt="Sambhram Event" />
             </motion.div>
           </div>
           <motion.div

@@ -154,13 +154,13 @@
   }
 }
 
-.team-container {
+.sambhram-team-container {
   padding: 2rem;
   text-align: center;
 }
 
-.team-container h1 {
-  margin-top: 2rem;
+.sambhram-team-container h1 {
+  margin-top: 4rem;
   margin-bottom: 2.5rem;
   color: var(--dark-red);
   font-size: 2.8rem;
@@ -175,7 +175,7 @@
   animation: fadeInDown 1.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.team-container h1::after {
+.sambhram-team-container h1::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -188,7 +188,7 @@
   background: linear-gradient(to right, var(--dark-red), var(--gold), var(--dark-red));
 }
 
-.team-members {
+.sambhram-team-members {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
@@ -197,7 +197,7 @@
   margin: 0 auto;
 }
 
-.team-member-card {
+.sambhram-team-member-card {
   background: #fff;
   border-radius: 10px;
   padding: 1.5rem;
@@ -232,18 +232,18 @@
   will-change: transform, opacity;
 }
 
-.team-member-card.loaded {
+.sambhram-team-member-card.loaded {
   opacity: 1;
   transform: none;
 }
 
-.team-member-card.animate {
+.sambhram-team-member-card.animate {
   transform: translateY(0);
   opacity: 1;
 }
 
 /* Regular team member cards only */
-.team-member-card:not(.head-member):not(.co-head-member) {
+.sambhram-team-member-card:not(.head-member):not(.co-head-member) {
   width: 100%;
   height: 350px;
   display: flex;
@@ -255,95 +255,95 @@
   padding: 1.5rem;
 }
 
-.team-member-card.animate {
+.sambhram-team-member-card.animate {
   animation: fadeInScale 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
-.team-member-card:hover {
+.sambhram-team-member-card:hover {
   transform: translateY(-5px) scale(1.03);
   box-shadow: 0 12px 24px rgba(139, 0, 0, 0.2);
   animation: glowPulse 2s infinite;
 }
 
-.team-member-card:hover .member-image {
+.sambhram-team-member-card:hover .member-image {
   animation: floatEffect 3s ease-in-out infinite;
   border-width: 4px;
   animation: borderFlow 3s infinite;
 }
 
-.team-section .team-member-card:nth-child(1) {
+.sambhram-team-section .sambhram-team-member-card:nth-child(1) {
   animation-delay: 0.1s;
 }
 
-.team-section .team-member-card:nth-child(2) {
+.sambhram-team-section .sambhram-team-member-card:nth-child(2) {
   animation-delay: 0.2s;
 }
 
-.team-section .team-member-card:nth-child(3) {
+.sambhram-team-section .sambhram-team-member-card:nth-child(3) {
   animation-delay: 0.3s;
 }
 
-.team-section .team-member-card:nth-child(4) {
+.sambhram-team-section .sambhram-team-member-card:nth-child(4) {
   animation-delay: 0.4s;
 }
 
-.team-section .team-member-card:nth-child(5) {
+.sambhram-team-section .sambhram-team-member-card:nth-child(5) {
   animation-delay: 0.5s;
 }
 
-.team-section .team-member-card:nth-child(6) {
+.sambhram-team-section .sambhram-team-member-card:nth-child(6) {
   animation-delay: 0.6s;
 }
 
-.team-section .team-member-card:nth-child(7) {
+.sambhram-team-section .sambhram-team-member-card:nth-child(7) {
   animation-delay: 0.7s;
 }
 
-.team-section .team-member-card:nth-child(8) {
+.sambhram-team-section .sambhram-team-member-card:nth-child(8) {
   animation-delay: 0.8s;
 }
 
-.team-section .team-member-card:nth-child(9) {
+.sambhram-team-section .sambhram-team-member-card:nth-child(9) {
   animation-delay: 0.9s;
 }
 
-.team-section .team-member-card:nth-child(10) {
+.sambhram-team-section .sambhram-team-member-card:nth-child(10) {
   animation-delay: 1.0s;
 }
 
-.team-section.animate .team-member-card:nth-child(1) {
+.sambhram-team-section.animate .sambhram-team-member-card:nth-child(1) {
   transition-delay: 0.2s;
 }
 
-.team-section.animate .team-member-card:nth-child(2) {
+.sambhram-team-section.animate .sambhram-team-member-card:nth-child(2) {
   transition-delay: 0.4s;
 }
 
-.team-section.animate .team-member-card:nth-child(3) {
+.sambhram-team-section.animate .sambhram-team-member-card:nth-child(3) {
   transition-delay: 0.6s;
 }
 
-.team-section.animate .team-member-card:nth-child(4) {
+.sambhram-team-section.animate .sambhram-team-member-card:nth-child(4) {
   transition-delay: 0.8s;
 }
 
-.team-section.animate .team-member-card:nth-child(5) {
+.sambhram-team-section.animate .sambhram-team-member-card:nth-child(5) {
   transition-delay: 1.0s;
 }
 
-.team-section.animate .team-member-card:nth-child(6) {
+.sambhram-team-section.animate .sambhram-team-member-card:nth-child(6) {
   transition-delay: 1.2s;
 }
 
-.team-member-card h3 {
+.sambhram-team-member-card h3 {
   color: var(--dark-red);
 }
 
-.team-member-card p {
+.sambhram-team-member-card p {
   color: var(--medium-red);
 }
 
-.member-image {
+.sambhram-member-image {
   width: 130px;
   /* Consistent image size */
   height: 130px;
@@ -357,19 +357,19 @@
   animation-delay: 0.3s;
 }
 
-.team-member-card:hover .member-image {
+.sambhram-team-member-card:hover .sambhram-member-image {
   transform: scale(1.1);
   border-color: var(--medium-red);
 }
 
-.social-links {
+.sambhram-social-links {
   display: flex;
   justify-content: center;
   gap: 1rem;
   margin-top: 1rem;
 }
 
-.social-links a {
+.sambhram-social-links a {
   color: var(--dark-gold);
   font-size: 1.5rem;
   transition: all 0.3s ease;
@@ -377,13 +377,13 @@
   transform: scale(1);
 }
 
-.social-links a:hover {
+.sambhram-social-links a:hover {
   animation: popUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   color: var(--gold);
   transform: scale(1.3) rotate(360deg);
 }
 
-.team-section {
+.sambhram-team-section {
   margin-bottom: 4rem;
   opacity: 0;
   transform: translateX(-50px);
@@ -395,12 +395,12 @@
   will-change: opacity, transform;
 }
 
-.team-section.animate {
+.sambhram-team-section.animate {
   opacity: 1;
   transform: translateX(0);
 }
 
-.team-section h2 {
+.sambhram-team-section h2 {
   color: var(--dark-red);
   margin-bottom: 2rem;
   font-size: 2.2rem;
@@ -416,11 +416,11 @@
   font-weight: 700;
 }
 
-.team-section h2::before {
+.sambhram-team-section h2::before {
   display: none;
 }
 
-.team-section h2::after {
+.sambhram-team-section h2::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -433,7 +433,7 @@
   opacity: 0.8;
 }
 
-.head-card {
+.sambhram-head-card {
   max-width: 900px;
   /* Increased from 800px */
   margin: 0 auto 4rem;
@@ -459,7 +459,7 @@
   transform: translateZ(0);
 }
 
-.head-card::before {
+.sambhram-head-card::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -476,7 +476,7 @@
   will-change: transform;
 }
 
-.head-image img {
+.sambhram-head-image img {
   width: 250px;
   /* Increased from 200px */
   height: 250px;
@@ -487,18 +487,18 @@
   transition: all 0.4s ease;
 }
 
-.head-card:hover .head-image img {
+.sambhram-head-card:hover .sambhram-head-image img {
   transform: scale(1.08) rotate(5deg);
   border-color: var(--dark-red);
   box-shadow: 0 12px 24px rgba(139, 0, 0, 0.3);
 }
 
-.head-info {
+.sambhram-head-info {
   text-align: left;
   flex: 1;
 }
 
-.head-info h2 {
+.sambhram-head-info h2 {
   font-size: 2.5rem;
   background: linear-gradient(45deg, var(--dark-red), var(--medium-red));
   -webkit-background-clip: text;
@@ -506,7 +506,7 @@
   margin-bottom: 1rem;
 }
 
-.head-role {
+.sambhram-head-role {
   font-size: 1.4rem;
   color: var(--dark-gold);
   margin-bottom: 1.2rem;
@@ -515,7 +515,7 @@
   letter-spacing: 1px;
 }
 
-.head-description {
+.sambhram-head-description {
   font-size: 1.1rem;
   line-height: 1.8;
   color: #444;
@@ -523,18 +523,18 @@
   font-style: italic;
 }
 
-.head-social {
+.sambhram-head-social {
   justify-content: flex-start;
 }
 
-.head-social a {
+.sambhram-head-social a {
   font-size: 2rem;
   margin: 0 1rem;
   color: var(--dark-red);
   transition: all 0.3s ease;
 }
 
-.head-social a:hover {
+.sambhram-head-social a:hover {
   color: var(--gold);
   transform: scale(1.2) rotate(360deg);
 }
@@ -572,8 +572,8 @@
   min-width: auto;
 }
 
-.head-member .member-image,
-.co-head-member .member-image {
+.head-member .sambhram-member-image,
+.co-head-member .sambhram-member-image {
   width: 140px;
   /* Reduced from 160px */
   height: 140px;
@@ -585,11 +585,11 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-.head-member .member-image {
+.head-member .sambhram-member-image {
   border-color: var(--dark-red);
 }
 
-.co-head-member .member-image {
+.co-head-member .sambhram-member-image {
   border-color: var(--gold);
 }
 
@@ -604,7 +604,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-.leader-description {
+.sambhram-leader-description {
   color: #555;
   line-height: 1.4;
   /* Reduced from 1.6 */
@@ -617,7 +617,7 @@
   /* Increased from 80% for better text flow */
 }
 
-.leader-stats {
+.sambhram-leader-stats {
   font-size: 0.8rem;
   margin: 0.5rem 0;
   display: flex;
@@ -625,8 +625,8 @@
   gap: 1rem;
 }
 
-.head-member .social-links a,
-.co-head-member .social-links a {
+.head-member .sambhram-social-links a,
+.co-head-member .sambhram-social-links a {
   font-size: 1.6rem;
   /* Reduced from 1.8rem */
   margin: 0 0.6rem;
@@ -640,38 +640,38 @@
 
 /* Consolidated Media Queries */
 @media (max-width: 480px) {
-  .team-container h1 {
+  .sambhram-team-container h1 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
   }
 
-  .team-members {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  .sambhram-team-members {
+    grid-template-columns: 1fr; /* Ensure one card per row */
+    gap: 1rem; /* Adjust gap between cards */
     padding: 0.5rem;
   }
 
-  .head-card {
+  .sambhram-head-card {
     padding: 1rem;
     margin-bottom: 2rem;
     flex-direction: column;
     text-align: center;
   }
 
-  .head-image img {
+  .sambhram-head-image img {
     width: 150px;
     height: 150px;
   }
 
-  .head-info {
+  .sambhram-head-info {
     text-align: center;
   }
 
-  .head-info h2 {
+  .sambhram-head-info h2 {
     font-size: 1.8rem;
   }
 
-  .head-social {
+  .sambhram-head-social {
     justify-content: center;
   }
 
@@ -682,23 +682,23 @@
     min-height: auto;
   }
 
-  .head-member .member-image,
-  .co-head-member .member-image {
+  .head-member .sambhram-member-image,
+  .co-head-member .sambhram-member-image {
     width: 120px;
     height: 120px;
   }
 
-  .leader-description {
+  .sambhram-leader-description {
     font-size: 0.8rem;
     max-width: 100%;
   }
 
-  .leader-stats {
+  .sambhram-leader-stats {
     flex-direction: column;
     gap: 0.5rem;
   }
 
-  .team-member-card {
+  .sambhram-team-member-card {
     height: auto;
     min-height: 320px;
     padding: 1rem;
@@ -706,44 +706,44 @@
     transition-duration: 0.3s;
   }
 
-  .team-member-card:not(.head-member):not(.co-head-member) {
+  .sambhram-team-member-card:not(.head-member):not(.co-head-member) {
     height: auto;
     min-height: 320px;
     padding: 1rem;
     min-width: auto;
   }
 
-  .member-image {
+  .sambhram-member-image {
     width: 110px;
     height: 110px;
   }
 
-  .team-members {
+  .sambhram-team-members {
     gap: 1rem;
     padding: 0.5rem;
   }
 
-  .team-member-card:not(.head-member):not(.co-head-member) {
+  .sambhram-team-member-card:not(.head-member):not(.co-head-member) {
     min-height: 300px;
     height: auto;
   }
 
-  .image-container {
+  .sambhram-image-container {
     width: 110px;
     height: 110px;
   }
 
-  .team-container {
+  .sambhram-team-container {
     padding: 1rem;
   }
 
-  .team-members {
+  .sambhram-team-members {
     gap: 1rem;
     padding: 0.25rem;
     grid-template-columns: 1fr;
   }
 
-  .team-member-card {
+  .sambhram-team-member-card {
     min-height: auto;
     height: auto;
     min-width: 100%;
@@ -754,76 +754,76 @@
     box-shadow: 0 2px 4px rgba(139, 0, 0, 0.15);
   }
 
-  .member-image,
-  .image-container {
+  .sambhram-member-image,
+  .sambhram-image-container {
     width: 100px;
     height: 100px;
     margin-bottom: 0.75rem;
   }
 
-  .team-member-card h3 {
+  .sambhram-team-member-card h3 {
     font-size: 1.1rem;
     margin: 0.5rem 0;
   }
 
-  .member-role {
+  .sambhram-member-role {
     font-size: 0.9rem;
   }
 
-  .social-links {
+  .sambhram-social-links {
     gap: 1.5rem;
     margin-top: 0.75rem;
   }
 
-  .social-links a {
+  .sambhram-social-links a {
     font-size: 1.3rem;
     padding: 0.5rem;
   }
 
   /* Head card mobile optimization */
-  .head-card {
+  .sambhram-head-card {
     padding: 1rem;
     gap: 1rem;
     margin-bottom: 2rem;
     flex-direction: column;
   }
 
-  .head-image img {
+  .sambhram-head-image img {
     width: 140px;
     height: 140px;
     border-width: 3px;
   }
 
-  .head-info h2 {
+  .sambhram-head-info h2 {
     font-size: 1.6rem;
     margin-bottom: 0.5rem;
   }
 
-  .head-role {
+  .sambhram-head-role {
     font-size: 1rem;
     margin-bottom: 0.75rem;
   }
 
-  .head-description {
+  .sambhram-head-description {
     font-size: 0.9rem;
     line-height: 1.5;
     margin-bottom: 1rem;
   }
 
   /* Disable heavy animations on mobile */
-  .team-member-card:hover {
+  .sambhram-team-member-card:hover {
     transform: none;
     box-shadow: 0 2px 4px rgba(139, 0, 0, 0.15);
     animation: none;
   }
 
-  .team-member-card:hover .member-image {
+  .sambhram-team-member-card:hover .sambhram-member-image {
     animation: none;
     transform: none;
   }
 
   /* Optimize touch targets */
-  .social-links a {
+  .sambhram-social-links a {
     min-width: 44px;
     min-height: 44px;
     display: flex;
@@ -833,41 +833,41 @@
 }
 
 @media (max-width: 768px) {
-  .head-card {
+  .sambhram-head-card {
     padding: 1.5rem;
     border-width: 4px;
   }
 
-  .head-image img {
+  .sambhram-head-image img {
     width: 180px;
     height: 180px;
     border-width: 4px;
   }
 
-  .head-info h2 {
+  .sambhram-head-info h2 {
     font-size: 2rem;
   }
 
-  .head-role {
+  .sambhram-head-role {
     font-size: 1.1rem;
   }
 
-  .head-description {
+  .sambhram-head-description {
     font-size: 1rem;
     line-height: 1.6;
   }
 
-  .team-member-card {
+  .sambhram-team-member-card {
     content-visibility: auto;
     contain-intrinsic-size: 300px;
   }
 
-  .team-section {
+  .sambhram-team-section {
     contain: content;
   }
 
   /* Reduce animation complexity */
-  .team-member-card.animate {
+  .sambhram-team-member-card.animate {
     animation: fadeIn 0.3s ease forwards;
   }
 
@@ -883,11 +883,11 @@
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
-  .team-container h1 {
+  .sambhram-team-container h1 {
     font-size: 2.4rem;
   }
 
-  .team-members {
+  .sambhram-team-members {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -896,18 +896,18 @@
     grid-column: span 1;
   }
 
-  .team-members {
+  .sambhram-team-members {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
 
-  .team-member-card {
+  .sambhram-team-member-card {
     min-height: 330px;
   }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-  .team-members {
+  .sambhram-team-members {
     grid-template-columns: repeat(3, 1fr);
   }
 
@@ -917,8 +917,28 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .sambhram-team-members {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  .sambhram-head-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sambhram-head-image img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .sambhram-head-info {
+    text-align: center;
+  }
+}
+
 @media (min-width: 1025px) {
-  .team-members {
+  .sambhram-team-members {
     grid-template-columns: repeat(4, 1fr);
   }
 
@@ -930,12 +950,12 @@
 
 /* Touch device optimizations */
 @media (hover: none) and (pointer: coarse) {
-  .social-links a {
+  .sambhram-social-links a {
     padding: 0.5rem;
     margin: 0 0.25rem;
   }
 
-  .team-member-card {
+  .sambhram-team-member-card {
     padding: 1.25rem;
   }
 }
@@ -954,60 +974,60 @@
 /* Reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
 
-  .team-container h1,
-  .team-section h2,
-  .team-member-card {
+  .sambhram-team-container h1,
+  .sambhram-team-section h2,
+  .sambhram-team-member-card {
     animation: none;
   }
 
-  .team-section,
-  .team-member-card {
+  .sambhram-team-section,
+  .sambhram-team-member-card {
     transition: none;
     animation: none;
     opacity: 1;
     transform: none;
   }
 
-  .team-section.animate,
-  .team-member-card.animate {
+  .sambhram-team-section.animate,
+  .sambhram-team-member-card.animate {
     transition: none;
     animation: none;
   }
 
   .head-member:hover,
   .co-head-member:hover,
-  .team-member-card:hover {
+  .sambhram-team-member-card:hover {
     transform: none;
   }
 
-  .team-member-card:hover,
-  .team-member-card:hover .member-image,
-  .head-card::before,
-  .social-links a:hover {
+  .sambhram-team-member-card:hover,
+  .sambhram-team-member-card:hover .sambhram-member-image,
+  .sambhram-head-card::before,
+  .sambhram-social-links a:hover {
     animation: none;
     transform: none;
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .team-section {
+  .sambhram-team-section {
     transform-origin: center;
     perspective: 1000px;
   }
 
-  .team-member-card {
+  .sambhram-team-member-card {
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
       box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .team-member-card:hover {
+  .sambhram-team-member-card:hover {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
 /* Add error styling */
-.error-container {
+.sambhram-error-container {
   padding: 2rem;
   text-align: center;
   color: var(--dark-red);
@@ -1019,14 +1039,14 @@
 }
 
 /* Image loading improvements */
-.image-container {
+.sambhram-image-container {
   position: relative;
   width: 130px;
   height: 130px;
   margin-bottom: 1rem;
 }
 
-.image-placeholder {
+.sambhram-image-placeholder {
   position: absolute;
   top: 0;
   left: 0;
@@ -1049,7 +1069,7 @@
 }
 
 /* Performance optimizations */
-.team-member-card {
+.sambhram-team-member-card {
   /* ...existing styles... */
   contain: content;
   content-visibility: auto;
@@ -1060,13 +1080,13 @@
   transform: translateZ(0);
 }
 
-.team-member-card.loaded {
+.sambhram-team-member-card.loaded {
   opacity: 1;
   transform: none;
 }
 
 /* Reduce paint operations */
-.team-member-card:hover {
+.sambhram-team-member-card:hover {
   /* ...existing styles... */
   transform: translateY(-5px) scale(1.03);
   will-change: transform;
@@ -1074,52 +1094,52 @@
 
 /* Optimize animations */
 @media (prefers-reduced-motion: no-preference) {
-  .team-member-card {
+  .sambhram-team-member-card {
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
       box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .team-member-card:hover {
+  .sambhram-team-member-card:hover {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
 /* Fix mobile issues */
 @media (max-width: 480px) {
-  .team-members {
+  .sambhram-team-members {
     gap: 1rem;
     padding: 0.5rem;
   }
 
-  .team-member-card:not(.head-member):not(.co-head-member) {
+  .sambhram-team-member-card:not(.head-member):not(.co-head-member) {
     min-height: 300px;
     height: auto;
   }
 
-  .image-container {
+  .sambhram-image-container {
     width: 110px;
     height: 110px;
   }
 }
 
 /* Add smooth transitions for all interactive elements */
-.team-member-card,
-.head-card,
-.member-image,
-.social-links a {
+.sambhram-team-member-card,
+.sambhram-head-card,
+.sambhram-member-image,
+.sambhram-social-links a {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Remove existing animation delays and use CSS custom properties */
-.team-section .team-member-card {
+.sambhram-team-section .sambhram-team-member-card {
   transition-delay: calc(var(--card-index, 0) * 100ms);
 }
 
 /* Optimize performance */
-.team-member-card,
-.head-card,
-.member-image {
+.sambhram-team-member-card,
+.sambhram-head-card,
+.sambhram-member-image {
   contain: layout style paint;
   will-change: transform;
   backface-visibility: hidden;
@@ -1127,20 +1147,20 @@
 }
 
 /* Remove animation duplicates */
-.team-member-card:hover .member-image {
+.sambhram-team-member-card:hover .sambhram-member-image {
   animation: floatEffect 3s ease-in-out infinite;
 }
 
 /* Optimize scroll performance */
-.team-section {
+.sambhram-team-section {
   transform: translateZ(0);
   backface-visibility: hidden;
   will-change: opacity, transform;
 }
 
 /* Reduce repaints */
-.member-image,
-.social-links a,
-.head-card::before {
+.sambhram-member-image,
+.sambhram-social-links a,
+.sambhram-head-card::before {
   will-change: transform;
 }
