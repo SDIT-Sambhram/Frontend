@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import Razorpay from 'razorpay';
 
-const url = process.env.REACT_APP_URL;
+const url = import.meta.REACT_APP_URL;
 
 export const StoreContext = createContext();
 export const ContextProvider = ({ children }) => {
@@ -133,7 +133,7 @@ export const ContextProvider = ({ children }) => {
 
             // Open Razorpay Checkout with dynamic order details
             const options = {
-                key: process.env.REACT_APP_RAZORPAY_ID, // Your Razorpay Key ID
+                key: import.meta.REACT_APP_RAZORPAY_ID, // Your Razorpay Key ID
                 amount: payLoad.amount, // Amount from backend response (should be in subunits, e.g., paise for INR)
                 currency: payLoad.currency,
                 name: "SHREE DEVI SAMBHRAM",
