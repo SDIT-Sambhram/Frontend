@@ -8,11 +8,11 @@ const SelectedItemSection = ({ items }) => {
   const { selectEvent } = useContext(StoreContext)
 
   const totalAmount = items.length * 100;
-  let couponDiscount = 0; 
+  let couponDiscount = 0;  
   let currentCoupon = null;
 
   couponDiscount = items.length === 4 ? 150
-    : items.length === 3 ? 80
+    : items.length === 3 ? 80 
       : items.length === 2 ? 40
         : 0;
 
@@ -36,9 +36,9 @@ const SelectedItemSection = ({ items }) => {
     <div className="items-section">
       {/* <div className="item-section-head"><h1>Selected Events</h1></div> */}
 
-
-      <div className="item-rows">
+      
         <h4>SELECTED EVENTS</h4>
+      <div className="item-rows">
         {items.map((item) => (
           <div className="item-row" key={item._id}>
             <div className="items">

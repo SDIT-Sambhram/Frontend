@@ -4,6 +4,8 @@
   height: 150vh;
   display: flex;
   justify-content: center;
+  
+  background: radial-gradient(#882222,#35060e);
 }
 
 .checkout-container {
@@ -49,11 +51,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: rgba(255, 255, 255, 0.256);
 }
 
 .circle {
   border-radius: 50%;
-  border: 1px solid black;
+  border: 1px solid rgba(255, 255, 255, 0.329);
   width: 25px;
   height: 25px;
   line-height: 40px;
@@ -64,16 +67,17 @@
 }
 
 .circle.active {
-  border: 3px solid rgb(0, 0, 0);
+  border: 3px solid rgba(0, 0, 0, 0.532);
 }
 
 .step-title {
   margin-top: 10px;
   font-size: 12px;
+  color: rgba(255, 255, 255, 0.15);
 }
 
 .step-title.active {
-  color: rgb(255, 255, 255);
+  color: rgba(255, 254, 254, 0.438);
 }
 
 
@@ -114,7 +118,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(240, 234, 234);
+  background-color: rgba(0, 0, 0, 0.217);
+  backdrop-filter: blur(10px);
   bottom: 0;
   width: 100%;
   padding: 10px 40px;
@@ -123,15 +128,19 @@
 .confirm-div {
   position: fixed;
   top: 30%;
-  min-height: 300px;
+  min-height: 350px;
   width: 350px;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 10px 10px 10px 10px rgba(184, 176, 176, 0.5);
+  background-color: rgba(61, 1, 1, 0.39);
+  backdrop-filter: blur(15px);
   padding: 10px;
   display: flex;
+  color: rgba(255, 255, 255, 0.212);
   flex-direction: column;
   justify-content: space-around;
-
+  border-radius: 10px;
+}
+.confirm-div h3{
+  text-align: center;
 }
 
 .confirm-payment-button {
@@ -165,6 +174,9 @@
   margin-top: 3px;
 }
 @media (max-width:700px) {
+  .checkout-flex{
+    margin-top: 60px;
+  }
   .back {
     height: 80px;
   }
@@ -178,8 +190,12 @@
     height: 50px;
   }
   .confirm-div{
+    top: 25%;
     width: 90%;
   }
+}
+.continue-panel{
+  padding: 8px 20px;
 }
 
 

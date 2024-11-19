@@ -1,14 +1,18 @@
 .items-section {
   padding: 20px;
-  background-color: #ffffff;
-  height: 100vh;
+  background-color: #00000036;
+  height: 70vh;
+  color: rgba(255, 255, 255, 0.769);
 }
-
+.items-section h4{
+  text-align: center;
+  text-shadow:0 0 4px rgba(254, 0, 0, 0.61);
+}
 .coupon-current {
   width: 100%;
   display: flex;
   justify-self: center;
-}
+} 
 
 .coupon-current p {
   color: #ff2010;
@@ -21,7 +25,7 @@
 }
 
 .item-rows {
-  margin-top: 10px;
+  margin-top: 10px; 
   min-height: 150px;
 }
 
@@ -120,7 +124,7 @@
 
   }
   .items-section{
-    height: 90vh;
+    height: 100vh;
   }
 
   .receipt-section {
