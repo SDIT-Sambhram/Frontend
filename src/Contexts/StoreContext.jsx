@@ -129,6 +129,7 @@ export const ContextProvider = ({ children }) => {
         try {
             // Get order details from backend
             const payLoad = await sendDatatoBackend();
+            console.log("payload", payLoad);
 
             // Open Razorpay Checkout with dynamic order details
             const options = {
