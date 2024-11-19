@@ -10,7 +10,7 @@ import img5 from "./images/5.jpg"
 import img6 from "./images/6.jpg"
 import collage from "./images/collage.jpg"
 import canteen from "./images/canteen.jpg"
-import sambhram from "./images/IMG_8687.jpg"
+import sambhram from "./images/sambhram.jpg"
 
 const AboutComponent = () => {
   const prevEventImages = [
