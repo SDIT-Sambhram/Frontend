@@ -5,7 +5,9 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import Razorpay from 'razorpay';
 
+
 const url = process.env.REACT_APP_URL;
+const razorpayKey = process.env.REACT_APP_RAZORPAY_ID;
 
 export const StoreContext = createContext();
 export const ContextProvider = ({ children }) => {
@@ -118,6 +120,7 @@ export const ContextProvider = ({ children }) => {
             console.log(res.data.participantId);            
             successData.participantId = res.data.participantId
             successData.orderId = res.data.orderId
+            console.log("success data",successData);
             return res.data; // Return the response data containing the order ID
         } catch (err) {
             console.error("Error in backend call", err);
@@ -129,11 +132,13 @@ export const ContextProvider = ({ children }) => {
         try {
             // Get order details from backend
             const payLoad = await sendDatatoBackend();
-            console.log(payLoad)
+            console.log("payload", payLoad);
+            console.log("data", data);
+            console.log("razorpay key", razorpayKey);
 
             // Open Razorpay Checkout with dynamic order details
             const options = {
-                key: process.env.REACT_APP_RAZORPAY_ID, // Your Razorpay Key ID
+                key: razorpayKey, // Your Razorpay Key ID
                 amount: payLoad.amount, // Amount from backend response (should be in subunits, e.g., paise for INR)
                 currency: payLoad.currency,
                 name: "SHREE DEVI SAMBHRAM",
