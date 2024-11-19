@@ -17,10 +17,16 @@
     justify-content: space-evenly;
     position: relative;
     transform-style: preserve-3d;
-    transition: transform 0.7s ease;
+    transition: transform 0.5s ease;
     transform-origin: center;
     border-radius: 10px;
     box-shadow: 0 10px 30px 5px rgba(76, 0, 0, 0.3); /* Heavy spreading shadow */
+}
+.event-card:hover {
+    transform: scale(1.05);
+}
+.event-card:hover .front img {
+    transform: scale(1.1);
 }
 
 
@@ -60,6 +66,7 @@
     height: 55%;
     object-fit: cover;
     object-position: top;
+    transition: transform 1s ease;
  }
  .event-card-content{
     position: absolute;
