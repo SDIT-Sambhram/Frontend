@@ -56,7 +56,7 @@ const MainAttractions = () => {
                     </div>
 
                     <div className="fourth hero">
-                        <img src="battle of bands.webp" alt="" className="image" />
+                        <img src="https://media.istockphoto.com/id/161839324/photo/rock-and-roll.jpg?s=612x612&w=0&k=20&c=eRXcG8hvSVNeIg2424LMPJBkehMpFZTyzRW8JH3btxc=" alt="" className="image" />
                         <div className="text"></div>
                         <div className="main-text">
                             <h3>BATTLE OF <br /> THE BANDS</h3>

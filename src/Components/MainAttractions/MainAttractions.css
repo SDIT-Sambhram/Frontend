@@ -51,13 +51,13 @@
   .main-container .third .image{
     height: auto;
     width: 430px;
-    transform: translate(0, 10);    
+    transform: translate(0, -30px);    
   }
 
   .main-container .fourth .image{
     height: auto;
     width: 400px;
-    transform: translate(0, -22px);
+    transform: translate(0, -70px) scale(1.3);
     
   }
 

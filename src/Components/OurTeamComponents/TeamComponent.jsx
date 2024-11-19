@@ -23,7 +23,7 @@ const teamMembers = {
       isHead: true
     },
     {
-      name: "Abdhulla Shafaz KU",
+      name: "Abdulla Shafaz K U",
       role: "Website Co-Lead",
       image: abdhullaImage, // Updated image reference
       github: "https://github.com/colead",
@@ -52,14 +52,14 @@ const teamMembers = {
       linkedin: "https://linkedin.com/in/dev3"
     },
     {
-      name: "Suraj MP",
+      name: "Suraj M P",
       role: "UI/UX Developer",
       image: surajImage,
       github: "https://github.com/dev4",
       linkedin: "https://linkedin.com/in/dev4"
     },
     {
-      name: "Isha",
+      name: "Esha",
       role: "Database Engineer",
       image: "https://via.placeholder.com/150",
       github: "https://github.com/dev5",
@@ -92,7 +92,7 @@ const teamMembers = {
 const specialContributors = {
   team: [
     {
-      name: "Fahiz",
+      name: "Mohammed Fahiz",
       role: "Technical Support",
       image: fahizImage, // Updated image reference
       github: "https://github.com/fahiz",
@@ -113,7 +113,7 @@ const specialContributors = {
       linkedin: "https://linkedin.com/in/shanif"
     },
     {
-      name: "Devdarsh",
+      name: "Devadarsh",
       role: "Technical Advisor",
       image: devdarshImage, // Updated image reference
       github: "https://github.com/devdarsh",

@@ -44,9 +44,9 @@ const Navbar = () => {
     const navItems = [
         { id: 'home', path: '/', label: 'Home' },
         { id: 'event', path: '/events', label: 'Event' },
-        { id: 'contact', path: '/contact', label: 'Contact' },
-        { id: 'about', path: '/about', label: 'About' },
-        { id: 'team', path: '/team', label: 'Team' },
+        { id: 'contact', path: '/contact', label: 'Contact Us' },
+        { id: 'team', path: '/team', label: 'Our Team' },
+        { id: 'about', path: '/about', label: 'About Us' },
     ];
 
     // Determine the navbar class based on scrolled state and current page
