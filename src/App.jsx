@@ -26,18 +26,18 @@ import Contact from './Pages/Contact/Contact.jsx';
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
-  // useEffect(() => {
-  //   const handleLoad = () => setIsLoading(false);
+  useEffect(() => {
+    const handleLoad = () => setIsLoading(false);
 
-  //   window.addEventListener('load', handleLoad);
-  //   const timer = setTimeout(() => setIsLoading(false), 2000);
+    window.addEventListener('load', handleLoad);
+    const timer = setTimeout(() => setIsLoading(false), 2000);
 
-  //   return () => {
-  //     window.removeEventListener('load', handleLoad);
-  //     clearTimeout(timer);
-  //   };
+    return () => {
+      window.removeEventListener('load', handleLoad);
+      clearTimeout(timer);
+    };
 
-  // }, []);
+  }, []);
 
   return (
     <ContextProvider>
