@@ -5,8 +5,7 @@
   display: flex;
   justify-content: center;  
   background: radial-gradient(#882222,#35060e);
-}
-
+} 
 .checkout-container {
   position: absolute;
   top: 40px;
@@ -86,13 +85,6 @@
     align-items: center;
     justify-content: space-between;
   }
-
-/* .terms a{
-    
-    color: rgb(250, 250, 45);
-  } */
-
-
 
 .continue-button {
   background-color: #ff1100;

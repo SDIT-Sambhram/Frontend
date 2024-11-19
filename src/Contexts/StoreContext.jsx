@@ -176,7 +176,7 @@ export const ContextProvider = ({ children }) => {
                 participantId: paymentDetails.participantId,
                 orderId: paymentDetails.orderId
             }
-        });
+        });n
     };
 
     const handlePaymentError = (error) => {
@@ -227,10 +227,12 @@ export const ContextProvider = ({ children }) => {
             const rzp = new window.Razorpay(options);
             rzp.on('payment.failed', handlePaymentError);
             rzp.open();
-            
+            return true
+             
         } catch (error) {
             console.error("Payment initialization failed:", error);
             toast.error(error.response.data.message || 'Failed to initialize payment');
+            return false
         }
     };
 
