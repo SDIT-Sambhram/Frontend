@@ -57,9 +57,18 @@ const Contact = () => {
                             <i className="fa-solid fa-headset fa-xl"></i><h2>Tech Support</h2>
                         </div>
                         <div className="contact-element">
-                            <p>Abdulla Shafaz : <b>+91 7510324437</b></p>
-                            <p>Abhishek Kulal : 999999999999999</p>
-                            <p>Abhin M : 9562620848</p>
+                        <div className="contact-name">
+                        <p>Abdulla Shafaz : <b>+91 75103 24437</b></p>
+                                </div>
+                                <div className="contact-name">
+                                <p>Abhishek Kulal : +91 81050 48276</p><p></p>
+                            </div>
+                            <div className="contact-name">
+                            <p>Abhishek Kulal : +91 81050 48276</p><p></p>
+                            </div>
+                            
+                         
+                            <p>Abhin M : +91 95626 20848</p><p></p>
                         </div>
                     </div>
                     <hr />
