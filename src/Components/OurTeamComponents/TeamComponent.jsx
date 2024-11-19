@@ -61,6 +61,20 @@ const teamMembers = {
       image: "https://via.placeholder.com/150",
       github: "https://github.com/dev6",
       linkedin: "https://linkedin.com/in/dev6"
+    },
+    {
+      name: "Developer 9",
+      role: "Cloud Engineer",
+      image: "https://via.placeholder.com/150",
+      github: "https://github.com/dev9",
+      linkedin: "https://linkedin.com/in/dev9"
+    },
+    {
+      name: "Developer 10",
+      role: "Quality Assurance Engineer",
+      image: "https://via.placeholder.com/150",
+      github: "https://github.com/dev10",
+      linkedin: "https://linkedin.com/in/dev10"
     }
   ]
 };
@@ -86,39 +100,82 @@ const HeadCard = () => {
   );
 };
 
-const TeamMemberCard = ({ member }) => {
-  const cardRef = useRef(null);
+const TeamErrorBoundary = ({ children }) => {
+  const [hasError, setHasError] = React.useState(false);
 
+  React.useEffect(() => {
+    const handleError = (error) => {
+      console.error('Team Component Error:', error);
+      setHasError(true);
+    };
+
+    window.addEventListener('error', handleError);
+    return () => window.removeEventListener('error', handleError);
+  }, []);
+
+  if (hasError) {
+    return <div className="error-container">Failed to load team section. Please refresh the page.</div>;
+  }
+
+  return children;
+};
+
+const useIntersectionObserver = (options) => {
+  const elementRef = useRef(null);
+  
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-            observer.unobserve(entry.target); // Stop observing once animated
-          }
-        });
-      },
-      { 
-        threshold: 0.1,
-        rootMargin: '-20px'
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+        observer.unobserve(entry.target);
       }
-    );
+    }, {
+      threshold: options.threshold || 0.2,
+      rootMargin: options.rootMargin || '0px',
+    });
 
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
+    const currentElement = elementRef.current;
+    if (currentElement) {
+      observer.observe(currentElement);
     }
 
-    return () => observer.disconnect();
-  }, []);
+    return () => {
+      if (currentElement) {
+        observer.unobserve(currentElement);
+      }
+    };
+  }, [options.threshold, options.rootMargin]);
+
+  return elementRef;
+};
+
+const TeamMemberCard = ({ member }) => {
+  const cardRef = useIntersectionObserver({
+    threshold: 0.2,
+    rootMargin: '50px',
+  });
+  const [imageLoaded, setImageLoaded] = React.useState(false);
 
   const cardClassName = `team-member-card ${
     member.isHead ? 'head-member' : member.isCoHead ? 'co-head-member' : ''
-  }`;
+  } ${imageLoaded ? 'loaded' : ''}`;
 
   return (
     <div className={cardClassName} ref={cardRef}>
-        <img src={member.image} alt={member.name} className="member-image" />
+      <div className="image-container">
+        <img 
+          src={member.image} 
+          alt={member.name} 
+          className="member-image"
+          onLoad={() => setImageLoaded(true)}
+          onError={(e) => {
+            e.target.src = 'https://via.placeholder.com/150?text=Member';
+            setImageLoaded(true);
+          }}
+          loading="lazy"
+        />
+        {!imageLoaded && <div className="image-placeholder" />}
+      </div>
         <h3>{member.name}</h3>
         <p className="member-role">{member.role}</p>
         {(member.isHead || member.isCoHead) && (
@@ -144,31 +201,14 @@ const TeamMemberCard = ({ member }) => {
 };
 
 const TeamSection = ({ title, members }) => {
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          entry.target.classList.toggle('animate', entry.isIntersecting);
-        });
-      },
-      { 
-        threshold: 0.2,
-        rootMargin: '-50px'
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  const sectionRef = useIntersectionObserver({
+    threshold: 0.1,
+    rootMargin: '0px',
+  });
 
   return (
     <div className="team-section" ref={sectionRef}>
-      <h2>{title}</h2>
+      <h2 data-text={title}>{title}</h2>
       <div className="team-members">
         {members.map((member, index) => (
           <TeamMemberCard key={index} member={member} />
@@ -180,12 +220,14 @@ const TeamSection = ({ title, members }) => {
 
 const TeamComponent = () => {
     return (
+      <TeamErrorBoundary>
         <div className="team-container">
             <h1>Our Team</h1>
             <HeadCard />
             <TeamSection title="Website Team" members={teamMembers.team} />
         </div>
+      </TeamErrorBoundary>
     );
 };
 
-export default TeamComponent;
+export default React.memo(TeamComponent);
