@@ -20,7 +20,7 @@
     transition: transform 0.5s ease;
     transform-origin: center;
     border-radius: 10px;
-    box-shadow: 0 10px 30px 5px rgba(76, 0, 0, 0.3); /* Heavy spreading shadow */
+    box-shadow: 0 0px 15px 2px rgba(255, 0, 0, 0.1);
 }
 .event-card:hover {
     transform: scale(1.05);
