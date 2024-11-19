@@ -6,7 +6,7 @@ const EventPopup = () => {
     const { setPopUpStatus, popUpStatus, selectEvent, selectedEvent } = useContext(StoreContext);
 
     return (
-        <div onClick={() => setPopUpStatus('')} className={`event-popup-container ${popUpStatus ? 'show' : ''}`}>
+        <div key={popUpStatus._id} onClick={() => setPopUpStatus('')} className={`event-popup-container ${popUpStatus ? 'show' : ''}`}>
             <div className="event-popup" onClick={(e) => e.stopPropagation()}>
             <img src="/bg-Cultural-phone.jpg" alt="" />
                 <div className="close-icon">

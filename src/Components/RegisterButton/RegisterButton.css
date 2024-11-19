@@ -18,21 +18,15 @@
     justify-content: space-between;
     align-items: center;
     border-radius: 15px;
-    background: url("../../assets/bg-drag.jpg");
-    background-size: cover;
-    -webkit-animation: moveBg 80s linear infinite;
-    animation: moveBg 80s linear infinite;
-    transition: all 0.3s ease;
-    transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.311);
+    background-color: #540000ca;
+    backdrop-filter: blur(10px);
 }
 
 .register-button:hover {
-    background: linear-gradient(319deg, #000000, #540000, #630202);
-    background-size: 800% 800%;
-    -webkit-animation: AnimationName 5s ease infinite;
-    animation: AnimationName 5s ease infinite;
+    box-shadow: 0 0 20px 5px rgba(255, 2, 2, 0.311);
+    background-color: #370101ca;
+    backdrop-filter: blur(10px);
 }
 
 .register-button:hover p {
@@ -48,19 +42,7 @@
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* Keyframes for animation */
-@keyframes AnimationName {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
 
-@keyframes moveBg {
-    0% { background-position: 0 0; }
-    100% { background-position: 100% 0; }
-}
-
-/* Mobile adjustments */
 @media (max-width: 700px) {
     .register-button-container {
         bottom: calc(3svh - env(safe-area-inset-bottom, 0px));
