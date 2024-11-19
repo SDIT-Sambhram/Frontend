@@ -50,10 +50,10 @@ const SuccessPage = () => {
                     </div>
                 )}
                 <div className="success-component">
-                <img className='success-bg-img' src="bg-Special-phone.jpg" alt="" />
+                {/* <img className='success-bg-img' src="bg-Special-phone.jpg" alt="" /> */}
                     <div className="flying-lantern">
                         <img src="https://oriental-decor.com/wp-content/uploads/2023/10/2545-w-900x900.png" alt="Flying Lantern" />
-                    </div>
+                    </div> 
                     <div className="flying-lantern">
                         <img src="https://oriental-decor.com/wp-content/uploads/2023/10/2545-w-900x900.png" alt="Flying Lantern" />
                     </div>

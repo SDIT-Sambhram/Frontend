@@ -10,20 +10,6 @@ const Contact = () => {
                     <div className="contact-heading">
                         <h2>Contact Us</h2>
                     </div>
-                    {/* <div className="contact-elements">
-                        <div className="contact-element-head">
-                            <i className="fa-solid fa-user fa-xl"></i><h2>Media team</h2>
-                        </div>
-                        <div className="contact-element">
-                            <h4>Rohan shetty (Head) </h4><p>+91 99999999999999</p>
-                        </div>
-                        <div className="contact-element">
-                            <h4>Rohan shetty (Head) </h4><p>+91 99999999999999</p>
-                        </div>
-                        <div className="contact-element">
-                            <h4>Rohan shetty (Head) </h4><p>+91 99999999999999</p>
-                        </div>
-                    </div> */}
 
                     <div className="contact-elements">
                         <div className="contact-element-head">
