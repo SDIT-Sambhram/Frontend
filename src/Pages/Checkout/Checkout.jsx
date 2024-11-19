@@ -78,12 +78,14 @@ const CheckoutPage = () => {
   }
 
 
-  const confirmPayment = () => {
-    payNow();
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 10000);
+  const confirmPayment = async () => {
+    setIsLoading(true)
+    const confirmRes = await payNow();
+    if (!confirmRes) {
+      toast.error("Please try again after sometime..")
+    }
+    setIsLoading(false)
+
   }
 
 
@@ -127,9 +129,9 @@ const CheckoutPage = () => {
           <div className="confirm-price-section">
             <h4>Selected events</h4>
             {items.map((item, index) => (
-             <div className="confirm-price" key={index}>
-             <p>{item.eventName}</p> <p><i className="fa-solid fa-indian-rupee-sign">&nbsp;</i>100</p>
-           </div>
+              <div className="confirm-price" key={index}>
+                <p>{item.eventName}</p> <p><i className="fa-solid fa-indian-rupee-sign">&nbsp;</i>100</p>
+              </div>
             ))}
           </div>
 
@@ -159,8 +161,8 @@ const CheckoutPage = () => {
 
       <div className="continue-panel">
         <div className="terms">
-        <i onClick={handleBack} className="fa-solid fa-arrow-left fa-lg" style={{ color: "#ffffff" }}></i>
-          <i onClick={() => setSelectedEvent(() => [])} className="fa-solid fa-trash" style={{ color: "#ffffff" }}></i>    
+          <i onClick={handleBack} className="fa-solid fa-arrow-left fa-lg" style={{ color: "#ffffff" }}></i>
+          <i onClick={() => setSelectedEvent(() => [])} className="fa-solid fa-trash" style={{ color: "#ffffff" }}></i>
         </div>
 
         <div className="continue-section">

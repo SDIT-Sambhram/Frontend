@@ -97,7 +97,7 @@ export const ContextProvider = ({ children }) => {
     const selectEvent = (id) => {
         if (selectedEvent.includes(id)) {
             setSelectedEvent(prev => prev.filter(eventId => eventId !== id));
-            toast.error("Event removed");
+            toast.success("Event removed");
         } else {
             if (selectedEvent.length >= 4) {
                 toast.warn("Maximum 4 events can be selected");
@@ -176,7 +176,7 @@ export const ContextProvider = ({ children }) => {
                 participantId: paymentDetails.participantId,
                 orderId: paymentDetails.orderId
             }
-        });
+        });n
     };
 
     const handlePaymentError = (error) => {
@@ -227,10 +227,12 @@ export const ContextProvider = ({ children }) => {
             const rzp = new window.Razorpay(options);
             rzp.on('payment.failed', handlePaymentError);
             rzp.open();
-            
+            return true
+             
         } catch (error) {
             console.error("Payment initialization failed:", error);
             toast.error(error.response.data.message || 'Failed to initialize payment');
+            return false
         }
     };
 
