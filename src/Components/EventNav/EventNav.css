@@ -8,15 +8,17 @@
    top: 100px;
    z-index: 15;
 }
-
 .event-nav{
     width:50%;
     height: 60px;
     border-radius: 50px;
     display: flex;
     justify-content: space-around; 
-    padding: 10px;
-    background: linear-gradient(319deg, #000000, #540000, #630202);
+    align-items: center;
+    padding: 8px;
+    box-shadow: 0 0 10px 6px rgba(255, 255, 255, 0.35);
+    /* background: linear-gradient(319deg, #000000, #540000, #630202); */
+    backdrop-filter: blur(10px);
     background-size: 800% 800%;
     -webkit-animation: AnimationName 5s ease infinite;
     animation: AnimationName 5s ease infinite;
@@ -33,20 +35,19 @@
 }
 .event-nav-type {
     width: 110px;
-    height: 40px;
+    height: 90%;
     border-radius: 50px;
     background-color: rgba(255, 255, 255, 0.605);
     display: flex;
     justify-content: center; 
     align-items: center;
     font-weight: bold;
-
+font-size: 16px;
     transition: transform 0.2s; 
 }
 .event-nav .active{
-    border: 3px solid rgb(255, 0, 0);
     background-color: white;
-
+    box-shadow: 0 0 6px 1px rgb(255, 255, 255);
     animation: shake 0.3s forwards;
 }
 
@@ -84,6 +85,8 @@
     }
     .event-nav{
         width: 80%;
+        height: 55px;
+        box-shadow: 0 0 9apx 3px rgba(255, 255, 255, 0.3);
     }
     .event-nav-type{
         width: 30%;
