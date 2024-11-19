@@ -14,7 +14,8 @@ const menuItems = [
   { id: 'home', path: '/', label: 'Home' },
   { id: 'events', path: '/events', label: 'Events' },
   { id: 'about', path: '/about', label: 'About' },
-  { id: 'contact', path: '/Contact', label: 'Contact' }
+  { id: 'contact', path: '/Contact', label: 'Contact' },
+  { id: 'team', path: '/team', label: 'Team' },
 ];
 
 const RightDrawerMenu = memo(() => {
@@ -33,7 +34,7 @@ const RightDrawerMenu = memo(() => {
   // Memoize drawer content to prevent unnecessary re-renders
   const drawerContent = useMemo(() => (
     <List component="nav">
-      {menuItems.map(({ id, path, label }) => ( 
+      {menuItems.map(({ id, path, label }) => (
         <ListItem key={id} disablePadding>
           {path ? (
             <ListItemButton
@@ -75,9 +76,9 @@ const RightDrawerMenu = memo(() => {
           elevation: 3,
           sx: {
             width: { xs: '250px', sm: '300px' },
-            backdropFilter: 'blur(4px)', 
+            backdropFilter: 'blur(4px)',
             backgroundColor: 'rgb(37 9 9 / 50%);',
-            color:'white',
+            color: 'white',
             '& .MuiListItemButton-root': {
               py: 1.5,
               '&:hover': {
