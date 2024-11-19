@@ -4,13 +4,13 @@ const Contact = () => {
     return (
         <>
             <div className="contact">
-                <div className="contact-heading">
-                    <h2>Contact Us</h2>
-                </div>
+
 
                 <div className="contact-box">
-
-                {/* <div className="contact-elements">
+                    <div className="contact-heading">
+                        <h2>Contact Us</h2>
+                    </div>
+                    {/* <div className="contact-elements">
                         <div className="contact-element-head">
                             <i className="fa-solid fa-user fa-xl"></i><h2>Media team</h2>
                         </div>
@@ -24,7 +24,7 @@ const Contact = () => {
                             <h4>Rohan shetty (Head) </h4><p>+91 99999999999999</p>
                         </div>
                     </div> */}
-                    
+
                     <div className="contact-elements">
                         <div className="contact-element-head">
                             <i className="fa-solid fa-envelope fa-xl"></i><h2>Mail</h2>
@@ -57,9 +57,18 @@ const Contact = () => {
                             <i className="fa-solid fa-headset fa-xl"></i><h2>Tech Support</h2>
                         </div>
                         <div className="contact-element">
-                            <p>Abdulla Shafaz : <b>+91 7510324437</b></p>
-                            <p>Abhishek Kulal : 999999999999999</p>
-                            <p>Abhin M : 9562620848</p>
+                            <div className="contact-name">
+                                <p>Abdulla Shafaz  </p><p><b>+91 75103 24437</b></p>
+                            </div>
+                            <div className="contact-name">
+                                <p>Abhishek Kulal  </p><p>+91 81050 48276</p>
+                            </div>
+                            <div className="contact-name">
+                                <p>Abhin M  </p><p>+91 95626 20848</p>
+                            </div>
+
+
+
                         </div>
                     </div>
                     <hr />

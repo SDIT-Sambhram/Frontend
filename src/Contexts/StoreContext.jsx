@@ -1,109 +1,132 @@
-import { createContext, useState, useEffect, } from 'react';
+import { createContext, useState, useEffect } from 'react';
 import { eventsData } from '../sampleDB';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-import Razorpay from 'razorpay';
 
-
+// Constants
 const url = process.env.REACT_APP_URL;
+const razorpayKey = process.env.REACT_APP_RAZORPAY_ID;
 
+// Create context
 export const StoreContext = createContext();
+
+// Context Provider Component
 export const ContextProvider = ({ children }) => {
+    // State management
     const [eventType, setEventType] = useState("Cultural");
     const [popUpStatus, setPopUpStatus] = useState('');
     const [eventDatas, setEventDatas] = useState([]);
-    const [amount, setAmount] = useState();
+    const [amount, setAmount] = useState(0);
     const [step, setStep] = useState(1);
-   
+    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
+
+    // Form data state
     const [data, setData] = useState({
         name: "",
         usn: "",
         college: "",
         mobile: "",
-        Othercollege:""
+        Othercollege: ""
     });
 
+    // Selected events state with localStorage persistence
     const [selectedEvent, setSelectedEvent] = useState(() => {
         const savedEvents = localStorage.getItem("selectedEvent");
         return savedEvents ? JSON.parse(savedEvents) : [];
     });
 
-    let successData= {
-        participantId:"no participant id",
-        orderId:"no id"
-    };
+    // State for tracking payment success
+    const [paymentStatus, setPaymentStatus] = useState({
+        participantId: null,
+        orderId: null,
+        isSuccess: false
+    });
 
+    // Effect for persisting selected events
     useEffect(() => {
         localStorage.setItem("selectedEvent", JSON.stringify(selectedEvent));
     }, [selectedEvent]);
 
+    // Effect for persisting event data
     useEffect(() => {
         localStorage.setItem("eventDatas", JSON.stringify(eventDatas));
-    }, [eventDatas])
-    const navigate = useNavigate();
+    }, [eventDatas]);
 
+    // Effect for initial data load
     useEffect(() => {
-        const loadEvents = async () => {
-            // Try to load from localStorage first for immediate display
+        loadEvents();
+    }, []);
+
+    // Functions
+    const loadEvents = async () => {
+        try {
+            // Try loading from localStorage first
             const cachedData = localStorage.getItem("eventDatas");
             if (cachedData) {
                 setEventDatas(JSON.parse(cachedData));
             }
 
-            // Then fetch fresh data from server
-            await fetchData();
-        };
-
-        loadEvents();
-    }, []);
-    
-    const selectEvent = (id) => {
-        if (selectedEvent.includes(id)) {
-            setSelectedEvent((prev) => prev.filter(eventId => eventId !== id));
-            toast.error("Event removed");
+            // Fetch fresh data
+            await fetchEvents();
+        } catch (error) {
+            console.error("Error loading events:", error);
+            toast.error("Failed to load events");
         }
-        else {
-            if (selectedEvent.length == 4) {
-                toast.warn("only 4 event can be selected");
-            }
-            else {
-                setSelectedEvent((prev) => [...prev, id]);
-                toast.success("Event added");
-            }
-        }
-
     };
 
-    const fetchData = async () => {
+    const fetchEvents = async () => {
         try {
-            console.log(url);
             const response = await axios.get(`${url}/api/v1/auth/events`);
-
             const newEventDatas = response.data;
 
-            localStorage.setItem("eventDatas", JSON.stringify(newEventDatas.length));
-
-            // Update state
-            setEventDatas(newEventDatas);
-            console.log("Data successfully fetched from server ||", "Fetched quantity :::", newEventDatas.length);
-        } catch (err) {
-            console.log("Error in axios", err);
-
-            // Try to load from localStorage first
-            const cachedData = localStorage.getItem("eventDatas");
-            if (cachedData) {
-                const parsedData = JSON.parse(cachedData);
-                setEventDatas(parsedData);
-                console.log("Data loaded from localStorage (", parsedData.length, "items)");
+            if (Array.isArray(newEventDatas)) {
+                setEventDatas(newEventDatas);
+                localStorage.setItem("eventDatas", JSON.stringify(newEventDatas));
+                console.log("Events fetched successfully:", newEventDatas.length);
             } else {
-                console.log("error fetching data");
+                throw new Error("Invalid event data format");
             }
+        } catch (error) {
+            console.error("Error fetching events:", error);
+            throw error;
         }
     };
-    const sendDatatoBackend = async () => {
 
-        const dataSet = {
+    const selectEvent = (id) => {
+        if (selectedEvent.includes(id)) {
+            setSelectedEvent(prev => prev.filter(eventId => eventId !== id));
+            toast.error("Event removed");
+        } else {
+            if (selectedEvent.length >= 4) {
+                toast.warn("Maximum 4 events can be selected");
+                return;
+            }
+            setSelectedEvent(prev => [...prev, id]);
+            toast.success("Event added");
+        }
+    };
+
+    const validatePaymentData = () => {
+        const requiredFields = ['name', 'usn', 'college', 'mobile'];
+        const missingFields = requiredFields.filter(field => !data[field]);
+        
+        if (missingFields.length > 0) {
+            throw new Error(`Missing required fields: ${missingFields.join(', ')}`);
+        }
+
+        if (!selectedEvent.length) {
+            throw new Error('Please select at least one event');
+        }
+
+        if (!amount || amount <= 0) {
+            throw new Error('Invalid amount');
+        }
+    };
+
+    const preparePaymentData = () => {
+        return {
             name: data.name,
             usn: data.usn,
             college: data.college,
@@ -111,75 +134,122 @@ export const ContextProvider = ({ children }) => {
             amount: amount,
             registrations: selectedEvent.map(id => ({ event_id: id }))
         };
-        console.log("data sending to backend:",dataSet);
-        
+    };
+
+    const sendDatatoBackend = async () => {
         try {
-            const res = await axios.post(`${url}/api/v1/auth/payment`, dataSet);
-            console.log("success bro ", res.data);
-            console.log(res.data.participantId);            
-            successData.participantId = res.data.participantId
-            successData.orderId = res.data.orderId
-            console.log("success data",successData);
-            return res.data; // Return the response data containing the order ID
-        } catch (err) {
-            console.error("Error in backend call", err);
-            throw err; // Rethrow the error so it can be caught by payNow
+            validatePaymentData();
+            const paymentData = preparePaymentData();
+            
+            setLoading(true);
+            const response = await axios.post(`${url}/api/v1/auth/payment`, paymentData);
+            
+            if (!response.data?.orderId) {
+                throw new Error('Invalid response from payment server');
+            }
+
+            return {
+                participantId: response.data.participantId,
+                orderId: response.data.orderId,
+                amount: response.data.amount,
+                currency: response.data.currency || 'INR'
+            };
+        } catch (error) {
+            console.error("Backend request failed:", error);
+            throw error;
+        } finally {
+            setLoading(false);
         }
+    };
+
+    const handlePaymentSuccess = (response, paymentDetails) => {
+        console.log("Payment successful", response);
+        setPaymentStatus({
+            participantId: paymentDetails.participantId,
+            orderId: paymentDetails.orderId,
+            isSuccess: true
+        });
+
+        setSelectedEvent([]);
+        navigate('/success', {
+            state: {
+                participantId: paymentDetails.participantId,
+                orderId: paymentDetails.orderId
+            }
+        });
+    };
+
+    const handlePaymentError = (error) => {
+        console.error("Payment failed:", error);
+        toast.error(error.error?.response.data.message || 'Payment failed');
+        setPaymentStatus(prev => ({ ...prev, isSuccess: false }));
+    };
+
+    const initializeRazorpay = (paymentDetails) => {
+        return {
+            key: razorpayKey,
+            amount: paymentDetails.amount,
+            currency: paymentDetails.currency,
+            name: "SHREE DEVI SAMBHRAM",
+            description: "National Level Technical and Cultural Fest",
+            image: "https://storage.googleapis.com/educrib/colleges/uploads/f7a1791dd41f3fa5e5e4f8a6faea2467ShreeDeviCollegeOfPhysiotherapy_Fd.jpg",
+            order_id: paymentDetails.orderId,
+            handler: (response) => handlePaymentSuccess(response, paymentDetails),
+            prefill: {
+                name: data.name,
+                contact: data.mobile
+            },
+            notes: {
+                address: "Kenjar"
+            },
+            theme: {
+                color: "#ff001b"
+            },
+            modal: {
+                ondismiss: () => toast.info("Payment cancelled")
+            }
+        };
     };
 
     const payNow = async () => {
         try {
-            // Get order details from backend
-            const payLoad = await sendDatatoBackend();
-            console.log("payload", payLoad);
+            if (!window.Razorpay) {
+                throw new Error('Razorpay SDK not loaded');
+            }
 
-            // Open Razorpay Checkout with dynamic order details
-            const options = {
-                key: process.env.REACT_APP_RAZORPAY_ID, // Your Razorpay Key ID
-                amount: payLoad.amount, // Amount from backend response (should be in subunits, e.g., paise for INR)
-                currency: payLoad.currency,
-                name: "SHREE DEVI SAMBHRAM",
-                description: "National Level Technical and Cultural Fest",
-                image: "https://storage.googleapis.com/educrib/colleges/uploads/f7a1791dd41f3fa5e5e4f8a6faea2467ShreeDeviCollegeOfPhysiotherapy_Fd.jpg",
-                order_id: payLoad.orderId,
-                redirect: url + '/api/v1/auth/payment/verify',
-                handler: function (response) {
+            if (!razorpayKey) {
+                throw new Error('Razorpay key not configured');
+            }
 
-                    console.log("gateway success");
-
-                    setSelectedEvent([]);
-                    
-                    navigate('/success', { state: { participantId: successData.participantId,orderId:successData.orderId } });
-
-                },
-                prefill: {
-                    name: data.name,
-                    contact: data.mobile
-                },
-                notes: {
-                    address: "Kenjar"
-                },
-                theme: {
-                    color: "#ff001b",
-                }
-            };
-
-            const rzp = new Razorpay(options);
-            rzp.on('payment.failed', function (response) {
-                toast.error("Payment failed: " + response.error.description);
-            });
+            const paymentDetails = await sendDatatoBackend();
+            const options = initializeRazorpay(paymentDetails);
+            
+            const rzp = new window.Razorpay(options);
+            rzp.on('payment.failed', handlePaymentError);
             rzp.open();
+            
         } catch (error) {
-            console.error("Error initiating payment", error.response);
-            toast.error(error.response.data.message)
+            console.error("Payment initialization failed:", error);
+            toast.error(error.response.data.message || 'Failed to initialize payment');
         }
     };
 
+    // Reset functions
+    const resetForm = () => {
+        setData({
+            name: "",
+            usn: "",
+            college: "",
+            mobile: "",
+            Othercollege: ""
+        });
+        setStep(1);
+        setSelectedEvent([]);
+        setAmount(0);
+    };
 
-
-
-
-    const objects = {
+    // Context value
+    const contextValue = {
         eventType,
         setEventType,
         popUpStatus,
@@ -197,12 +267,16 @@ export const ContextProvider = ({ children }) => {
         payNow,
         step,
         setStep,
-        successData
+        loading,
+        paymentStatus,
+        resetForm
     };
 
     return (
-        <StoreContext.Provider value={objects}>
+        <StoreContext.Provider value={contextValue}>
             {children}
         </StoreContext.Provider>
     );
 };
+
+export default ContextProvider;
