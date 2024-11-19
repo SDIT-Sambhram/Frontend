@@ -160,8 +160,7 @@ const CheckoutPage = () => {
       <div className="continue-panel">
         <div className="terms">
         <i onClick={handleBack} className="fa-solid fa-arrow-left fa-lg" style={{ color: "#ffffff" }}></i>
-          {/* <i onClick={() => setSelectedEvent(() => [])} className="fa-solid fa-trash" style={{ color: "#520f0f" }}></i> */}
-         
+          <i onClick={() => setSelectedEvent(() => [])} className="fa-solid fa-trash" style={{ color: "#ffffff" }}></i>    
         </div>
 
         <div className="continue-section">
