@@ -7,6 +7,7 @@ import Razorpay from 'razorpay';
 
 
 const url = process.env.REACT_APP_URL;
+const razorpayKey = process.env.REACT_APP_RAZORPAY_ID;
 
 export const StoreContext = createContext();
 export const ContextProvider = ({ children }) => {
@@ -133,10 +134,11 @@ export const ContextProvider = ({ children }) => {
             const payLoad = await sendDatatoBackend();
             console.log("payload", payLoad);
             console.log("data", data);
+            console.log("razorpay key", razorpayKey);
 
             // Open Razorpay Checkout with dynamic order details
             const options = {
-                key: process.env.REACT_APP_RAZORPAY_ID, // Your Razorpay Key ID
+                key: razorpayKey, // Your Razorpay Key ID
                 amount: payLoad.amount, // Amount from backend response (should be in subunits, e.g., paise for INR)
                 currency: payLoad.currency,
                 name: "SHREE DEVI SAMBHRAM",
