@@ -16,6 +16,7 @@ const menuItems = [
   { id: 'about', path: '/about', label: 'About Us' },
   { id: 'contact', path: '/Contact', label: 'Contact Us' },
   { id: 'team', path: '/team', label: 'Our Team' },
+  { id: 'viewticket', path: '/viewticket', label: 'View Your Ticket' }
 ];
 
 const RightDrawerMenu = memo(() => {

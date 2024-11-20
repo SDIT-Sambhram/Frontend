@@ -4,25 +4,26 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
-// Constants
 const url = process.env.REACT_APP_URL;
 const razorpayKey = process.env.REACT_APP_RAZORPAY_ID;
 
-// Create context
 export const StoreContext = createContext();
 
-// Context Provider Component
 export const ContextProvider = ({ children }) => {
-    // State management
+    const navigate = useNavigate();
+
     const [eventType, setEventType] = useState("Cultural");
     const [popUpStatus, setPopUpStatus] = useState('');
     const [eventDatas, setEventDatas] = useState([]);
     const [amount, setAmount] = useState(0);
     const [step, setStep] = useState(1);
     const [loading, setLoading] = useState(false);
-    const navigate = useNavigate();
 
-    // Form data state
+    // Retrieve and manage participant ID
+    const [stPartId, setStPartId] = useState(() => {
+        return localStorage.getItem("stPartId") || null;
+    });
+
     const [data, setData] = useState({
         name: "",
         usn: "",
@@ -31,44 +32,35 @@ export const ContextProvider = ({ children }) => {
         Othercollege: ""
     });
 
-    // Selected events state with localStorage persistence
     const [selectedEvent, setSelectedEvent] = useState(() => {
         const savedEvents = localStorage.getItem("selectedEvent");
         return savedEvents ? JSON.parse(savedEvents) : [];
     });
 
-    // State for tracking payment success
     const [paymentStatus, setPaymentStatus] = useState({
         participantId: null,
         orderId: null,
         isSuccess: false
     });
 
-    // Effect for persisting selected events
     useEffect(() => {
         localStorage.setItem("selectedEvent", JSON.stringify(selectedEvent));
     }, [selectedEvent]);
 
-    // Effect for persisting event data
     useEffect(() => {
         localStorage.setItem("eventDatas", JSON.stringify(eventDatas));
     }, [eventDatas]);
 
-    // Effect for initial data load
     useEffect(() => {
         loadEvents();
     }, []);
 
-    // Functions
     const loadEvents = async () => {
         try {
-            // Try loading from localStorage first
             const cachedData = localStorage.getItem("eventDatas");
             if (cachedData) {
                 setEventDatas(JSON.parse(cachedData));
             }
-
-            // Fetch fresh data
             await fetchEvents();
         } catch (error) {
             console.error("Error loading events:", error);
@@ -111,7 +103,7 @@ export const ContextProvider = ({ children }) => {
     const validatePaymentData = () => {
         const requiredFields = ['name', 'usn', 'college', 'mobile'];
         const missingFields = requiredFields.filter(field => !data[field]);
-        
+
         if (missingFields.length > 0) {
             throw new Error(`Missing required fields: ${missingFields.join(', ')}`);
         }
@@ -140,10 +132,10 @@ export const ContextProvider = ({ children }) => {
         try {
             validatePaymentData();
             const paymentData = preparePaymentData();
-            
+
             setLoading(true);
             const response = await axios.post(`${url}/api/v1/auth/payment`, paymentData);
-            
+
             if (!response.data?.orderId) {
                 throw new Error('Invalid response from payment server');
             }
@@ -163,25 +155,37 @@ export const ContextProvider = ({ children }) => {
     };
 
     const handlePaymentSuccess = (response, paymentDetails) => {
-        console.log("Payment successful", response);
+        console.log('Payment response:', response);
+
+        // Remove old participant ID
+        localStorage.removeItem('stPartId');
+
+        // Update payment status
         setPaymentStatus({
             participantId: paymentDetails.participantId,
             orderId: paymentDetails.orderId,
             isSuccess: true
         });
 
+        // Update state and local storage
+        setStPartId(paymentDetails.participantId);
+        localStorage.setItem('stPartId', paymentDetails.participantId);
+
+        console.log('Updated participant ID:', paymentDetails.participantId);
+
+        // Clear selected events and navigate
         setSelectedEvent([]);
         navigate('/success', {
             state: {
                 participantId: paymentDetails.participantId,
                 orderId: paymentDetails.orderId
             }
-        });n
+        });
     };
 
     const handlePaymentError = (error) => {
         console.error("Payment failed:", error);
-        toast.error(error.error?.response.data.message || 'Payment failed');
+        toast.error(error.response?.data?.message || 'Payment failed');
         setPaymentStatus(prev => ({ ...prev, isSuccess: false }));
     };
 
@@ -223,20 +227,19 @@ export const ContextProvider = ({ children }) => {
 
             const paymentDetails = await sendDatatoBackend();
             const options = initializeRazorpay(paymentDetails);
-            
+
             const rzp = new window.Razorpay(options);
             rzp.on('payment.failed', handlePaymentError);
             rzp.open();
-            return true
-             
+            return true;
+
         } catch (error) {
             console.error("Payment initialization failed:", error);
-            toast.error(error.response.data.message || 'Failed to initialize payment');
-            return false
+            toast.error(error.response?.data?.message || 'Failed to initialize payment');
+            return false;
         }
     };
 
-    // Reset functions
     const resetForm = () => {
         setData({
             name: "",
@@ -250,7 +253,6 @@ export const ContextProvider = ({ children }) => {
         setAmount(0);
     };
 
-    // Context value
     const contextValue = {
         eventType,
         setEventType,
@@ -271,7 +273,8 @@ export const ContextProvider = ({ children }) => {
         setStep,
         loading,
         paymentStatus,
-        resetForm
+        resetForm,
+        stPartId
     };
 
     return (
