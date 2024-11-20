@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useMemo } from 'react';
+import React, { memo, useCallback, useMemo, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
@@ -8,6 +8,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { StoreContext } from '../../Contexts/StoreContext';
 import './RightDrawerMenu.css';
 
 const menuItems = [
@@ -20,7 +21,7 @@ const menuItems = [
 
 const RightDrawerMenu = memo(() => {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
-
+  const {stPartId} = useContext(StoreContext)
   const handleOpenDrawer = useCallback(() => {
     setIsDrawerOpen(true);
   }, []);
@@ -52,6 +53,12 @@ const RightDrawerMenu = memo(() => {
           )}
         </ListItem>
       ))}
+      {stPartId? <ListItemButton
+              component={Link}
+              to="/viewticket"
+              onClick={handleCloseDrawer}
+              className="drawer-link"
+            ><ListItemText primary="View My Ticket" /></ListItemButton>:<></>}
     </List>
   ), [handleCloseDrawer]);
 
