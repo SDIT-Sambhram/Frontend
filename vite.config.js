@@ -7,22 +7,21 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export default defineConfig({
-  base: '/', // Ensure root path is correctly set for deployment
+  base: '/',
   
-  // Add server configuration for network access
   server: {
-    host: '0.0.0.0',  // Expose to all network interfaces
-    port: 3000,       // Specify port
-    strictPort: true, // Fail if port is in use
+    host: '0.0.0.0',
+    port: 3000,
+    strictPort: true,
     watch: {
-      usePolling: true // Helps with some network file systems
+      usePolling: true
     }
   },
 
   plugins: [
     react(),
     compression({
-      algorithm: 'brotliCompress', // Use Brotli compression
+      algorithm: 'brotliCompress',
       ext: '.br',
     }),
   ],
@@ -31,7 +30,6 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          // Split vendor code
           vendor: ['react', 'react-dom', 'react-router-dom'],
         }
       }
@@ -39,8 +37,19 @@ export default defineConfig({
     minify: 'terser',
     chunkSizeWarningLimit: 1500,
     terserOptions: {
-      compress: { // Remove console.logs in production
-        drop_debugger: true,
+      compress: {
+        drop_console: true,      // Remove console.* calls
+        drop_debugger: true,     // Remove debugger statements
+        pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.warn'], // Remove specific console functions
+        pure_getters: true,      // Optimize getter functions
+        passes: 2,              // Additional optimization passes
+        unsafe: true,           // Enable unsafe transformations
+      },
+      format: {
+        comments: false,        // Remove comments
+      },
+      mangle: {
+        properties: false,      // Don't mangle property names
       },
     },
   },
@@ -49,7 +58,7 @@ export default defineConfig({
     postcss: {
       plugins: [
         cssnano({
-          preset: 'default', // Default minification options
+          preset: 'default',
         }),
       ],
     },
@@ -59,7 +68,6 @@ export default defineConfig({
     'process.env': process.env,
   },
 
-  // Optional: Add HMR and other development optimizations
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom'],
   },

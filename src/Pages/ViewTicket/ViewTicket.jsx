@@ -62,7 +62,6 @@ const ViewTicket = () => {
                 {participant.map((event, index) => (
                     <div key={index} className="ticket ticket-top">
                         <img src={event.ticket_url} alt={`Ticket for event ${event.event_id}`} />
-                        {/* Display other relevant ticket details */}
                     </div>
                 ))}
             </div>}

@@ -114,7 +114,7 @@ export const ContextProvider = ({ children }) => {
 
         if (!amount || amount <= 0) {
             throw new Error('Invalid amount');
-        }
+        }      
     };
 
     const preparePaymentData = () => {
