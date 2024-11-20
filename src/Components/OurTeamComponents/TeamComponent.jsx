@@ -16,6 +16,9 @@ import ishaImage from './images/isha.jpg';
 import chiranjeeviImage from './images/chiranjeevi.jpg';
 import suhanImage from './images/suhan.jpg';
 import pareshImage from './images/paresh.jpg';
+import sanjanaImage from './images/sanjana.jpg';
+import shreyasImage from './images/shreyas.jpg';
+import appuImage from './images/appu.jpg';
 
 const teamMembers = {
   team: [
@@ -60,34 +63,34 @@ const teamMembers = {
       name: "Suraj M P",
       role: "UI/UX Developer",
       image: surajImage,
-      github: "https://github.com/dev4",
-      linkedin: "https://www.linkedin.com/in/surajmp045/"
+      github: "https://github.com/SURAJMP045",
+      linkedin: "https://www.linkedin.com/in/surajmp045"
     },
     {
       name: "Esha",
-      role: "Database Engineer",
+      role: "Frontend Developer",
       image: ishaImage,
       github: "https://github.com/dev5",
       linkedin: "https://www.linkedin.com/in/esha-shetty-27b0a127a/"
     },
     {
       name: "Chiranjeevi",
-      role: "API Developer",
+      role: "Frontend Developer",
       image: chiranjeeviImage,
       github: "https://github.com/Chiru088",
       linkedin: "https://www.linkedin.com/in/chiranjeevi-s-a9209b27b/"
     },
     {
       name: "Appuraj",
-      role: "Cloud Engineer",
-      image: "https://via.placeholder.com/150",
+      role: "front end",
+      image: appuImage,
       github: "https://github.com/dev9",
       linkedin: "https://linkedin.com/in/dev9"
     },
     {
       name: "Shreyas",
-      role: "Quality Assurance Engineer",
-      image: "https://via.placeholder.com/150",
+      role: "ui/ux designer",
+      image: shreyasImage,
       github: "https://github.com/dev10",
       linkedin: "https://linkedin.com/in/dev10"
     }
@@ -134,7 +137,7 @@ const specialContributors = {
     {
       name: "Sanjana",
       role: "Development Support",
-      image: "https://via.placeholder.com/150",
+      image: sanjanaImage,
       github: "https://github.com/yadhukrishna",
       linkedin: "https://linkedin.com/in/yadhukrishna"
     },
