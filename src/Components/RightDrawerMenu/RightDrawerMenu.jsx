@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useMemo } from 'react';
+import React, { memo, useCallback, useMemo ,useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
@@ -8,9 +8,12 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { StoreContext } from '../../Contexts/StoreContext';
 import './RightDrawerMenu.css';
 
-const menuItems = [
+const {stPartId} = useContext(StoreContext);
+
+let menuItems = [
   { id: 'home', path: '/', label: 'Home' },
   { id: 'events', path: '/events', label: 'Events' },
   { id: 'about', path: '/about', label: 'About Us' },
@@ -18,6 +21,8 @@ const menuItems = [
   { id: 'team', path: '/team', label: 'Our Team' },
   { id: 'viewticket', path: '/viewticket', label: 'View Your Ticket' }
 ];
+
+ menuItems = stPartId ? menuItems.filter(item => item.id !== 'viewticket') : menuItems;
 
 const RightDrawerMenu = memo(() => {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
