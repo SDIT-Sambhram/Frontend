@@ -7,7 +7,7 @@
 .label {
   font-size: 25px;
   font-weight: bold;
-  background: url('../../assets/image.png') no-repeat center center;
+  background: url('../../assets/image.png') center;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
