@@ -52,16 +52,24 @@ const SuccessPage = () => {
                 <div className="success-component">
                 {/* <img className='success-bg-img' src="bg-Special-phone.jpg" alt="" /> */}
                     <div className="flying-lantern">
-                        <img src="https://oriental-decor.com/wp-content/uploads/2023/10/2545-w-900x900.png" alt="Flying Lantern" />
+                        <img src="flying-lantern.png" />
                     </div> 
                     <div className="flying-lantern">
-                        <img src="https://oriental-decor.com/wp-content/uploads/2023/10/2545-w-900x900.png" alt="Flying Lantern" />
-                    </div>
+                        <img src="flying-lantern.png" />
+                    </div> 
+                    <div className="flying-lantern">
+                        <img src="flying-lantern.png" />
+                    </div> 
+
+                    
                     <div className="success-up">
-                        <img src="https://cdn2.iconfinder.com/data/icons/greenline/512/check-512.png" alt="Checkmark" />
+                        <img src="success.png" alt="Checkmark" />
                         <h2>Registered successfully</h2>
                         <p>Click the Button to View and Download the Ticket</p>
                     </div>
+
+
+
                     <div className="success-down">
                        
                         <div className="success-btn-container">

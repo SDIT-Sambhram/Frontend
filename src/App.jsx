@@ -11,6 +11,7 @@ import About from './Pages/About/About.jsx';
 import VerifyTicket from './Pages/VerifyTicket/VerifyTicket.jsx';
 import NotFound from './Pages/NotFound/NotFound';
 import OurTeam from './Pages/OurTeam/OurTeam.jsx';
+import ViewTicket from './Pages/ViewTicket/ViewTicket.jsx';
 
 import Footer from './Components/Footer/Footer.jsx'
 import TopButton from './Components/TopButton/TopButton.jsx'
@@ -58,6 +59,7 @@ function App() {
               <Route path='/team' element={<OurTeam/>}/>
               <Route path='/verify' element={<VerifyTicket/>}/>
               <Route path='/contact' element={<Contact/>}/>
+              <Route path='/viewticket' element={<ViewTicket/>}/>
               <Route path="*" element={<NotFound />} />
             </Routes>
 
