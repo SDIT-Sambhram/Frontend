@@ -7,6 +7,7 @@ import RegistrationForm from '../../RegisterComponents/RegistrationForm/Registra
 import { toast } from 'react-toastify';
 import PayButton from '../../RegisterComponents/PayButton/PayButton';
 import Preloader from '../../Components/Preloader/Preloader';
+import ConfirmSection from '../../RegisterComponents/ConfirmSection/ConfirmSection';
 
 const CheckoutPage = () => {
   const { selectedEvent, setSelectedEvent, eventDatas, setAmount, amount, payNow, step, data, setStep } = useContext(StoreContext);
@@ -17,6 +18,7 @@ const CheckoutPage = () => {
 
 
   const items = eventDatas.filter(event => selectedEvent.includes(event._id));
+  
   const navigate = useNavigate();
 
   const totalAmount = items.length * 100;
@@ -117,40 +119,12 @@ const CheckoutPage = () => {
           <RegistrationForm />
         }
       </div>
-
       {
         confirmSection &&
-        <div className="confirm-div">
-          <div className="close-confirm">
-            <i onClick={setConfirm} className="fa-solid fa-xmark"></i>
-          </div>
-          <h3>Confirm payment</h3>
-
-          <div className="confirm-price-section">
-            <h4>Selected events</h4>
-            {items.map((item, index) => (
-              <div className="confirm-price" key={index}>
-                <p>{item.eventName}</p> <p><i className="fa-solid fa-indian-rupee-sign">&nbsp;</i>100</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="confirm-price-section">
-            <h4>Price</h4>
-            <div className="confirm-price">
-              <p>Total amount</p> <p><i className="fa-solid fa-indian-rupee-sign"></i>&nbsp;{totalAmount}</p>
-            </div>
-            <div className="confirm-price">
-              <p>Coupon discount</p> <p><i className="fa-solid fa-indian-rupee-sign"></i>&nbsp;{couponDiscount}</p>
-            </div>
-            <div className="confirm-price">
-              <p>Grand Total</p> <p className='grand-total-final'><i className="fa-solid fa-indian-rupee-sign"></i>&nbsp;{grandTotal}</p>
-            </div>
-          </div>
-          <div className="confirm-payment-button">
-            <PayButton btnText={"Pay Now"} btnFunction={confirmPayment} step={step} />
-          </div>
-        </div>
+        <>
+         <ConfirmSection items={items} totalAmount={totalAmount} couponDiscount={couponDiscount} grandTotal={grandTotal} setConfirm={setConfirm} step={step} confirmPayment={confirmPayment}/>
+        </>
+       
       }
 
       {isLoading &&
