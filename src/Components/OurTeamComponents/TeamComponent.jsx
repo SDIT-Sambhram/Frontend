@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import './TeamComponent.css';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import abhishekImage from './images//abhishek.jpg';
-import abdhullaImage from './images/1000324130.jpg';
+import abdhullaImage from './images/shafaz.jpg';
 import mukeshImage from './images/mukesh.jpg';
 import adithyaImage from './images/adithya.jpg';
 import fahizImage from './images/fahiz.jpg';
@@ -11,6 +11,11 @@ import devdarshImage from './images/devdarsh.jpg';
 import surajImage from './images/suraj.jpg';
 import abhinImage from './images/ABHIN_M_4SH21CS007.jpg';
 import rohanImage from './images/rohan.jpg';
+import dhanyaImage from './images/dhanya.jpg';
+import ishaImage from './images/isha.jpg';
+import chiranjeeviImage from './images/chiranjeevi.jpg';
+import suhanImage from './images/suhan.jpg';
+import pareshImage from './images/paresh.jpg';
 
 const teamMembers = {
   team: [
@@ -18,59 +23,59 @@ const teamMembers = {
       name: "Abhishek Kulal",
       role: "Website Lead",
       image: abhishekImage, // Updated image reference
-      github: "https://github.com/lead",
-      linkedin: "https://linkedin.com/in/lead",
+      github: "https://github.com/Abhi15k",
+      linkedin: "https://www.linkedin.com/in/abhishek-kulal-30b26a209/",
       isHead: true
     },
     {
       name: "Abdulla Shafaz K U",
       role: "Website Co-Lead",
       image: abdhullaImage, // Updated image reference
-      github: "https://github.com/colead",
-      linkedin: "https://linkedin.com/in/colead",
+      github: "https://github.com/shafaz9539",
+      linkedin: "https://www.linkedin.com/in/shafazabdulla/",
       isCoHead: true
     },
     {
       name: "Abhin M",
       role: "Frontend Developer",
       image: abhinImage,
-      github: "https://github.com/dev1",
-      linkedin: "https://linkedin.com/in/dev1"
+      github: "https://github.com/abhinm7",
+      linkedin: "https://www.linkedin.com/in/abhinm7/"
     },
     {
       name: "Dhanya Kamath",
       role: "Backend Developer",
-      image: "https://via.placeholder.com/150",
+      image: dhanyaImage,
       github: "https://github.com/dev2",
-      linkedin: "https://linkedin.com/in/dev2"
+      linkedin: "https://www.linkedin.com/in/dhanya-kamat-7739b122a/"
     },
     {
       name: "K Mukesh",
       role: "Full Stack Developer",
       image: mukeshImage, // Updated image reference
-      github: "https://github.com/dev3",
-      linkedin: "https://linkedin.com/in/dev3"
+      github: "https://github.com/kmukessh",
+      linkedin: "https://www.linkedin.com/in/mukeshk25/"
     },
     {
       name: "Suraj M P",
       role: "UI/UX Developer",
       image: surajImage,
       github: "https://github.com/dev4",
-      linkedin: "https://linkedin.com/in/dev4"
+      linkedin: "https://www.linkedin.com/in/surajmp045/"
     },
     {
       name: "Esha",
       role: "Database Engineer",
-      image: "https://via.placeholder.com/150",
+      image: ishaImage,
       github: "https://github.com/dev5",
-      linkedin: "https://linkedin.com/in/dev5"
+      linkedin: "https://www.linkedin.com/in/esha-shetty-27b0a127a/"
     },
     {
-      name: "Cheeranjeevi",
+      name: "Chiranjeevi",
       role: "API Developer",
-      image: "https://via.placeholder.com/150",
-      github: "https://github.com/dev6",
-      linkedin: "https://linkedin.com/in/dev6"
+      image: chiranjeeviImage,
+      github: "https://github.com/Chiru088",
+      linkedin: "https://www.linkedin.com/in/chiranjeevi-s-a9209b27b/"
     },
     {
       name: "Appuraj",
@@ -93,14 +98,14 @@ const specialContributors = {
   team: [
     {
       name: "Mohammed Fahiz",
-      role: "Technical Support",
+      role: "Media Team Lead & Design Consultant",
       image: fahizImage, // Updated image reference
       github: "https://github.com/fahiz",
       linkedin: "https://linkedin.com/in/fahiz"
     },
     {
       name: "Adithya",
-      role: "Design Contributor",
+      role: "Graphic Designer & Creative Contributor",
       image: adithyaImage, // Updated image reference
       github: "https://github.com/adithya",
       linkedin: "https://linkedin.com/in/adithya"
@@ -114,14 +119,14 @@ const specialContributors = {
     },
     {
       name: "Devadarsh",
-      role: "Technical Advisor",
+      role: " Visual Designer",
       image: devdarshImage, // Updated image reference
       github: "https://github.com/devdarsh",
       linkedin: "https://linkedin.com/in/devdarsh"
     },
     {
       name: "Yadhukrishna",
-      role: "Development Support",
+      role: " Visual Designer",
       image: "https://via.placeholder.com/150",
       github: "https://github.com/yadhukrishna",
       linkedin: "https://linkedin.com/in/yadhukrishna"
@@ -132,6 +137,20 @@ const specialContributors = {
       image: "https://via.placeholder.com/150",
       github: "https://github.com/yadhukrishna",
       linkedin: "https://linkedin.com/in/yadhukrishna"
+    },
+    {
+      name: "Paresh ",
+      role: "Development Support",
+      image: pareshImage,
+      github: "https://github.com/newcontributor1",
+      linkedin: "https://linkedin.com/in/newcontributor1"
+    },
+    {
+      name: "Suhan",
+      role: "Development Support",
+      image: suhanImage,
+      github: "https://github.com/newcontributor2",
+      linkedin: "https://linkedin.com/in/newcontributor2"
     }
   ]
 };
@@ -149,8 +168,8 @@ const HeadCard = () => {
           Leading our talented team with vision and expertise, driving innovation and excellence in every project.
         </p>
         <div className="sambhram-social-links sambhram-head-social">
-          <a href="https://github.com/teamlead" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
-          <a href="https://linkedin.com/in/teamlead" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
+          <a href="https://github.com/ROHAN-K-SHETTY" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+          <a href="https://www.linkedin.com/in/rohan-k-shetty-4ba423258/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
         </div>
       </div>
     </div>
