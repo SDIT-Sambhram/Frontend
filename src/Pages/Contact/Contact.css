@@ -1,13 +1,12 @@
 .contact {
     width: 100%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content:  center;
     margin-top: 40px;
     background: radial-gradient(#882222,#35060e);
-    
+    padding: 50px;
 }
 .contact-heading{
     display: flex;
