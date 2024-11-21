@@ -8,6 +8,10 @@
         color: rgba(255, 255, 255, 0.749);
     }
     
+    .participant-events-list {
+        margin-top: 20px;
+    }
+    
     .participant-details img {
         position: absolute;
         top: 15%;
@@ -69,10 +73,6 @@
         width: 100%;
         display: flex;
         justify-content: space-between
-    }
-    
-    .participant-events-list {
-        margin-bottom: 10px;
     }
     
     @media (max-width: 700px) {
