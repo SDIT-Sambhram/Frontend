@@ -46,7 +46,7 @@ function App() {
         <Preloader />
       ) : (
         <>
-          <div className="app">
+          <div className="app"> 
             <Navbar />
             <ToastContainer />
             <ScrollToTop />

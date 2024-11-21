@@ -20,7 +20,7 @@ const CheckoutPage = () => {
   const items = eventDatas.filter(event => selectedEvent.includes(event._id));
   
   const navigate = useNavigate();
-
+ 
   const totalAmount = items.length * 100;
   let couponDiscount = 0;
 
