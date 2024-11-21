@@ -11,6 +11,21 @@
   --fluid-max-size: 18;
   --fluid-min-ratio: 1.2;
   --fluid-max-ratio: 1.25;
+  --primary-color: #8B0000;
+  --secondary-color: #FFD700;
+  --background-color: #fff;
+  --text-color: #333;
+  --card-width: 280px;
+  --card-height: 350px;
+  --card-gap: 20px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
 }
 
 @keyframes fadeInDown {
@@ -880,6 +895,16 @@
       opacity: 1;
     }
   }
+
+  .team-members {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-member-card {
+    width: 90%;
+    margin-bottom: var(--card-gap);
+  }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
@@ -1163,4 +1188,80 @@
 .sambhram-social-links a,
 .sambhram-head-card::before {
   will-change: transform;
+}
+
+.team-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.team-container h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--card-gap);
+  position: relative;
+}
+
+.team-member-card {
+  background-color: var(--background-color);
+  width: var(--card-width);
+  height: var(--card-height);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.team-member-card img {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+}
+
+.team-member-card h3 {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin: 0.5rem 0;
+}
+
+.team-member-card .member-role {
+  font-size: 1rem;
+  color: var(--secondary-color);
+  margin: 0.5rem 0;
+}
+
+.team-member-card .member-bio {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  margin: 0.5rem 1rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-links a {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--secondary-color);
 }
