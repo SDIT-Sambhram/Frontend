@@ -35,7 +35,7 @@ const SuccessPage = () => {
             const url = window.URL.createObjectURL(blob);
             const link = document.createElement('a');
             link.href = url;
-            link.download = `ticket_sambhram_${orderId}.jpg`;
+            link.download = `Sambhram_Ticket_${orderId}.jpg`;
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);

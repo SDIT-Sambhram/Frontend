@@ -140,5 +140,9 @@
     .navbar h1 {
         font-size: 20px;
     }
+    .navbar-left img{
+        width: 78px;
+        height: auto;
+    }
     
 }
