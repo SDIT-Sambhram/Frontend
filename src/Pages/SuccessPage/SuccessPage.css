@@ -5,7 +5,7 @@
     width: 100%;
     height: 100vh;
     position: relative;
-    background: radial-gradient(#882222, #35060e)
+    background: radial-gradient(#882222, #35060e);
 }
 
 .success-component {
