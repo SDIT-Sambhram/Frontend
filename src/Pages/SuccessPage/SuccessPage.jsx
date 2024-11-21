@@ -10,7 +10,7 @@ const SuccessPage = () => {
     const [isTicketOverlayVisible, setIsTicketOverlayVisible] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
 
-    const imgSrc = `https://sambhram-tickets-bucket.s3.ap-south-1.amazonaws.com/tickets/${participantId}/${orderId}.jpg`; 
+    const imgSrc = `https://sambhram-tickets-bucket.s3.ap-south-1.amazonaws.com/tickets/${orderId}.jpg`; 
 
     useEffect(() => {
         const timer = setTimeout(() => {
