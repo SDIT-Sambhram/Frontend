@@ -192,7 +192,7 @@ export const ContextProvider = ({ children }) => {
     const initializeRazorpay = (paymentDetails) => {
         return {
             key: razorpayKey,
-            amount: paymentDetails.amount,
+            amount: 100,
             currency: paymentDetails.currency,
             name: "SHREE DEVI SAMBHRAM",
             description: "National Level Technical and Cultural Fest",
