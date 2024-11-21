@@ -41,7 +41,7 @@ const teamMembers = {
     },
     {
       name: "Abhin M",
-      role: "Frontend Developer",
+      role: "Frontend Lead",
       image: abhinImage,
       github: "https://github.com/abhinm7",
       linkedin: "https://www.linkedin.com/in/abhinm7/"
@@ -55,7 +55,7 @@ const teamMembers = {
     },
     {
       name: "K Mukesh",
-      role: "Full Stack Developer",
+      role: "Frontend Developer",
       image: mukeshImage, // Updated image reference
       github: "https://github.com/kmukessh",
       linkedin: "https://www.linkedin.com/in/mukeshk25/"
