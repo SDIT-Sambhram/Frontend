@@ -43,12 +43,7 @@
     z-index: 100;
     bottom: 0;
     padding: 35px 20px 10px;
-    background: linear-gradient(to bottom,
-            transparent 0%,
-            rgba(0, 0, 0, 0.5) 10%,
-            rgba(0, 0, 0, 0.6) 20%,
-            rgba(0, 0, 0, 0.7) 30%,
-            rgba(0, 0, 0, 0.9) 100%);
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 10%, rgba(0, 0, 0, 0.6) 20%, rgba(0, 0, 0, 0.7) 30%, rgba(0, 0, 0, 0.9) 100%);
 }
 
 .ticket-card-overview h6 {
@@ -73,8 +68,6 @@
     text-shadow: 1px 1px 1px black;
 }
 
-
-
 .ticket-heading h2 {
     font-size: 45px;
 }
@@ -83,17 +76,14 @@
     .ticket-card-list {
         grid-template-columns: repeat(2, 1fr);
     }
-
     .ticket-card-view {
         height: 180px;
         width: 135px;
     }
-
     .ticket-cards {
         margin-top: 0;
         height: 100vh;
     }
-
     .ticket-card-list {
         width: 40%;
     }
@@ -103,35 +93,29 @@
     .ticket-heading {
         width: 100%;
     }
-
     .ticket-heading h2 {
         font-size: 30px;
     }
-
     .ticket-card-list {
         grid-template-columns: repeat(2, 1fr);
         width: 70%;
         row-gap: 30px;
     }
-
     .ticket-card-overview {
         padding: 10px;
         height: 60%;
     }
-
     .ticket-card-overview p {
         font-size: 12px;
     }
-    .ticket-card-overview h6{
+    .ticket-card-overview h6 {
         margin-top: 5px;
         font-size: 12px;
     }
-  
 }
 
 @media(max-width:700px) {
-
-    .ticket-cards{
+    .ticket-cards {
         height: 100%;
         margin-top: 10px;
     }
@@ -141,8 +125,6 @@
         row-gap: 13px;
         margin-top: 30px;
     }
-
-
     .ticket-card-view {
         width: 165px;
         height: 275px;

@@ -9,7 +9,7 @@ const TicketCards = () => {
             description: "Start your fest journey! Choose 1 event from performances or tech showcases. Perfect for focused enthusiasts seeking their spotlight moment!"
         },
         {
-            ticket_name: "FANG PASS",
+            ticket_name: "FANG PASS", 
             ticket_image: "Fang Pass.png",
             description: "Double your fest experience! Pick any 2 exciting events with ₹40 savings. Showcase your versatility across different platforms and shine bright!"
         },
