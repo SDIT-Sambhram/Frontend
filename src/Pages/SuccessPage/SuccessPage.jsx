@@ -95,6 +95,7 @@ const SuccessPage = () => {
                         <img src="success.png" alt="Checkmark" />
                         <h2>Registered successfully</h2>
                         <p>Click the Button to View and Download the Ticket</p>
+                        <p className='team-event-warning'>Don't forget to bring your ticket !!!</p>
                     </div>
                     <div className="success-down">
                         <div className="success-btn-container">
