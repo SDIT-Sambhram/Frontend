@@ -19,7 +19,7 @@ import pareshImage from './images/paresh.jpg';
 import sanjanaImage from './images/sanjana.jpg';
 import shreyasImage from './images/shreyas.jpg';
 import appuImage from './images/appu.jpg';
-import yadhukrishnaImage from './images/yadhukrishna.jpg';
+import yadhukrishnaImage from './images/yadhukrishna.webp';
 
 const teamMembers = {
   team: [
@@ -47,7 +47,7 @@ const teamMembers = {
       linkedin: "https://www.linkedin.com/in/abhinm7/"
     },
     {
-      name: "Dhanya Kamath",
+      name: "Dhanya Kamat",
       role: "Backend Developer",
       image: dhanyaImage,
       github: "https://github.com/dev2",
