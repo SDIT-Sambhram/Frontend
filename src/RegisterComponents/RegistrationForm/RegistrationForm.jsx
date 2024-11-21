@@ -92,7 +92,7 @@ const RegistrationForm = () => {
         const value = event.target.value;
         setData(data => ({ ...data, [name]: value }))
     }
-
+ 
 
     return (
         <div className="registration-form-div">
