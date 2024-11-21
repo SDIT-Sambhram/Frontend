@@ -10,7 +10,7 @@ const SuccessPage = () => {
     const [isTicketOverlayVisible, setIsTicketOverlayVisible] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
 
-    const imgSrc = `https://sambhram-tickets-bucket.s3.ap-south-1.amazonaws.com/tickets/${orderId}.jpg`; 
+    const imgSrc = `https://sambhram-tickets-bucket.s3.ap-south-1.amazonaws.com/tickets/${orderId}.jpg`;
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -48,80 +48,82 @@ const SuccessPage = () => {
 
     if (isLoading) {
         return (
-            <Preloader/>
+            <Preloader />
         );
     }
 
     return (
         <>{
-            participantId?<div className="success-page">
-            {isTicketOverlayVisible && (
-                <div className="ticket-overlay">
-                    <div className="ticket">
-                        <img
-                            src={imgSrc}
-                            alt="Ticket"
-                        />
-                        <div className="ticket-button-flex">
-                            <i
-                                onClick={handleCloseClick}
-                                className="fa-solid fa-xmark"
-                                style={{ color: '#ff3838', cursor: 'pointer' }}
-                            >
-                            </i>
-                        </div>
-                    </div>
-                    <div className="save-flex">
-                        <div className="download-div">
-                            <div onClick={handleDownload} style={{ cursor: 'pointer' }}>
-                                <Save />
+            orderId ? <div className="success-page">
+                {isTicketOverlayVisible && (
+                    <div className="ticket-overlay">
+                        <div className="ticket">
+                            <img
+                                src={imgSrc}
+                                alt="Ticket"
+                            />
+                            <div className="ticket-button-flex">
+                                <i
+                                    onClick={handleCloseClick}
+                                    className="fa-solid fa-xmark"
+                                    style={{ color: '#ff3838', cursor: 'pointer' }}
+                                >
+                                </i>
                             </div>
-                            <p>Click to download</p>
+                        </div>
+                        <div className="save-flex">
+                            <div className="download-div">
+                                <div onClick={handleDownload} style={{ cursor: 'pointer' }}>
+                                    <Save />
+                                </div>
+                                <p>Click to download</p>
+                            </div>
+                        </div>
+                    </div>
+                )}
+                <div className="success-component">
+                    <div className="flying-lantern">
+                        <img src="flying-lantern.png" alt="Flying Lantern" />
+                    </div>
+                    <div className="flying-lantern">
+                        <img src="flying-lantern.png" alt="Flying Lantern" />
+                    </div>
+                    <div className="flying-lantern">
+                        <img src="flying-lantern.png" alt="Flying Lantern" />
+                    </div>
+                    <div className="success-up">
+                        <img src="success.png" alt="Checkmark" />
+                        <h2>Registered successfully</h2>
+                        <p>Click the Button to View and Download the Ticket</p>
+                        <p className='team-event-warning'>Don't forget to bring your ticket !!!</p>
+                    </div>
+                    <div className="success-down">
+                        <div className="success-btn-container">
+                            <a className="button type--C" onClick={handleViewTicketClick}>
+                                <div className="button__line"></div>
+                                <div className="button__line"></div>
+                                <span className="button__text">View Ticket</span>
+                                <div className="button__drow1"></div>
+                                <div className="button__drow2"></div>
+                            </a>
                         </div>
                     </div>
                 </div>
-            )}
-            <div className="success-component">
-                <div className="flying-lantern">
-                    <img src="flying-lantern.png" alt="Flying Lantern" />
-                </div>
-                <div className="flying-lantern">
-                    <img src="flying-lantern.png" alt="Flying Lantern" />
-                </div>
-                <div className="flying-lantern">
-                    <img src="flying-lantern.png" alt="Flying Lantern" />
-                </div>
-                <div className="success-up">
-                    <img src="success.png" alt="Checkmark" />
-                    <h2>Registered successfully</h2>
-                    <p>Click the Button to View and Download the Ticket</p>
-                    <p className='team-event-warning'>Don't forget to bring your ticket !!!</p>
-                </div>
-                <div className="success-down">
-                    <div className="success-btn-container">
-                        <a className="button type--C" onClick={handleViewTicketClick}>
-                            <div className="button__line"></div>
-                            <div className="button__line"></div>
-                            <span className="button__text">View Ticket</span>
-                            <div className="button__drow1"></div>
-                            <div className="button__drow2"></div>
-                        </a>
+            </div> :
+
+
+                <div className="error">
+                    <div className="error-div">
+                        <img src="error.jpg" height="70px" alt="" />
+                        <p>Error in generating ticket</p>
+                        <p> Please contact us </p>
+                        <p>+91 75103 24437</p>
+                        <p>+91 81050 48276</p>
                     </div>
+
                 </div>
-            </div>
-        </div>: 
-        <div className="error">
-            <div className="error-div">
-            <img src="error.jpg" height="70px" alt="" />
-            <p>Error in generating ticket</p>
-            <p> Please contact us </p>
-            <p>+91 75103 24437</p>    
-            <p>+91 81050 48276</p>
-            </div>
-           
-        </div>
         }
-            
+
         </>
     );
 };

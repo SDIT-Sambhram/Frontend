@@ -21,7 +21,7 @@ const menuItems = [
 
 const RightDrawerMenu = memo(() => {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
-  const {stPartId} = useContext(StoreContext)
+  const {stOrderId} = useContext(StoreContext)
   const handleOpenDrawer = useCallback(() => {
     setIsDrawerOpen(true);
   }, []);
@@ -53,7 +53,7 @@ const RightDrawerMenu = memo(() => {
           )}
         </ListItem>
       ))}
-      {stPartId? <ListItemButton
+      {stOrderId? <ListItemButton
               component={Link}
               to="/viewticket"
               onClick={handleCloseDrawer}
