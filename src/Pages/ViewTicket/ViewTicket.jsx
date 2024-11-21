@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 
 const ViewTicket = () => {
     const { stPartId } = useContext(StoreContext);
-    const [participant, setParticipant] = useState();
+    const [participant, setParticipant] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -20,49 +20,91 @@ const ViewTicket = () => {
                 if (!stPartId) {
                     throw new Error('No participant ID found');
                 }
-                console.log("id part:", stPartId);
+                console.log("Participant ID:", stPartId);
 
                 const response = await axios.post(
                     "https://o83h8nltlc.execute-api.ap-south-1.amazonaws.com/api/v1/auth/verify/ticket",
                     { id: stPartId }
                 );
 
-                let registrations = response.data.registrations;
+                let registrations = response.data.registrations || [];
 
+                // Remove duplicate tickets
                 const uniqueParticipant = Array.from(
                     new Map(registrations.map(event => [event.ticket_url, event])).values()
                 );
                 setParticipant(uniqueParticipant);
 
                 console.log("Ticket details:", response.data);
-                console.log("Registration details:", registrations);
-                console.log("Registration details filtered:", uniqueParticipant);
+                console.log("Unique Registrations:", uniqueParticipant);
 
             } catch (err) {
                 console.error("Error fetching ticket:", err);
-                setError(err.response?.data?.message || err.message || 'Failed to fetch ticket details');
-                toast.error(err.response?.data?.message || 'Failed to fetch ticket details');
+                const errorMessage = err.response?.data?.message || err.message || 'Failed to fetch ticket details';
+                setError(errorMessage);
+                toast.error(errorMessage);
             } finally {
                 setLoading(false);
             }
         };
 
-        fetchTicketDetails();
+        if (stPartId) {
+            fetchTicketDetails();
+        }
     }, [stPartId]);
 
+    const handleImageError = (e) => {
+        e.target.src = '/path/to/placeholder/image.png'; // Replace with your placeholder
+        e.target.onerror = null;
+    };
+
+    if (loading) {
+        return (
+            <div className="spinner-overlay">
+                <Preloader />
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div className="error-container">
+                <p className="error-message">{error}</p>
+                <button onClick={() => window.location.reload()}>
+                    Try Again
+                </button>
+            </div>
+        );
+    }
 
     return (
         <div className="view-ticket-container">
-            {loading ? <div className="spinner-overlay">
-                <Preloader />
-            </div> : <div className="view-tickets">
-                {participant.map((event, index) => (
-                    <div key={index} className="ticket ticket-top">
-                        <img src={event.ticket_url} alt={`Ticket for event ${event.event_id}`} />
-                    </div>
-                ))}
-            </div>}
-
+            {participant && participant.length > 0 ? (
+                <div className="view-tickets">
+                    {participant.map((event, index) => (
+                        <div 
+                            key={event.ticket_url || index} 
+                            className="ticket ticket-top"
+                        >
+                            <img 
+                                src={event.ticket_url} 
+                                alt={`Ticket for event ${event.event_id}`} 
+                                onError={handleImageError}
+                                className="ticket-image"
+                            />
+                            {event.event_name && (
+                                <div className="ticket-details">
+                                    <p>{event.event_name}</p>
+                                </div>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            ) : (
+                <div className="no-tickets">
+                    <p>No tickets found for this participant.</p>
+                </div>
+            )}
         </div>
     );
 };
