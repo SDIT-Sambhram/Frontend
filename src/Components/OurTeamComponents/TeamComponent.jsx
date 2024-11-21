@@ -41,7 +41,7 @@ const teamMembers = {
     },
     {
       name: "Abhin M",
-      role: "Frontend Developer",
+      role: "Frontend Developer LEAD",
       image: abhinImage,
       github: "https://github.com/abhinm7",
       linkedin: "https://www.linkedin.com/in/abhinm7/"
@@ -83,14 +83,14 @@ const teamMembers = {
     },
     {
       name: "Appuraj",
-      role: "front end",
+      role: "Frontend Developer",
       image: appuImage,
       github: "",
       linkedin: ""
     },
     {
       name: "Shreyas",
-      role: "ui/ux designer",
+      role: "UI/UX Developer",
       image: shreyasImage,
       github: "",
       linkedin: ""
