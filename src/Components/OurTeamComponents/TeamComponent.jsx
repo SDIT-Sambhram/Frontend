@@ -16,10 +16,6 @@ import ishaImage from './images/isha.jpg';
 import chiranjeeviImage from './images/chiranjeevi.jpg';
 import suhanImage from './images/suhan.jpg';
 import pareshImage from './images/paresh.jpg';
-import sanjanaImage from './images/sanjana.jpg';
-import shreyasImage from './images/shreyas.jpg';
-import appuImage from './images/appu.jpg';
-import yadhukrishnaImage from './images/yadhukrishna.webp';
 
 const teamMembers = {
   team: [
@@ -47,10 +43,10 @@ const teamMembers = {
       linkedin: "https://www.linkedin.com/in/abhinm7/"
     },
     {
-      name: "Dhanya Kamat",
+      name: "Dhanya Kamath",
       role: "Backend Developer",
       image: dhanyaImage,
-      github: "https://github.com/dev2",
+      github: "",
       linkedin: "https://www.linkedin.com/in/dhanya-kamat-7739b122a/"
     },
     {
@@ -64,36 +60,36 @@ const teamMembers = {
       name: "Suraj M P",
       role: "UI/UX Developer",
       image: surajImage,
-      github: "https://github.com/SURAJMP045",
+      github: "https://github.com/dev4",
       linkedin: "https://www.linkedin.com/in/surajmp045/"
     },
     {
       name: "Esha",
-      role: "Frontend Developer",
+      role: "Database Engineer",
       image: ishaImage,
-      github: "https://github.com/eshashetty19",
+      github: "https://github.com/dev5",
       linkedin: "https://www.linkedin.com/in/esha-shetty-27b0a127a/"
     },
     {
       name: "Chiranjeevi",
-      role: "Frontend Developer",
+      role: "API Developer",
       image: chiranjeeviImage,
       github: "https://github.com/Chiru088",
       linkedin: "https://www.linkedin.com/in/chiranjeevi-s-a9209b27b/"
     },
     {
       name: "Appuraj",
-      role: "Frontend Developer",
-      image: appuImage,
-      github: "",
-      linkedin: ""
+      role: "Cloud Engineer",
+      image: "https://via.placeholder.com/150",
+      github: "https://github.com/dev9",
+      linkedin: "https://linkedin.com/in/dev9"
     },
     {
       name: "Shreyas",
-      role: "UI/UX Developer",
-      image: shreyasImage,
-      github: "",
-      linkedin: ""
+      role: "Quality Assurance Engineer",
+      image: "https://via.placeholder.com/150",
+      github: "https://github.com/dev10",
+      linkedin: "https://linkedin.com/in/dev10"
     }
   ]
 };
@@ -111,8 +107,8 @@ const specialContributors = {
       name: "Adithya",
       role: "Graphic Designer & Creative Contributor",
       image: adithyaImage, // Updated image reference
-      github: "",
-      linkedin: ""
+      github: "https://github.com/adithya",
+      linkedin: "https://linkedin.com/in/adithya"
     },
     {
       name: "Shanif",
@@ -131,30 +127,30 @@ const specialContributors = {
     {
       name: "Yadhukrishna",
       role: " Visual Designer",
-      image: yadhukrishnaImage,
+      image: "https://via.placeholder.com/150",
       github: "https://github.com/yadhukrishna",
-      linkedin: "https://www.linkedin.com/in/yadhukrishnan-kv-815722259/"
+      linkedin: "https://linkedin.com/in/yadhukrishna"
     },
     {
       name: "Sanjana",
       role: "Development Support",
-      image: sanjanaImage,
-      github: "https://github.com/sanjanaa11",
-      linkedin: "https://www.linkedin.com/in/sanjana-naik-745569292/"
+      image: "https://via.placeholder.com/150",
+      github: "https://github.com/yadhukrishna",
+      linkedin: "https://linkedin.com/in/yadhukrishna"
     },
     {
       name: "Paresh ",
       role: "Development Support",
       image: pareshImage,
-      github: "",
-      linkedin: "https://www.linkedin.com/in/m-paresh-p-kamath-1a3a48245/"
+      github: "https://github.com/newcontributor1",
+      linkedin: "https://linkedin.com/in/newcontributor1"
     },
     {
       name: "Suhan",
       role: "Development Support",
       image: suhanImage,
-      github: "",
-      linkedin: "https://www.linkedin.com/in/suhan-m-03a535339/"
+      github: "https://github.com/newcontributor2",
+      linkedin: "https://linkedin.com/in/newcontributor2"
     }
   ]
 };
