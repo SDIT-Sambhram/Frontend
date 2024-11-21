@@ -22,6 +22,30 @@
     background: radial-gradient(#882222, #35060e);
 }
 
+.error {
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(#882222, #35060e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.error-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0px 0px 10px 10px rgb(0, 0, 0, 0.1);
+}
+
+.error p {
+    margin-top: 10px
+}
+
 
 /* .success-bg-img{
   position: absolute;
