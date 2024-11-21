@@ -41,7 +41,7 @@ const teamMembers = {
     },
     {
       name: "Abhin M",
-      role: "Frontend Developer LEAD",
+      role: "Frontend Developer",
       image: abhinImage,
       github: "https://github.com/abhinm7",
       linkedin: "https://www.linkedin.com/in/abhinm7/"
