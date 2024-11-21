@@ -70,9 +70,6 @@ const ViewTicket = () => {
         return (
             <div className="error-container">
                 <p className="error-message">{error}</p>
-                <button onClick={() => window.location.reload()}>
-                    Try Again
-                </button>
             </div>
         );
     }

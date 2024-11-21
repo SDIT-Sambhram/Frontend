@@ -16,6 +16,7 @@
     justify-content: center;
     height: 100vh;
     text-align: center;
+    background: radial-gradient(#882222,#35060e);
 }
 
 .error-message {
