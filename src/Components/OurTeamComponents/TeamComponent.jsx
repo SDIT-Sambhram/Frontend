@@ -19,6 +19,7 @@ import pareshImage from './images/paresh.jpg';
 import sanjanaImage from './images/sanjana.jpg';
 import shreyasImage from './images/shreyas.jpg';
 import appuImage from './images/appu.jpg';
+import yadhukrishnaImage from './images/yadhukrishna.jpg';
 
 const teamMembers = {
   team: [
@@ -64,13 +65,13 @@ const teamMembers = {
       role: "UI/UX Developer",
       image: surajImage,
       github: "https://github.com/SURAJMP045",
-      linkedin: "https://www.linkedin.com/in/surajmp045"
+      linkedin: "https://www.linkedin.com/in/surajmp045/"
     },
     {
       name: "Esha",
       role: "Frontend Developer",
       image: ishaImage,
-      github: "https://github.com/dev5",
+      github: "https://github.com/eshashetty19",
       linkedin: "https://www.linkedin.com/in/esha-shetty-27b0a127a/"
     },
     {
@@ -84,15 +85,15 @@ const teamMembers = {
       name: "Appuraj",
       role: "front end",
       image: appuImage,
-      github: "https://github.com/dev9",
-      linkedin: "https://linkedin.com/in/dev9"
+      github: "",
+      linkedin: ""
     },
     {
       name: "Shreyas",
       role: "ui/ux designer",
       image: shreyasImage,
-      github: "https://github.com/dev10",
-      linkedin: "https://linkedin.com/in/dev10"
+      github: "",
+      linkedin: ""
     }
   ]
 };
@@ -110,8 +111,8 @@ const specialContributors = {
       name: "Adithya",
       role: "Graphic Designer & Creative Contributor",
       image: adithyaImage, // Updated image reference
-      github: "https://github.com/adithya",
-      linkedin: "https://linkedin.com/in/adithya"
+      github: "",
+      linkedin: ""
     },
     {
       name: "Shanif",
@@ -130,30 +131,30 @@ const specialContributors = {
     {
       name: "Yadhukrishna",
       role: " Visual Designer",
-      image: "https://via.placeholder.com/150",
+      image: yadhukrishnaImage,
       github: "https://github.com/yadhukrishna",
-      linkedin: "https://linkedin.com/in/yadhukrishna"
+      linkedin: "https://www.linkedin.com/in/yadhukrishnan-kv-815722259/"
     },
     {
       name: "Sanjana",
       role: "Development Support",
       image: sanjanaImage,
-      github: "https://github.com/yadhukrishna",
-      linkedin: "https://linkedin.com/in/yadhukrishna"
+      github: "https://github.com/sanjanaa11",
+      linkedin: "https://www.linkedin.com/in/sanjana-naik-745569292/"
     },
     {
       name: "Paresh ",
       role: "Development Support",
       image: pareshImage,
-      github: "https://github.com/newcontributor1",
-      linkedin: "https://linkedin.com/in/newcontributor1"
+      github: "",
+      linkedin: "https://www.linkedin.com/in/m-paresh-p-kamath-1a3a48245/"
     },
     {
       name: "Suhan",
       role: "Development Support",
       image: suhanImage,
-      github: "https://github.com/newcontributor2",
-      linkedin: "https://linkedin.com/in/newcontributor2"
+      github: "",
+      linkedin: "https://www.linkedin.com/in/suhan-m-03a535339/"
     }
   ]
 };
