@@ -29,12 +29,9 @@ const ViewTicket = () => {
 
                 let registrations = response.data.registrations;
 
-                // Filter unique ticket URLs
                 const uniqueParticipant = Array.from(
                     new Map(registrations.map(event => [event.ticket_url, event])).values()
                 );
-
-                // Set unique participants to the state
                 setParticipant(uniqueParticipant);
 
                 console.log("Ticket details:", response.data);

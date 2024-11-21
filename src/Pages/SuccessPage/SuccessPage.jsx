@@ -1,77 +1,102 @@
-import './SuccessPage.css';
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-
 import Save from '../../Components/Save/Save';
+import Preloader from '../../Components/Preloader/Preloader'
+import './SuccessPage.css';
 
 const SuccessPage = () => {
     const location = useLocation();
-    let { participantId, orderId } = location.state || {};
-    
+    const { participantId, orderId } = location.state || {};
     const [isTicketOverlayVisible, setIsTicketOverlayVisible] = useState(false);
-    console.log(orderId);
-    
-    let imgSrc = `https://sambhram-tickets-bucket.s3.ap-south-1.amazonaws.com/tickets/${participantId}/${orderId}.jpg`
+    const [isLoading, setIsLoading] = useState(true);
 
-    const handleViewTicketClick = () => { 
+    const imgSrc = `https://sambhram-tickets-bucket.s3.ap-south-1.amazonaws.com/tickets/${participantId}/${orderId}.jpg`;
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 3);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    const handleViewTicketClick = () => {
         setIsTicketOverlayVisible(true);
     };
+
     const handleCloseClick = () => {
         setIsTicketOverlayVisible(false);
     };
 
+    const handleDownload = async () => {
+        try {
+            const response = await fetch(imgSrc);
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `ticket_sambhram_${orderId}.jpg`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(url);
+        } catch (error) {
+            console.error('Download failed:', error);
+            alert('Download failed. Please try again.');
+        }
+    };
+
+    if (isLoading) {
+        return (
+            <Preloader/>
+        );
+    }
+
     return (
         <>
-            <div className="success-page">  
+            <div className="success-page">
                 {isTicketOverlayVisible && (
                     <div className="ticket-overlay">
                         <div className="ticket">
-                            <img src={imgSrc} alt="Ticket" />
+                            <img
+                                src={imgSrc}
+                                alt="Ticket"
+                            />
                             <div className="ticket-button-flex">
-                                <i onClick={handleCloseClick}
+                                <i
+                                    onClick={handleCloseClick}
                                     className="fa-solid fa-xmark"
-                                    style={{ color: '#ff3838', cursor: 'pointer' }}>
+                                    style={{ color: '#ff3838', cursor: 'pointer' }}
+                                >
                                 </i>
                             </div>
-
                         </div>
                         <div className="save-flex">
                             <div className="download-div">
-                                
-                            <a href={imgSrc} download={"ticket_sambhram"}>
-                                <Save />
-                            </a>
-                            <p>Click to download</p>
+                                <div onClick={handleDownload} style={{ cursor: 'pointer' }}>
+                                    <Save />
+                                </div>
+                                <p>Click to download</p>
                             </div>
-                            
-
                         </div>
                     </div>
                 )}
                 <div className="success-component">
-                {/* <img className='success-bg-img' src="bg-Special-phone.jpg" alt="" /> */}
                     <div className="flying-lantern">
-                        <img src="flying-lantern.png" />
-                    </div> 
+                        <img src="flying-lantern.png" alt="Flying Lantern" />
+                    </div>
                     <div className="flying-lantern">
-                        <img src="flying-lantern.png" />
-                    </div> 
+                        <img src="flying-lantern.png" alt="Flying Lantern" />
+                    </div>
                     <div className="flying-lantern">
-                        <img src="flying-lantern.png" />
-                    </div> 
-
-                    
+                        <img src="flying-lantern.png" alt="Flying Lantern" />
+                    </div>
                     <div className="success-up">
                         <img src="success.png" alt="Checkmark" />
                         <h2>Registered successfully</h2>
                         <p>Click the Button to View and Download the Ticket</p>
                     </div>
-
-
-
                     <div className="success-down">
-                       
                         <div className="success-btn-container">
                             <a className="button type--C" onClick={handleViewTicketClick}>
                                 <div className="button__line"></div>
