@@ -204,10 +204,10 @@ export const ContextProvider = ({ children }) => {
                 contact: data.mobile
             },
             notes: {
-                address: "Kenjar"
+                address: "Shree Devi Institute Of Technology, Kenjar, Near Mangalore International Airport, Karnataka - 574142"
             },
             theme: {
-                color: "#ff001b"
+                color: "#580808"
             },
             modal: {
                 ondismiss: () => toast.info("Payment cancelled")
