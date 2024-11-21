@@ -112,7 +112,7 @@ const SuccessPage = () => {
         </div>: 
         <div className="error">
             <div className="error-div">
-            <img src="error.jpg" height="80px" alt="" />
+            <img src="error.jpg" height="70px" alt="" />
             <p>Error in generating ticket</p>
             <p> Please contact us </p>
             <p>+91 75103 24437</p>    
