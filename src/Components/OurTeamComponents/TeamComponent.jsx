@@ -85,8 +85,8 @@ const teamMembers = {
       name: "Appuraj",
       role: "Frontend Developer",
       image: appuImage,
-      github: "",
-      linkedin: ""
+      github: "https://github.com/Appuraj46",
+      linkedin: "www.linkedin.com/in/appuraj-gs"
     },
     {
       name: "Shreyas",
@@ -119,7 +119,7 @@ const specialContributors = {
       role: "Development Support",
       image: shanifImage, // Updated image reference
       github: "",
-      linkedin: ""
+      linkedin: "www.linkedin.com/in/shanif-nazeer"
     },
     {
       name: "Devadarsh",
