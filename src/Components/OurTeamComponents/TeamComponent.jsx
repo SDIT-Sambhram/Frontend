@@ -64,14 +64,14 @@ const teamMembers = {
       name: "Suraj M P",
       role: "UI/UX Developer",
       image: surajImage,
-      github: "https://github.com/dev4",
+      github: "hhttps://github.com/SURAJMP045",
       linkedin: "https://www.linkedin.com/in/surajmp045/"
     },
     {
       name: "Esha",
       role: "Database Engineer",
       image: ishaImage,
-      github: "https://github.com/dev5",
+      github: "",
       linkedin: "https://www.linkedin.com/in/esha-shetty-27b0a127a/"
     },
     {
@@ -85,15 +85,15 @@ const teamMembers = {
       name: "Appuraj",
       role: "Cloud Engineer",
       image: appuImage,
-      github: "https://github.com/dev9",
-      linkedin: "https://linkedin.com/in/dev9"
+      github: "",
+      linkedin: ""
     },
     {
       name: "Shreyas",
       role: "Quality Assurance Engineer",
       image: shreyasImage,
-      github: "https://github.com/dev10",
-      linkedin: "https://linkedin.com/in/dev10"
+      github: "",
+      linkedin: ""
     }
   ]
 };
@@ -146,15 +146,15 @@ const specialContributors = {
       name: "Paresh ",
       role: "Development Support",
       image: pareshImage,
-      github: "https://github.com/newcontributor1",
-      linkedin: "https://linkedin.com/in/newcontributor1"
+      github: "",
+      linkedin: ""
     },
     {
       name: "Suhan",
       role: "Development Support",
       image: suhanImage,
-      github: "https://github.com/newcontributor2",
-      linkedin: "https://linkedin.com/in/newcontributor2"
+      github: "",
+      linkedin: ""
     }
   ]
 };
