@@ -63,7 +63,7 @@ const MainAttractions = () => {
                         </div>
                         <div className='date-time'>
                             <div className="date">
-                                <p>DEC 07 | 2024</p>
+                                <p>DEC 06 | 2024</p>
                             </div>
                             <div className="hero-btn">
                                 <p>5:30 PM</p>

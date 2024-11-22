@@ -4,8 +4,6 @@ const Contact = () => {
     return (
         <>
             <div className="contact">
-
-
                 <div className="contact-box">
                     <div className="contact-heading">
                         <h2>Contact Us</h2>
@@ -52,15 +50,20 @@ const Contact = () => {
                             <div className="contact-name">
                                 <p>Abhin M  </p><p><a href="tel:+91 95626 20848">+91 95626 20848</a></p>
                             </div>
-
-
-
                         </div>
+
+                        <div className="contact-element-head">
+                            <i className="fa-solid fa-headset fa-xl"></i><h2>Registration Support</h2>
+                        </div>
+
+                        <div className="contact-name">
+                            <p>Chashmitha Kadya  </p><p><a href="tel:+91 93537 33635">+91 93537 33635</a></p>
+                        </div>
+                        <div className="contact-name">
+                            <p>Ajay S  </p><p><a href="tel:+91 70196 76527">+91 70196 76527</a></p>
+                        </div>
+
                     </div>
-                    <hr />
-
-
-
                 </div>
             </div>
         </>
