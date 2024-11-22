@@ -105,42 +105,42 @@ const specialContributors = {
       role: "Media Team Lead & Design Consultant",
       image: fahizImage, // Updated image reference
       github: "https://github.com/fahiz",
-      linkedin: "https://linkedin.com/in/fahiz"
+      linkedin: "https://www.linkedin.com/in/mohammed-fahiz-4033ba264?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
     },
     {
       name: "Adithya",
       role: "Graphic Designer & Creative Contributor",
       image: adithyaImage, // Updated image reference
-      github: "https://github.com/adithya",
-      linkedin: "https://linkedin.com/in/adithya"
+      github: "https://github.com/adii-13",
+      linkedin: "https://www.linkedin.com/in/h-s-adithya-chakravarthy-a33505144?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
     },
     {
       name: "Shanif",
       role: "Development Support",
       image: shanifImage, // Updated image reference
-      github: "https://github.com/shanif",
-      linkedin: "https://linkedin.com/in/shanif"
+      github: "",
+      linkedin: ""
     },
     {
       name: "Devadarsh",
       role: " Visual Designer",
       image: devdarshImage, // Updated image reference
-      github: "https://github.com/devdarsh",
-      linkedin: "https://linkedin.com/in/devdarsh"
+      github: "",
+      linkedin: ""
     },
     {
       name: "Yadhukrishna",
       role: " Visual Designer",
       image: yadukrishnaImage, // Updated image reference
-      github: "https://github.com/yadhukrishna",
-      linkedin: "https://linkedin.com/in/yadhukrishna"
+      github: "",
+      linkedin: ""
     },
     {
       name: "Sanjana",
       role: "Development Support",
       image: sanjanaImage,
-      github: "https://github.com/yadhukrishna",
-      linkedin: "https://linkedin.com/in/yadhukrishna"
+      github: "",
+      linkedin: ""
     },
     {
       name: "Paresh ",
