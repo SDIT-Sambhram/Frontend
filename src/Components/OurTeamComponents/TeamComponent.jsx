@@ -16,6 +16,10 @@ import ishaImage from './images/isha.jpg';
 import chiranjeeviImage from './images/chiranjeevi.jpg';
 import suhanImage from './images/suhan.jpg';
 import pareshImage from './images/paresh.jpg';
+import appuImage from './images/appu.jpg';
+import shreyasImage from './images/shreyas.jpg';
+import sanjanaImage from './images/sanjana.jpg';
+import yadukrishnaImage from './images/yadhukrishna.webp';
 
 const teamMembers = {
   team: [
@@ -80,14 +84,14 @@ const teamMembers = {
     {
       name: "Appuraj",
       role: "Cloud Engineer",
-      image: "https://via.placeholder.com/150",
+      image: appuImage,
       github: "https://github.com/dev9",
       linkedin: "https://linkedin.com/in/dev9"
     },
     {
       name: "Shreyas",
       role: "Quality Assurance Engineer",
-      image: "https://via.placeholder.com/150",
+      image: shreyasImage,
       github: "https://github.com/dev10",
       linkedin: "https://linkedin.com/in/dev10"
     }
@@ -127,14 +131,14 @@ const specialContributors = {
     {
       name: "Yadhukrishna",
       role: " Visual Designer",
-      image: "https://via.placeholder.com/150",
+      image: yadukrishnaImage, // Updated image reference
       github: "https://github.com/yadhukrishna",
       linkedin: "https://linkedin.com/in/yadhukrishna"
     },
     {
       name: "Sanjana",
       role: "Development Support",
-      image: "https://via.placeholder.com/150",
+      image: sanjanaImage,
       github: "https://github.com/yadhukrishna",
       linkedin: "https://linkedin.com/in/yadhukrishna"
     },
@@ -198,7 +202,7 @@ const TeamErrorBoundary = ({ children }) => {
 
 const useIntersectionObserver = (options) => {
   const elementRef = useRef(null);
-  
+
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
@@ -233,16 +237,15 @@ const TeamMemberCard = ({ member }) => {
   });
   const [imageLoaded, setImageLoaded] = React.useState(false);
 
-  const cardClassName = `sambhram-team-member-card ${
-    member.isHead ? 'head-member' : member.isCoHead ? 'co-head-member' : ''
-  } ${imageLoaded ? 'loaded' : ''}`;
+  const cardClassName = `sambhram-team-member-card ${member.isHead ? 'head-member' : member.isCoHead ? 'co-head-member' : ''
+    } ${imageLoaded ? 'loaded' : ''}`;
 
   return (
     <div className={cardClassName} ref={cardRef}>
       <div className="sambhram-image-container">
-        <img 
-          src={member.image} 
-          alt={member.name} 
+        <img
+          src={member.image}
+          alt={member.name}
           className="sambhram-member-image" // Updated className
           onLoad={() => setImageLoaded(true)}
           onError={(e) => {
@@ -253,26 +256,26 @@ const TeamMemberCard = ({ member }) => {
         />
         {!imageLoaded && <div className="image-placeholder" />}
       </div>
-        <h3>{member.name}</h3>
-        <p className="sambhram-member-role">{member.role}</p>
-        {(member.isHead || member.isCoHead) && (
-          <>
-            <p className="leader-description">
-              {member.isHead ? 
-                "Leading the team with technical excellence and innovation, driving our vision forward with expertise and dedication." :
-                "Supporting the team's success through technical guidance and collaborative leadership, ensuring project excellence."
-              }
-            </p>
-            {/* <div className="leader-stats">
+      <h3>{member.name}</h3>
+      <p className="sambhram-member-role">{member.role}</p>
+      {(member.isHead || member.isCoHead) && (
+        <>
+          <p className="leader-description">
+            {member.isHead ?
+              "Leading the team with technical excellence and innovation, driving our vision forward with expertise and dedication." :
+              "Supporting the team's success through technical guidance and collaborative leadership, ensuring project excellence."
+            }
+          </p>
+          {/* <div className="leader-stats">
               <span>Experience: {member.isHead ? "10+ years" : "8+ years"}</span>
               <span>Projects: {member.isHead ? "50+" : "40+"}</span>
             </div> */}
-          </>
-        )}
-        <div className="sambhram-social-links">
-            <a href={member.github} target="_blank" rel="noopener noreferrer"><FaGithub /></a>
-            <a href={member.linkedin} target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-        </div>
+        </>
+      )}
+      <div className="sambhram-social-links">
+        <a href={member.github} target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+        <a href={member.linkedin} target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
+      </div>
     </div>
   );
 };
@@ -296,16 +299,16 @@ const TeamSection = ({ title, members }) => {
 };
 
 const TeamComponent = () => {
-    return (
-      <TeamErrorBoundary>
-        <div className="sambhram-team-container">
-            <h1>Our Team</h1>
-            <HeadCard />
-            <TeamSection title="Website Team" members={teamMembers.team} />
-            <TeamSection title="Special Contributors" members={specialContributors.team} />
-        </div>
-      </TeamErrorBoundary>
-    );
+  return (
+    <TeamErrorBoundary>
+      <div className="sambhram-team-container">
+        <h1>Our Team</h1>
+        <HeadCard />
+        <TeamSection title="Website Team" members={teamMembers.team} />
+        <TeamSection title="Special Contributors" members={specialContributors.team} />
+      </div>
+    </TeamErrorBoundary>
+  );
 };
 
 export default React.memo(TeamComponent);

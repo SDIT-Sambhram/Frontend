@@ -448,6 +448,34 @@ body {
   opacity: 0.8;
 }
 
+.sambhram-team-section[title="Special Contributors"] h2 {
+  /* Apply the same styles as the Website Team heading */
+  color: var(--dark-red);
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  position: relative;
+  padding-bottom: 1rem;
+  background: linear-gradient(45deg, var(--dark-red), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.sambhram-team-section[title="Special Contributors"] h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, var(--dark-red), var(--gold));
+  opacity: 0.8;
+}
+
 .sambhram-head-card {
   max-width: 900px;
   /* Increased from 800px */
