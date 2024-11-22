@@ -106,15 +106,18 @@ const SelectedItemSection = ({ items }) => {
             <p>Add {4 - items.length} More Events & Get ₹150 Flat Discount!</p>
           </div>
         )}
+        <div className="btn-section">
+          <button onClick={handleShowCoupon}>
+            View Coupons
+          </button>
+          <button onClick={handleAddMore}><i className="fa-solid fa-plus" ></i>&nbsp;Add more events</button>
+        </div>
 
-        <button onClick={handleShowCoupon}>
-          View Coupons
-        </button>
-        <div className="addMore" onClick={handleAddMore}>
+        {/* <div className="addMore" onClick={handleAddMore}>
         <i className="fa-solid fa-plus" ></i>&nbsp;Add more events
+      </div> */}
       </div>
-      </div>
-      
+
       <div className="receipt-section">
         <div className="current-ticket-section">
 

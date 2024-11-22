@@ -6,63 +6,52 @@ import Preloader from '../../Components/Preloader/Preloader';
 import { toast } from 'react-toastify';
 
 const ViewTicket = () => {
-    const { stPartId } = useContext(StoreContext);
-    const [participant, setParticipant] = useState();
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const { stOrderId } = useContext(StoreContext);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null)
+    console.log(stOrderId);
+    
+    const handleImageError = (e) => {
+        e.target.src = '/path/to/placeholder/image.png'; // Replace with your placeholder
+        e.target.onerror = null;
+    };
 
-    useEffect(() => {
-        const fetchTicketDetails = async () => {
-            try {
-                setLoading(true);
-                setError(null);
+    if (loading) {
+        return (
+           <div className="error-container">
+            <div className="spinner"></div>
+           </div>
+        );
+    }
 
-                if (!stPartId) {
-                    throw new Error('No participant ID found');
-                }
-                console.log("id part:", stPartId);
-
-                const response = await axios.post(
-                    "https://o83h8nltlc.execute-api.ap-south-1.amazonaws.com/api/v1/auth/verify/ticket",
-                    { id: stPartId }
-                );
-
-                let registrations = response.data.registrations;
-
-                const uniqueParticipant = Array.from(
-                    new Map(registrations.map(event => [event.ticket_url, event])).values()
-                );
-                setParticipant(uniqueParticipant);
-
-                console.log("Ticket details:", response.data);
-                console.log("Registration details:", registrations);
-                console.log("Registration details filtered:", uniqueParticipant);
-
-            } catch (err) {
-                console.error("Error fetching ticket:", err);
-                setError(err.response?.data?.message || err.message || 'Failed to fetch ticket details');
-                toast.error(err.response?.data?.message || 'Failed to fetch ticket details');
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchTicketDetails();
-    }, [stPartId]);
-
+    if (error) {
+        return (
+            <div className="error-container">
+                <p className="error-message">{error}</p>
+            </div>
+        );
+    }
 
     return (
         <div className="view-ticket-container">
-            {loading ? <div className="spinner-overlay">
-                <Preloader />
-            </div> : <div className="view-tickets">
-                {participant.map((event, index) => (
-                    <div key={index} className="ticket ticket-top">
-                        <img src={event.ticket_url} alt={`Ticket for event ${event.event_id}`} />
-                    </div>
-                ))}
-            </div>}
-
+            {stOrderId ? (
+                <div className="view-tickets">
+                    {stOrderId.map(ticket => (
+                        <div className="ticket margtop">
+                            <img
+                                src={`https://sambhram-tickets-bucket.s3.ap-south-1.amazonaws.com/tickets/${ticket}.jpg`}
+                                alt={`Ticket for event `}
+                                onError={handleImageError}
+                                className="ticket-image"
+                            />
+                        </div>
+                    ))}
+                </div>
+            ) : (
+                <div className="no-tickets">
+                    <p>No tickets found.</p>
+                </div>
+            )}
         </div>
     );
 };

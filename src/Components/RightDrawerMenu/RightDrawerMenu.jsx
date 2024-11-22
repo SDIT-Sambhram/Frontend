@@ -21,7 +21,9 @@ const menuItems = [
 
 const RightDrawerMenu = memo(() => {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
-  const {stPartId} = useContext(StoreContext)
+  const {stOrderId} = useContext(StoreContext)
+  console.log(stOrderId);
+  
   const handleOpenDrawer = useCallback(() => {
     setIsDrawerOpen(true);
   }, []);
@@ -44,7 +46,7 @@ const RightDrawerMenu = memo(() => {
               onClick={handleCloseDrawer}
               className="drawer-link"
             >
-              <ListItemText primary={label} />
+              <ListItemText primary={label} /> 
             </ListItemButton>
           ) : (
             <ListItemButton onClick={handleCloseDrawer}>
@@ -53,7 +55,7 @@ const RightDrawerMenu = memo(() => {
           )}
         </ListItem>
       ))}
-      {stPartId? <ListItemButton
+      {stOrderId.length>0? <ListItemButton
               component={Link}
               to="/viewticket"
               onClick={handleCloseDrawer}

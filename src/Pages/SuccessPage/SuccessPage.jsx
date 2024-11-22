@@ -10,7 +10,7 @@ const SuccessPage = () => {
     const [isTicketOverlayVisible, setIsTicketOverlayVisible] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
 
-    const imgSrc = `https://sambhram-tickets-bucket.s3.ap-south-1.amazonaws.com/tickets/${participantId}/${orderId}.jpg`;
+    const imgSrc = `https://sambhram-tickets-bucket.s3.ap-south-1.amazonaws.com/tickets/${orderId}.jpg`;
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -48,13 +48,13 @@ const SuccessPage = () => {
 
     if (isLoading) {
         return (
-            <Preloader/>
+            <Preloader />
         );
     }
 
     return (
-        <>
-            <div className="success-page">
+        <>{
+            orderId ? <div className="success-page">
                 {isTicketOverlayVisible && (
                     <div className="ticket-overlay">
                         <div className="ticket">
@@ -95,6 +95,7 @@ const SuccessPage = () => {
                         <img src="success.png" alt="Checkmark" />
                         <h2>Registered successfully</h2>
                         <p>Click the Button to View and Download the Ticket</p>
+                        <p className='team-event-warning'>Don't forget to bring your ticket !!!</p>
                     </div>
                     <div className="success-down">
                         <div className="success-btn-container">
@@ -108,7 +109,21 @@ const SuccessPage = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> :
+
+
+                <div className="error">
+                    <div className="error-div">
+                        <img src="error.jpg" height="70px" alt="" />
+                        <p>Error in generating ticket</p>
+                        <p> Please contact us </p>
+                        <p>+91 75103 24437</p>
+                        <p>+91 81050 48276</p>
+                    </div>
+
+                </div>
+        }
+
         </>
     );
 };

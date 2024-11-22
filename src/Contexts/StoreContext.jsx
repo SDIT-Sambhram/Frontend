@@ -1,5 +1,4 @@
 import { createContext, useState, useEffect } from 'react';
-import { eventsData } from '../sampleDB';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
@@ -19,9 +18,15 @@ export const ContextProvider = ({ children }) => {
     const [step, setStep] = useState(1);
     const [loading, setLoading] = useState(false);
 
-    // Retrieve and manage participant ID
-    const [stPartId, setStPartId] = useState(() => {
-        return localStorage.getItem("stPartId") || null;
+    const [stOrderId, setStOrderId] = useState(() => {
+        const savedOrderIds = localStorage.getItem('stOrderIds');
+        if (savedOrderIds) {
+            const parsedIds = JSON.parse(savedOrderIds);
+            return Array.isArray(parsedIds) 
+                ? parsedIds 
+                : [parsedIds];
+        }
+        return [];
     });
 
     const [data, setData] = useState({
@@ -76,7 +81,6 @@ export const ContextProvider = ({ children }) => {
             if (Array.isArray(newEventDatas)) {
                 setEventDatas(newEventDatas);
                 localStorage.setItem("eventDatas", JSON.stringify(newEventDatas));
-                console.log("Events fetched successfully:", newEventDatas.length);
             } else {
                 throw new Error("Invalid event data format");
             }
@@ -135,7 +139,7 @@ export const ContextProvider = ({ children }) => {
 
             setLoading(true);
             const response = await axios.post(`${url}/api/v1/auth/payment`, paymentData);
-
+             
             if (!response.data?.orderId) {
                 throw new Error('Invalid response from payment server');
             }
@@ -155,30 +159,30 @@ export const ContextProvider = ({ children }) => {
     };
 
     const handlePaymentSuccess = (response, paymentDetails) => {
-        console.log('Payment response:', response);
+        const existingOrderIds = JSON.parse(localStorage.getItem('stOrderIds') || '[]');
 
-        // Remove old participant ID
-        localStorage.removeItem('stPartId');
+        const currentOrderIds = Array.isArray(existingOrderIds) 
+            ? existingOrderIds 
+            : (existingOrderIds ? [existingOrderIds] : []);
 
-        // Update payment status
+        const updatedOrderIds = [...currentOrderIds, paymentDetails.orderId];
+
+        localStorage.setItem('stOrderIds', JSON.stringify(updatedOrderIds));
+
+        setStOrderId(updatedOrderIds);
+
         setPaymentStatus({
             participantId: paymentDetails.participantId,
             orderId: paymentDetails.orderId,
             isSuccess: true
         });
 
-        // Update state and local storage
-        setStPartId(paymentDetails.participantId);
-        localStorage.setItem('stPartId', paymentDetails.participantId);
-
-        console.log('Updated participant ID:', paymentDetails.participantId);
-
-        // Clear selected events and navigate
         setSelectedEvent([]);
         navigate('/success', {
             state: {
                 participantId: paymentDetails.participantId,
-                orderId: paymentDetails.orderId
+                orderId: paymentDetails.orderId,
+                orderIds: updatedOrderIds
             }
         });
     };
@@ -262,7 +266,6 @@ export const ContextProvider = ({ children }) => {
         setSelectedEvent,
         selectEvent,
         eventDatas,
-        eventsData,
         setData,
         data,
         setAmount,
@@ -274,7 +277,8 @@ export const ContextProvider = ({ children }) => {
         loading,
         paymentStatus,
         resetForm,
-        stPartId
+        stOrderId,
+        setStOrderId
     };
 
     return (

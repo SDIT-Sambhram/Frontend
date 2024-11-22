@@ -1,4 +1,4 @@
-.confirm-flex{
+.confirm-flex {
     width: 100%;
     height: 85vh;
     position: fixed;
@@ -8,49 +8,52 @@
     align-items: center;
     backdrop-filter: blur(8px);
 }
+
 .confirm-div {
     min-height: 350px;
     width: 350px;
     background-color: rgba(31, 1, 1, 0.7);
     backdrop-filter: blur(15px);
-    padding: 10px;
+    padding: 20px;
     display: flex;
-    color: rgba(255, 255, 255,0.85);
+    color: rgba(255, 255, 255, 0.85);
     flex-direction: column;
     justify-content: space-around;
     border-radius: 10px;
-  }
-  .confirm-div h3{
+}
+
+.confirm-div h3 {
     text-align: center;
-  }
-  
-  .confirm-payment-button {
+}
+
+.confirm-payment-button {
     width: 100%;
     display: flex;
     justify-content: center;
-  }
-  
-  .confirm-price {
+}
+
+.confirm-price {
     display: flex;
     justify-content: space-between;
-  }
-  
-  
-  
-  .confirm-div h6 {
+}
+
+.confirm-div h6 {
     font-size: 14px;
     font-weight: light;
-  }
-  .grand-total-final{
+}
+
+.grand-total-final {
     font-size: 18px;
     color: #ff1100;
-  }
-  .close-confirm{
+}
+
+.close-confirm {
     width: 100%;
     display: flex;
     justify-content: end;
-  }
-  .confirm-price-section p{
+}
+
+.confirm-price-section p {
     font-size: 14px;
     margin-top: 3px;
-  }
+}

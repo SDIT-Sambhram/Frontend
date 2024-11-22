@@ -83,9 +83,6 @@ const CheckoutPage = () => {
   const confirmPayment = async () => {
     setIsLoading(true)
     const confirmRes = await payNow();
-    if (!confirmRes) {
-      toast.error("Please try again after sometime..")
-    }
     setIsLoading(false)
 
   }
