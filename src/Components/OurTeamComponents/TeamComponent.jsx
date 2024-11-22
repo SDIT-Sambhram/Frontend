@@ -47,7 +47,7 @@ const teamMembers = {
       linkedin: "https://www.linkedin.com/in/abhinm7/"
     },
     {
-      name: "Dhanya Kamath",
+      name: "Dhanya Kamat",
       role: "Backend Developer",
       image: dhanyaImage,
       github: "",
@@ -69,31 +69,31 @@ const teamMembers = {
     },
     {
       name: "Esha",
-      role: "Database Engineer",
+      role: "Frontend Developer",
       image: ishaImage,
       github: "",
       linkedin: "https://www.linkedin.com/in/esha-shetty-27b0a127a/"
     },
     {
       name: "Chiranjeevi",
-      role: "API Developer",
+      role: "Frontend Developer",
       image: chiranjeeviImage,
       github: "https://github.com/Chiru088",
       linkedin: "https://www.linkedin.com/in/chiranjeevi-s-a9209b27b/"
     },
     {
       name: "Appuraj",
-      role: "Cloud Engineer",
+      role: "Frontend Developer",
       image: appuImage,
       github: "",
       linkedin: ""
     },
     {
       name: "Shreyas",
-      role: "Quality Assurance Engineer",
+      role: "UI/UX Developer",
       image: shreyasImage,
-      github: "",
-      linkedin: ""
+      github: "https://github.com/Shreyas445",
+      linkedin: " https://in.linkedin.com/in/shreyas-k-s-39990a339 "
     }
   ]
 };
@@ -104,7 +104,7 @@ const specialContributors = {
       name: "Mohammed Fahiz",
       role: "Media Team Lead & Design Consultant",
       image: fahizImage, // Updated image reference
-      github: "https://github.com/fahiz",
+      github: "https://github.com/fahiz508",
       linkedin: "https://www.linkedin.com/in/mohammed-fahiz-4033ba264?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
     },
     {
