@@ -64,7 +64,7 @@ const teamMembers = {
       name: "Suraj M P",
       role: "UI/UX Developer",
       image: surajImage,
-      github: "hhttps://github.com/SURAJMP045",
+      github: "https://github.com/SURAJMP045",
       linkedin: "https://www.linkedin.com/in/surajmp045/"
     },
     {
@@ -154,7 +154,7 @@ const specialContributors = {
       role: "Development Support",
       image: suhanImage,
       github: "",
-      linkedin: ""
+      linkedin: "https://www.linkedin.com/in/suhan-m-03a535339?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app "
     }
   ]
 };
