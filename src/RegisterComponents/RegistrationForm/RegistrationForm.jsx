@@ -6,6 +6,7 @@ const RegistrationForm = () => {
     const collegeNames = [
         "ACS College of Engineering",
         "Advanced Management College",
+        "A J Institute of Engineering and Technology, Mangalore",
         "Alva's Institute of Engineering and Technology",
         "Bearys Institute of Technology",
         "B L D E A's V P Dr P G Halakatti College of Engineering and Technology",
