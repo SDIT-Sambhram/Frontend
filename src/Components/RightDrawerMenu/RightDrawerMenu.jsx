@@ -22,7 +22,6 @@ const menuItems = [
 const RightDrawerMenu = memo(() => {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
   const {stOrderId} = useContext(StoreContext)
-  console.log(stOrderId);
   
   const handleOpenDrawer = useCallback(() => {
     setIsDrawerOpen(true);

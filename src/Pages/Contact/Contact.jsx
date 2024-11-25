@@ -53,7 +53,7 @@ const Contact = () => {
                         </div>
 
                         <div className="contact-element-head">
-                            <i className="fa-solid fa-headset fa-xl"></i><h2>Registration Support</h2>
+                            <i className="fa-regular fa-address-card fa-xl"></i><h2>Registration Support</h2>
                         </div>
 
                         <div className="contact-name">

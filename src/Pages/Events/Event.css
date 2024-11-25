@@ -1,6 +1,6 @@
 @keyframes fadesIn {
     0% {
-        opacity: 0.2    ;
+        opacity: 0.2;
     }
 
     100% {
@@ -11,7 +11,7 @@
 .event {
     display: flex;
     justify-content: center;
-    text-align: center; 
+    text-align: center;    
     min-height: 90vh;
 }
 
@@ -29,12 +29,13 @@
     /* text-shadow: 1px 1px 2px rgb(255, 7, 7,0.6); */
 }
 
-.event-loading{ 
+.event-loading {
     height: 40vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .spinner {
     width: 50px;
     height: 50px;
@@ -55,8 +56,13 @@
 }
 
 @keyframes wave-spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 
@@ -111,7 +117,7 @@
     .event-card-container {
         grid-template-columns: auto auto auto;
         padding: 0;
-    
+
     }
 
     .bg-image-events img {
@@ -139,7 +145,8 @@
         object-fit: fill;
         opacity: 0.7;
     }
-    .event-type-heading{
+
+    .event-type-heading {
         font-size: 40px;
     }
 }
