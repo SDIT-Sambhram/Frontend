@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://shreedevisambhram.in/sitemap.xml
