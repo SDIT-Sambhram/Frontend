@@ -1,3 +1,21 @@
-User-agent: *
-Allow: /
-Sitemap: https://shreedevisambhram.in/sitemap.xml
+{
+    "name": "Shree Devi Sambhram",
+    "short_name": "Sambhram",
+    "description": "A National Level Technical & Cultural Fest",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "icons": [
+      {
+        "src": "/head-logo.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/head-logo.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
