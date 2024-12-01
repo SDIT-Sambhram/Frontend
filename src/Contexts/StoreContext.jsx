@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 const url = process.env.REACT_APP_URL;
 const razorpayKey = process.env.REACT_APP_RAZORPAY_ID; 
-
+ 
 export const StoreContext = createContext();
 
 export const ContextProvider = ({ children }) => {
@@ -73,6 +73,8 @@ export const ContextProvider = ({ children }) => {
             toast.error("Failed to load events");
         }
     };
+
+    
 
     const fetchEvents = async () => {
         try {
