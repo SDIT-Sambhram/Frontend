@@ -18,7 +18,7 @@ const EventCard = ({eventDatas}) => {
                             className={`event-card ${flippedCard === event._id ? 'flipped' : ''}`}
                             onClick={() => toggleFlip(event._id)}
                         >
-                            <div className="front">
+                            <div className="front"> 
                                 <img src={`/${event.eventSubName}.jpg`} alt="" />
                                 <div className="event-card-content">
                                     <div className="card-front-top">
