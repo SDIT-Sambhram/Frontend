@@ -5,8 +5,19 @@
 }
 
 .label {
-  font-size: 25px;
+  font-size: 35px;
   font-weight: bold;
+  background: url('../../assets/image.png') center;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-animation: moveBg 80s linear infinite;
+  animation: moveBg 80s linear infinite;
+}
+
+.sublabel {
+  font-size: 25px;
   background: url('../../assets/image.png') center;
   -webkit-background-clip: text;
   -moz-background-clip: text;
