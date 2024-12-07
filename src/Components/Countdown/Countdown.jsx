@@ -41,7 +41,7 @@ function Countdown() {
     return (
         <div className="middle">
             <div className='bg-box'>
-                <div className="label">Gear Up! Sambhram Starts Soon!</div>
+                <div className="label">Let's Sambhram</div>
                 <div className="time">
                     <span>
                         <div><p>{time.days}</p>Days</div>
