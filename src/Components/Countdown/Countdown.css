@@ -14,6 +14,7 @@
   color: transparent;
   -webkit-animation: moveBg 80s linear infinite;
   animation: moveBg 80s linear infinite;
+  text-align: center;
 }
 
 .sublabel {
@@ -25,6 +26,7 @@
   color: transparent;
   -webkit-animation: moveBg 80s linear infinite;
   animation: moveBg 80s linear infinite;
+  text-align: center;
 }
 
 @keyframes moveBg { 
@@ -75,6 +77,9 @@
 }
 
 @media (max-width: 740px) {
+  .sublabel{
+    font-size: 18px
+  }
   .label {
     font-size: 20px
   }
