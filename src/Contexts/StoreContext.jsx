@@ -90,30 +90,6 @@ export const ContextProvider = ({ children }) => {
   };
 
   const closed_events = [
-    "673fb480f7c4766c1ccfe314",
-    "673fb480f7c4766c1ccfe315",
-    "673fb480f7c4766c1ccfe31e",
-    "673fb480f7c4766c1ccfe322",
-    "673fb480f7c4766c1ccfe317",
-    "673fb480f7c4766c1ccfe31b",
-    "673fb480f7c4766c1ccfe318",
-    "673fb480f7c4766c1ccfe319",
-    "673fb480f7c4766c1ccfe31d",
-    "673fb480f7c4766c1ccfe321",
-    "673fb480f7c4766c1ccfe31a",
-    "673fb480f7c4766c1ccfe31c",
-    "673fb480f7c4766c1ccfe31f",
-    "673fb480f7c4766c1ccfe320",
-    "673fb480f7c4766c1ccfe323",
-    "673fb480f7c4766c1ccfe324",
-    "673fb480f7c4766c1ccfe316",
-    "674c8176f162164c3b82c5a4",
-    "673fb480f7c4766c1ccfe305",
-    "673fb480f7c4766c1ccfe308",
-    "673fb480f7c4766c1ccfe304",
-    "673fb480f7c4766c1ccfe306",
-    "673fb480f7c4766c1ccfe303",
-    "673fb480f7c4766c1ccfe307",
   ];
 
   const selectEvent = (id) => {

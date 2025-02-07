@@ -25,7 +25,7 @@ const Header = () => {
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 >
                     <source
-                        src="https://sambhram-assets.s3.ap-south-1.amazonaws.com/sambhram-header.webm"
+                        src="/sambhram-header.mp4"
                         type="video/webm"
                     />
                     Your browser does not support the video tag.

@@ -64,7 +64,7 @@ const Navbar = () => {
         <div className={getNavbarClass()}>
             <div className="navbar-left">
                 <Link to='/' onClick={() => setMenu('home')}>
-                    <img src="https://sambhram-assets.s3.ap-south-1.amazonaws.com/SAMBHRAM+LOGO+final.png" />
+                    <img src="/SAMBHRAM LOGO final.png" />
                 </Link>
             </div>
             <div className="navbar-right">
